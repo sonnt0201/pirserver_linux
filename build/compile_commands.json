@@ -1,0 +1,42 @@
+[
+{
+  "directory": "/home/sonnguyen/Desktop/repos/pirserver/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/main.dir/main.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver/main.cpp",
+  "file": "/home/sonnguyen/Desktop/repos/pirserver/main.cpp"
+},
+{
+  "directory": "/home/sonnguyen/Desktop/repos/pirserver/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/main.dir/controllers/Server.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver/controllers/Server.cpp",
+  "file": "/home/sonnguyen/Desktop/repos/pirserver/controllers/Server.cpp"
+},
+{
+  "directory": "/home/sonnguyen/Desktop/repos/pirserver/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/main.dir/controllers/Controller.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver/controllers/Controller.cpp",
+  "file": "/home/sonnguyen/Desktop/repos/pirserver/controllers/Controller.cpp"
+},
+{
+  "directory": "/home/sonnguyen/Desktop/repos/pirserver/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/main.dir/controllers/Filter.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver/controllers/Filter.cpp",
+  "file": "/home/sonnguyen/Desktop/repos/pirserver/controllers/Filter.cpp"
+},
+{
+  "directory": "/home/sonnguyen/Desktop/repos/pirserver/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/main.dir/models/PIRDB.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver/models/PIRDB.cpp",
+  "file": "/home/sonnguyen/Desktop/repos/pirserver/models/PIRDB.cpp"
+},
+{
+  "directory": "/home/sonnguyen/Desktop/repos/pirserver/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/main.dir/models/Request.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver/models/Request.cpp",
+  "file": "/home/sonnguyen/Desktop/repos/pirserver/models/Request.cpp"
+},
+{
+  "directory": "/home/sonnguyen/Desktop/repos/pirserver/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/main.dir/models/Response.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver/models/Response.cpp",
+  "file": "/home/sonnguyen/Desktop/repos/pirserver/models/Response.cpp"
+},
+{
+  "directory": "/home/sonnguyen/Desktop/repos/pirserver/build",
+  "command": "/usr/bin/gcc   -g -o CMakeFiles/main.dir/lib/sqlite3.c.o -c /home/sonnguyen/Desktop/repos/pirserver/lib/sqlite3.c",
+  "file": "/home/sonnguyen/Desktop/repos/pirserver/lib/sqlite3.c"
+}
+]

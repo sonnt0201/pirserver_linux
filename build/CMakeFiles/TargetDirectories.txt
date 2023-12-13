@@ -1,0 +1,4 @@
+/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles/main.dir
+/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles/run.dir
+/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles/edit_cache.dir
+/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles/rebuild_cache.dir

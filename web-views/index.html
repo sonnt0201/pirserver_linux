@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PIR DATABASE</title>
+
+    <style>
+      body {
+        margin: 0;
+        align-items: center;
+      }
+      h1 {
+        text-align: center;
+      }
+      table {
+        width: 80%;
+        margin: 0 auto 0;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid white;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        background-color: #96d4d4;
+        padding: 0.5rem;
+        text-align: center;
+      }
+
+      .header * {
+        background-color: #2e4374;
+        color: white;
+        font-weight: bolder;
+      }
+
+      .num:hover {
+        background-color: beige;
+        font-weight: bold;
+      }
+
+      #controller {
+        margin: 1rem 40% 1rem ;
+        width: 100%;
+        padding: auto;
+        align-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <h1>PIR DATABASE</h1>
+
+      <div id="controller">
+        <button id="prev">&lt;</button> 
+        <button id="prev">&gt;</button>
+      </div>
+
+      <table id="dbheader">
+        <tr class="header">
+          <th width="5%">ID</th>
+          <th width="10%" style="word-wrap: break-word">ESP32 ID</th>
+          <th width="60%">Voltage</th>
+          <th width="15%">Time</th>
+        </tr>
+      </table>
+
+      <table id="dbcontent"></table>
+    </div>
+
+    <script>
+      const ADDR = "http://localhost:8080";
+
+      const db = document.querySelector("#dbcontent");
+
+      const rowHTML = (id, esp_id, voltage, timestamp) => `
+        <tr>
+          <td width="5%">${id}</td>
+          <td width="10%">${esp_id}</td>
+          <td width="60%">${voltage
+            .map(
+              (val) => `
+            <span class='num'> ${val}</span>
+            `
+            )
+            .join(" ")}</td>
+          <td width="15%">${new Date(timestamp)}</td>
+        </tr>
+      `;
+
+      const begin = 1,
+        end = 2;
+
+      onQuery = (begin, end) => {
+        fetch(`${ADDR}/api/range?begin=${begin}&end=${end}`)
+          .then((response) => response.json())
+          .then((data) => {
+            const arr = data["payload"];
+            console.log(arr);
+            arr.forEach((ele) => {
+              console.log(ele);
+              const row = rowHTML(
+                ele["id"],
+                ele["esp_id"],
+                ele["voltage"],
+                ele["timestamp"]
+              );
+
+              // Append the HTML content to the table using insertAdjacentHTML
+              db.insertAdjacentHTML("beforeend", row);
+            });
+          });
+      };
+
+      onQuery(1, 10);
+
+      // db.innerHTML = "";
+    </script>
+  </body>
+</html>
