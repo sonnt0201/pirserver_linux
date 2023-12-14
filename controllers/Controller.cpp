@@ -2,23 +2,7 @@
 
 PIRDB db = PIRDB(DEVELOPMENT);
 
-std::string toJson(std::vector<std::vector<std::string>> vec)
-{
-    std::string json = "{";
-    for (long i = 0; i < vec.size(); i++)
-    {
-        std::string key = vec[i][0];
 
-        std::string value = vec[i][1];
-        // while (value[0] == '0') value.erase(0,1);
-
-        json += '\"' + key + "\": " + value;
-        if (i < (vec.size() - 1))
-            json += ',';
-    }
-    json += "}";
-    return json; // Add this return statement
-};
 
 void controller(int client, Request request)
 {
@@ -38,14 +22,14 @@ void controller(int client, Request request)
         if (rc != SQLITE_DONE)
         {
             Response response = Response(500, "text/plain");
-            response.body = "Failed to saving data !";
+            response.setPlainContent("Failed to saving data !");
             response.sendClient(client);
         }
         else
         {
 
             Response response = Response(200, "text/plain");
-            response.body = "Data saved sucessfully";
+            response.setPlainContent("Data saved sucessfully") ;
             response.sendClient(client);
         }
        
@@ -63,49 +47,44 @@ void controller(int client, Request request)
 
     if (request.method() == GET && request.path() == "/api")
     {
-        Response response = Response(200, "application/json");
-        int numRows = db.numOfRows();
+        int begin = stoi(request.value("begin"));
+        int end = stoi(request.value("end"));
 
-        // set meta value to json
-        std::vector<std::vector<std::string>> metaStr = {{"start-id", std::to_string(std::max(numRows - 1000, 1))}, {"end-id", std::to_string(numRows)}};
-        std::string body = " { \"meta\" : " + toJson(metaStr);
+        std::vector<Record> records = db.recordWithTimestamp(begin, end);
+        Json::Value jsonArr= Json::arrayValue;
+        
 
-        // set main value to json
-        body += ", \"payload\" : ";
-        body += "[";
+        for (Record& record: records) {
+            std::cout <<record.toJsonString()<<"\n";
 
-        for (int i = std::max(numRows - 1000, 1); i <= numRows; i++)
-        {
-            std::vector<std::string> data = db.getDataWithID(i);
-            std::vector<std::vector<std::string>> str = {{"id", std::to_string(i)}, {"esp_id", data[0]}, {"voltage", data[1]}, {"timestamp", data[2]}};
-            body += toJson(str);
-
-            if (i < numRows)
-            {
-                body += ",";
-            }
+            jsonArr.append(record.toJson());
         }
 
-        body += "] }";
-        response.body = body;
+        Response response = Response(200, APPLICATION_JSON);
+        response.setJsonContent(jsonArr);
         response.sendClient(client);
+        return;
+    }
+
+    if (request.method() == GET && request.path() == "/api/with-id") {
+        int id = stoi(request.value("id"));
+        class Record result = db.recordWithID(id);
+        
+        if (!result.toJson().isNull()) {
+            Response response = Response(200, APPLICATION_JSON);
+            response.setJsonContent(result.toJson());
+            response.sendClient(client);
+            return;
+        }
+        
+        send404(client);
         return;
     }
 
     // Get number of row
     if (request.method() == GET && request.path() == "/api/count")
     {
-        int count = db.numOfRows();
-        if (count >= 0)
-        {
-            Response response = Response(200, "application/json");
-            std::string body = "";
-            std::vector<std::vector<std::string>> str = {{"count", std::to_string(count)}};
-            body += toJson(str);
-            response.body = body;
-            response.sendClient(client);
-            return;
-        }
+       return;
     }
 
     // test page
@@ -122,36 +101,6 @@ void controller(int client, Request request)
 
     if (request.method() == GET && request.path() == "/api/range")
     {
-        int begin = stoi(request.value("begin"));
-        int end = stoi(request.value("end"));
-        Response response = Response(200, "application/json");
-
-        // set meta value to json
-        std::vector<std::vector<std::string>> metaStr = {{"start-id", std::to_string(begin)}, {"end-id", std::to_string(end)}};
-        std::string body = " { \"meta\" : " + toJson(metaStr);
-
-        // set main value to json
-        body += ", \"payload\" : ";
-        body += "[";
-
-        
-
-        for (int i = begin; i <= end; i++)
-        {
-            std::vector<std::string> data = db.getDataWithID(i);
-            std::vector<std::vector<std::string>> str = {{"id", std::to_string(i)}, {"esp_id", data[0]}, {"voltage", data[1]}, {"timestamp", data[2]}};
-            body += toJson(str);
-
-            if (i < end)
-            {
-                body += ",";
-            }
-        }
-
-        body += "] }";
-        response.body = body;
-        response.sendClient(client);
-        return;
         return;
     }
 
@@ -167,10 +116,8 @@ void controller(int client, Request request)
         return;
         
     }
+
     // return 404
-    Response response = Response(404, "text/html");
-    response.setHtmlContent("404.html");
-    // printf("%s\n",response.rawText();
-    response.sendClient(client);
+    send404(client);
     return;
 }

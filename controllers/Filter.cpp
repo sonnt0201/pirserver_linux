@@ -12,9 +12,9 @@ bool filter(Request request)
                     idStr = request.value("esp-id"),
                     timeStr = request.value("time");
 
-        // std::cout<<"vol="<<voltageStr<<"\n"
-        //         <<"esp-id="<<idStr<<"\n"
-        //         <<"timeStr="<<timeStr<<"\n";
+        std::cout<<"vol="<<voltageStr<<"\n"
+                <<"esp-id="<<idStr<<"\n"
+                <<"timeStr="<<timeStr<<"\n";
 
         // check empty string
         if (voltageStr == "" || idStr == "" || timeStr == "") {std::cout<<"null \n" ; return 0;}

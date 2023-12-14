@@ -214,6 +214,30 @@ controllers/Server.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/controllers/Server.cpp.s
 .PHONY : controllers/Server.cpp.s
 
+lib/jsoncpp.o: lib/jsoncpp.cpp.o
+.PHONY : lib/jsoncpp.o
+
+# target to build an object file
+lib/jsoncpp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lib/jsoncpp.cpp.o
+.PHONY : lib/jsoncpp.cpp.o
+
+lib/jsoncpp.i: lib/jsoncpp.cpp.i
+.PHONY : lib/jsoncpp.i
+
+# target to preprocess a source file
+lib/jsoncpp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lib/jsoncpp.cpp.i
+.PHONY : lib/jsoncpp.cpp.i
+
+lib/jsoncpp.s: lib/jsoncpp.cpp.s
+.PHONY : lib/jsoncpp.s
+
+# target to generate assembly for a file
+lib/jsoncpp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lib/jsoncpp.cpp.s
+.PHONY : lib/jsoncpp.cpp.s
+
 lib/sqlite3.o: lib/sqlite3.c.o
 .PHONY : lib/sqlite3.o
 
@@ -237,6 +261,30 @@ lib/sqlite3.s: lib/sqlite3.c.s
 lib/sqlite3.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lib/sqlite3.c.s
 .PHONY : lib/sqlite3.c.s
+
+lib/utils.o: lib/utils.cpp.o
+.PHONY : lib/utils.o
+
+# target to build an object file
+lib/utils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lib/utils.cpp.o
+.PHONY : lib/utils.cpp.o
+
+lib/utils.i: lib/utils.cpp.i
+.PHONY : lib/utils.i
+
+# target to preprocess a source file
+lib/utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lib/utils.cpp.i
+.PHONY : lib/utils.cpp.i
+
+lib/utils.s: lib/utils.cpp.s
+.PHONY : lib/utils.s
+
+# target to generate assembly for a file
+lib/utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lib/utils.cpp.s
+.PHONY : lib/utils.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -353,9 +401,15 @@ help:
 	@echo "... controllers/Server.o"
 	@echo "... controllers/Server.i"
 	@echo "... controllers/Server.s"
+	@echo "... lib/jsoncpp.o"
+	@echo "... lib/jsoncpp.i"
+	@echo "... lib/jsoncpp.s"
 	@echo "... lib/sqlite3.o"
 	@echo "... lib/sqlite3.i"
 	@echo "... lib/sqlite3.s"
+	@echo "... lib/utils.o"
+	@echo "... lib/utils.i"
+	@echo "... lib/utils.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

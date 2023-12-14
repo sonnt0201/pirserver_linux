@@ -16,6 +16,8 @@ models/PIRDB.cpp
 models/Request.cpp 
 models/Response.cpp 
 lib/sqlite3.c 
+lib/jsoncpp.cpp 
+lib/utils.cpp
 )
 
 target_link_libraries(main PUBLIC)  

@@ -51,7 +51,7 @@ void Server::run()
 
     std::cout << "Server is listening on port: " << this->port << std::endl;
 
-    ssize_t valRead;
+    int valRead;
     char request[8000] = "";
     int clientSocket;
     while (1)
@@ -83,6 +83,9 @@ void Server::run()
             bool valid = filter(req);
             if (valid)
                 controller(clientSocket, req);
+
+
+            // request = "";
             close(clientSocket);
 
             // Counting time

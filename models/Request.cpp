@@ -17,6 +17,8 @@ int Request::method()
         return PUT;
     if (text.substr(0, 6) == "DELETE")
         return DEL;
+    
+    return INVALID_METHOD;
 }
 
 std::string Request::path()

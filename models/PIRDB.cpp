@@ -19,7 +19,7 @@ PIRDB::PIRDB(std::string dbFileName)
     int rc = sqlite3_open(charf, &this->db);
 
     const char *createTableSQL = "CREATE TABLE IF NOT EXISTS pir ("
-                                 "id INTEGER PRIMARY KEY,"
+                                 "id INTEGER AUTOINCREMENT PRIMARY KEY,"
                                  "esp_id INTEGER NOT NULL,"
                                  "vol VARCHAR NOT NULL,"
                                  "time INTEGER NOT NULL);";
@@ -101,7 +101,7 @@ std::vector<std::string> PIRDB::getDataWithID(int ID)
     }
     else
     {
-        std::cout << "Query failed with id  "<< ID << ": " << sqlite3_errmsg(db)  << std::endl;
+        std::cout << "Query failed with id  " << ID << ": " << sqlite3_errmsg(db) << std::endl;
     }
 
     // Finalize the statement
@@ -113,8 +113,8 @@ std::vector<std::string> PIRDB::getDataWithID(int ID)
 int PIRDB::addData(int deviceID, std::string vol, int time)
 {
     auto start = std::chrono::high_resolution_clock::now();
-    const char *query = "INSERT INTO pir (id, esp_id, vol, time)"
-                        "VALUES (?, ?, ? , ?);";
+    const char *query = "INSERT INTO pir (esp_id, vol, time)"
+                        "VALUES (?, ? , ?);";
 
     sqlite3_stmt *stmt;
 
@@ -127,12 +127,17 @@ int PIRDB::addData(int deviceID, std::string vol, int time)
         std::cerr << "Cannot prepare the statement: " << sqlite3_errmsg(this->db) << std::endl;
     }
     // set next id
-    int nextID = this->numOfRows() + 1;
-    sqlite3_bind_int(stmt, 1, nextID);
-    sqlite3_bind_int(stmt, 2, deviceID);
-    sqlite3_bind_text(stmt, 3, strdup(vol.c_str()), -1, NULL);
+    // int nextID = this->numOfRows() + 1;
+    // sqlite3_bind_int(stmt, 1, nextID);
 
-    sqlite3_bind_int(stmt, 4, time);
+    sqlite3_bind_int(stmt, 1, deviceID);
+
+    char *strVol = (char*) vol.c_str();
+    sqlite3_bind_text(stmt, 2, strVol, -1, NULL);
+
+    
+
+    sqlite3_bind_int(stmt, 3, time);
 
     rc = sqlite3_step(stmt);
     if (rc != SQLITE_DONE)
@@ -217,30 +222,163 @@ int PIRDB::allToCSV()
     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
     std::cout << "Create and write csv file in : " << duration.count() << " millisecs" << std::endl;
 
-    
     return SUCCESS;
 };
 
-/* TO-DO: Implement method recordWithID() */ 
-class RecordRow PIRDB::recordWithID(int ID) {
-    /* Code goes here */
+class Record PIRDB::recordWithID(int ID)
+{
+
+    char *query = "SELECT * FROM pir WHERE id=?";
+    sqlite3_stmt *stmt;
+    int rc;
+    rc = sqlite3_prepare_v2(this->db, query, -1, &stmt, 0);
+
+    if (rc != SQLITE_OK)
+    {
+        std::cout << "Cannot prepare statement. On recordWithID method: " << sqlite3_errmsg(this->db) << std::endl;
+    }
+
+    sqlite3_bind_int(stmt, 1, ID);
+
+    rc = sqlite3_step(stmt);
+    if (rc == SQLITE_ROW)
+    {
+        int id = sqlite3_column_int(stmt, 0),
+            espID = sqlite3_column_int(stmt, 1),
+            timestamp = sqlite3_column_int(stmt, 3);
+
+        char *rawVols = (char *)sqlite3_column_text(stmt, 2);
+
+        Record result = Record(id, espID, rawVols, timestamp);
+
+        return result;
+    }
+    else
+    {
+        std::cout << "Query error: " << sqlite3_errmsg(this->db) << std::endl
+                  << "With return code: " << rc << std::endl;
+        return Record(-1, -1, "", -1);
+    }
+}
+
+std::vector<Record> PIRDB::recordWithTimestamp(int begin, int end){
+    std::vector<Record> result = {};
+
+    char* query = "SELECT * FROM pir WHERE time > ? AND time < ? ;";
+    sqlite3_stmt* stmt;
+    int rc;
+
+    rc = sqlite3_prepare_v2(this->db, query, -1, &stmt, 0);
+
+    if (rc != SQLITE_OK) {
+        std::cout << "Cannot prepare statement. On recordWithTimestamp method: " << sqlite3_errmsg(this->db) << std::endl;
+        return result;
+    }
+
+    sqlite3_bind_int(stmt, 1, begin);
+    sqlite3_bind_int(stmt, 2, end);
+
+    while (
+        (rc = sqlite3_step(stmt)) == SQLITE_ROW
+    ) {
+        
+         int id = sqlite3_column_int(stmt, 0),
+            espID = sqlite3_column_int(stmt, 1),
+            timestamp = sqlite3_column_int(stmt, 3);
+
+        char *rawVols = (char *)sqlite3_column_text(stmt, 2);
+
+        Record record = Record(id, espID, rawVols, timestamp);
+        // std::cout<<record.getID()<<std::endl;
+        result.push_back(record);
+
+    }
+   
+    return result;
+
 };
 
-/* TO-DO: Implement class RecordRow */ 
-RecordRow::RecordRow(int id, int espID, int timestamp, int voltage[VOLNUM]){
-    /* Code goes here */
+
+/* Implement class Record*/
+Record::Record(int id, int espID, char *rawVol, int timestamp)
+{
+    this->_id = id;
+    this->_espID = espID;
+    this->_rawVol = std::string(rawVol);
+    this->_timestamp = timestamp;
 };
 
-int RecordRow::id(){
-    /* Code goes here */
+int Record::getID()
+{
     return this->_id;
+}
+
+int Record::getEspID()
+{
+    return this->_espID;
+}
+
+int Record::getTimestamp()
+{
+    return this->_timestamp;
+}
+
+std::vector<int> Record::getVols()
+{
+    int chunk = 0;
+    std::vector<int> result = {};
+
+    for (char c : this->_rawVol)
+    {
+        if (c != SEPARATOR)
+            chunk = chunk * 10 + (c - '0');
+        else
+        {
+            result.push_back(chunk);
+            chunk = 0;
+        }
+    }
+    return result;
 };
-int RecordRow::espID(){
-    /* Code goes here */
-};
-int RecordRow::timestamp(){
-    /* Code goes here */
-};
-std::vector<int> RecordRow::voltage(){
-    /* Code goes here */
-};
+
+Json::Value Record::toJson()
+{
+    
+    Json::Value root;
+
+    // Guard NULL
+    if (this->_id < 0) return root;
+
+    root["id"] = this->_id;
+    root["esp_id"] = this->_espID;
+    root["timestamp"] = this->_timestamp;
+    root["voltages"] = Json::arrayValue;
+    std::vector<int> vols = this->getVols();
+
+    for (int vol : vols)
+    {
+        root["voltages"].append(vol);
+    };
+
+    return root;
+}
+
+std::string Record::toJsonString()
+{
+    Json::Value root;
+    root["id"] = this->_id;
+    root["esp_id"] = this->_espID;
+    root["timestamp"] = this->_timestamp;
+    root["voltages"] = Json::arrayValue;
+    std::vector<int> vols = this->getVols();
+
+    for (int vol : vols)
+    {
+        root["voltages"].append(vol);
+    };
+
+    Json::FastWriter fastWriter;
+    std::string output = fastWriter.write(root);
+
+    return output;
+}

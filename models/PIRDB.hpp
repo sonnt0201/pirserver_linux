@@ -8,6 +8,7 @@
 #include <ctime>
 #include <chrono>
 
+#include "../lib/json.h"
 #pragma once
 
 #define DEVELOPMENT "./db/development.db"
@@ -42,8 +43,8 @@ class PIRDB {
     std::vector<std::string> getDataWithID(int ID);
     int deleteAllTableContent() ;
     // TO-DO: implement method  
-    class RecordRow recordWithID(int ID);
-
+    class Record recordWithID(int ID);
+    std::vector<Record> recordWithTimestamp(int begin, int end);
     /* Add data to database - return SQLITE_DONE if saving sucessfully */
     int addData(int deviceID, std::string vol, int time);
     
@@ -56,16 +57,19 @@ class PIRDB {
 };
 
 /* TO-DO: Implement Request Row class */ 
-class RecordRow {
+class Record {
     private:
-    int _id, _espID, _timestamp, _voltage[VOLNUM];
+    int _id,_espID, _timestamp;
+    std::string _rawVol;
+
     public:
+    Record (int id, int espID, char* rawVol, int timestamp);
+    int getID();
+    int getEspID();
+    std::vector<int> getVols();
+    int getTimestamp();
+    
+    Json::Value toJson();
 
-    /* Init function */ 
-    RecordRow(int id, int espID, int timestamp, int voltage[VOLNUM]);
-
-    /* Note: id, espID, timestamp, voltage is initialized only in init function (above), after initialized, they are READONLY */     int id();
-    int espID();
-    int timestamp();
-    std::vector <int> voltage();
+    std::string toJsonString();
 };

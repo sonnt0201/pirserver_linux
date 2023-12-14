@@ -6,8 +6,11 @@
 #include <sys/socket.h>
 #include <unistd.h>
 #include <fstream>
-
+#include "../lib/json.h"
+#include "http.h"
 typedef int SOCKET ;
+
+
 
 #pragma once
 
@@ -18,10 +21,11 @@ class Response {
         // Set statusCode string when init
         void setStatusCode();
         
-        std::string statusCode;
-        std::string contentType;
+        std::string _statusCode;
+        std::string _contentType;
+        std::string _body = "No body sent in response !";
         std::string accessControl = "";
-        std::string setJsonContent();
+        std::map<std::string, std::string> _headers;
     public:
 
         // Initialization
@@ -30,11 +34,19 @@ class Response {
         std::string jsonData;
         void setHtmlContent(std::string fileName);
         // body content for response
-        std::string body = "No body sent in response !";
         
+        void setHeaderParam(std::string key, std::string value);
+         void setJsonContent(Json::Value root);
+        void setPlainContent(std::string text);
+
         // get full raw text of the response
         char* rawText() ;
 
         // send response to client socket
         void sendClient(int client);
+        
+
+       
+        
+        
 };
