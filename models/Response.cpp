@@ -10,6 +10,8 @@ Response::Response(int status, std::string contentType)
     case 404:
         this->_statusCode = "404 Not Found";
         break;
+    case 400: 
+        this->_statusCode = "400 Bad Request";
     default:
         this->_statusCode = "500 Internal Server Error";
         break;

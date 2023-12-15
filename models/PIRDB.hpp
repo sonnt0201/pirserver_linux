@@ -44,10 +44,11 @@ class PIRDB {
     int deleteAllTableContent() ;
     // TO-DO: implement method  
     class Record recordWithID(int ID);
-    std::vector<Record> recordWithTimestamp(int begin, int end);
+    std::vector<Record> recordsWithTimestamp(int begin, int end);
     /* Add data to database - return SQLITE_DONE if saving sucessfully */
     int addData(int deviceID, std::string vol, int time);
-    
+    int latestTimestamp();
+    int oldestTimestamp();
     int allToCSV() ;
 
     

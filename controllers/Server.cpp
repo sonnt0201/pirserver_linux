@@ -1,5 +1,7 @@
 #include "Server.hpp"
 
+void onClientConnection(int clientSocket);
+
 Server::Server(int port)
 {
     // bind port
@@ -63,13 +65,23 @@ void Server::run()
             exit(EXIT_FAILURE);
         }
 
-        while (
+        std::thread handleConnection(onClientConnection, clientSocket);
+        handleConnection.detach();
+    }
+    close(serverSocket);
+    
+};
+
+// Callback function to run async
+void onClientConnection (int clientSocket) {
+    int valRead;
+    char request[8000] = "";
+     while (
             (valRead = read(clientSocket, request, sizeof(request))) > 0)
         {
             // Start timer
             time_t now = time(0);
-            std::cout << "_______________ \n"
-                      << ctime(&now);
+            
             auto start = std::chrono::high_resolution_clock::now();
 
             // Init request object
@@ -82,7 +94,7 @@ void Server::run()
             // Delegate to filter and controller
             bool valid = filter(req);
             if (valid)
-                controller(clientSocket, req);
+                controller(clientSocket, req); else send400(clientSocket);
 
 
             // request = "";
@@ -91,10 +103,9 @@ void Server::run()
             // Counting time
             auto end = std::chrono::high_resolution_clock::now();
             auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+            std::cout << "_______________ \n"
+                      << ctime(&now);
             std::cout << "Finish handling " << strMethod << " request in: " << duration.count() << " millisecs" << std::endl
                       << std::endl;
         }
-    }
-    close(serverSocket);
-    
-};
+}

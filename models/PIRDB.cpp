@@ -261,10 +261,10 @@ class Record PIRDB::recordWithID(int ID)
     }
 }
 
-std::vector<Record> PIRDB::recordWithTimestamp(int begin, int end){
+std::vector<Record> PIRDB::recordsWithTimestamp(int begin, int end){
     std::vector<Record> result = {};
 
-    char* query = "SELECT * FROM pir WHERE time > ? AND time < ? ;";
+    char* query = "SELECT * FROM pir WHERE time >= ? AND time <= ? ;";
     sqlite3_stmt* stmt;
     int rc;
 
@@ -298,6 +298,46 @@ std::vector<Record> PIRDB::recordWithTimestamp(int begin, int end){
 
 };
 
+// Return -1 if throw error
+int PIRDB::latestTimestamp() {
+    char* query = "SELECT MAX(time) FROM pir;";
+    sqlite3_stmt *stmt;
+    int rc;
+    rc = sqlite3_prepare_v2(this->db, query , -1, &stmt, 0);
+    
+    if (rc != SQLITE_OK) {
+        std::cout<<"Cannot prepare statement: "<< sqlite3_errmsg(this->db)<<"\n";
+        return -1;
+    } 
+
+    rc = sqlite3_step(stmt);
+    if (rc == SQLITE_ROW) {
+        return (int) sqlite3_column_int(stmt, 0);
+
+    }
+    return -1;
+
+}
+
+int PIRDB::oldestTimestamp(){
+    char* query = "SELECT MIN(time) FROM pir;";
+    sqlite3_stmt *stmt;
+    int rc;
+    rc = sqlite3_prepare_v2(this->db, query , -1, &stmt, 0);
+    
+    if (rc != SQLITE_OK) {
+        std::cout<<"Cannot prepare statement: "<< sqlite3_errmsg(this->db)<<"\n";
+        return -1;
+    } 
+
+    rc = sqlite3_step(stmt);
+    if (rc == SQLITE_ROW) {
+        return (int) sqlite3_column_int(stmt, 0);
+
+    }
+    return -1;
+
+}
 
 /* Implement class Record*/
 Record::Record(int id, int espID, char *rawVol, int timestamp)

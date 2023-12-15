@@ -47,19 +47,27 @@ void controller(int client, Request request)
 
     if (request.method() == GET && request.path() == "/api")
     {
-        int begin = stoi(request.value("begin"));
-        int end = stoi(request.value("end"));
 
-        std::vector<Record> records = db.recordWithTimestamp(begin, end);
+        // Get value
+        std::string strBegin = request.value("begin"),
+        strEnd = request.value("end");
+
+        long int begin = 0, end = 0;
+        if (strBegin == "") begin = 0; else begin = stringToUInt(strBegin);
+        if (strEnd == "") end = time(NULL); else end = stringToUInt(strEnd);
+
+
+        // Get record
+        std::vector<Record> records = db.recordsWithTimestamp(begin, end);
         Json::Value jsonArr= Json::arrayValue;
         
 
         for (Record& record: records) {
-            std::cout <<record.toJsonString()<<"\n";
+            // std::cout <<record.toJsonString()<<"\n";
 
             jsonArr.append(record.toJson());
         }
-
+        // std::cout<<jsonArr<<"\n";
         Response response = Response(200, APPLICATION_JSON);
         response.setJsonContent(jsonArr);
         response.sendClient(client);
@@ -67,7 +75,7 @@ void controller(int client, Request request)
     }
 
     if (request.method() == GET && request.path() == "/api/with-id") {
-        int id = stoi(request.value("id"));
+        int id = stringToUInt(request.value("id"));
         class Record result = db.recordWithID(id);
         
         if (!result.toJson().isNull()) {
