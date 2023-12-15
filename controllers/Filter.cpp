@@ -66,7 +66,7 @@ bool filter(Request request)
         if (strEnd == "") end = time(NULL); else end = stringToUInt(strEnd);
 
         if ( begin == -1 || end == -1 || begin > end) {
-            std::cout<<"Filter: Bad request !\n";
+            // std::cout<<"Filter: Bad request !\n";
             return false;}
 
 

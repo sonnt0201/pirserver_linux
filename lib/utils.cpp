@@ -6,8 +6,9 @@ void send404(SOCKET client) {
     response.sendClient(client);
 }
 
-// Bad Request
+// Bad Request, only use this function when the filter return 0
 void send400(SOCKET client) {
+    std::cout<<"\nFilter: Bad request! \n";
     Response response = Response(400, TEXT_PLAIN);
     response.setPlainContent("OOPS!.. Bad Request! ");
     response.sendClient(client);

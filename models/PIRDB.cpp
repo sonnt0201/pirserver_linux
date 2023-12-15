@@ -110,7 +110,7 @@ std::vector<std::string> PIRDB::getDataWithID(int ID)
     return result;
 }
 
-int PIRDB::addData(int deviceID, std::string vol, int time)
+int PIRDB::addData(int deviceID, std::string vol, int timestamp)
 {
     auto start = std::chrono::high_resolution_clock::now();
     const char *query = "INSERT INTO pir (esp_id, vol, time)"
@@ -137,7 +137,7 @@ int PIRDB::addData(int deviceID, std::string vol, int time)
 
     
 
-    sqlite3_bind_int(stmt, 3, time);
+    sqlite3_bind_int(stmt, 3, timestamp);
 
     rc = sqlite3_step(stmt);
     if (rc != SQLITE_DONE)
@@ -154,7 +154,9 @@ int PIRDB::addData(int deviceID, std::string vol, int time)
     // timer when successful
     auto end = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
-    std::cout << "Add new data successfully in : " << duration.count() << " millisecs" << std::endl;
+    time_t now = time(0);
+    std::cout <<"_______________ \n"<<ctime(&now)
+    << "Add new data successfully in : " << duration.count() << " millisecs" << std::endl;
 
     return rc;
 };
