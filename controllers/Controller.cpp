@@ -92,6 +92,12 @@ void controller(int client, Request request)
     // Get number of row
     if (request.method() == GET && request.path() == "/api/count")
     {
+        int count = db.numOfRows();
+        Response response = Response(200, APPLICATION_JSON);
+        Json::Value root;
+        root["count"] = count;
+        response.setJsonContent(root);
+        response.sendClient(client);
        return;
     }
 
