@@ -7,7 +7,7 @@ project(PirServer VERSION 1.0)
 # file(GLOB CONTROLLERS ./controllers/*.cpp)
  # Include directory for libpq headers
 
-add_executable(main 
+add_executable(pirserver 
 main.cpp 
 controllers/Server.cpp
 controllers/Controller.cpp 
@@ -20,11 +20,11 @@ lib/jsoncpp.cpp
 lib/utils.cpp
 )
 
-target_link_libraries(main PUBLIC)  
+target_link_libraries(pirserver PUBLIC)  
 
 add_custom_target(run 
     COMMAND make
-    COMMAND main
+    COMMAND pirserver
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
     COMMENT "Compile and run server"
 )

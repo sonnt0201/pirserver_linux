@@ -10,6 +10,68 @@ static int callback(void *data, int argc, char **argv, char **azColName)
     return 0;
 }
 
+std::vector<Record> PIRDB::recordsWithBeginTime(int begin, int range) {
+    std::vector<Record> results = {};
+    char* query = "SELECT * FROM pir WHERE time >= ? LIMIT ?";
+    sqlite3_stmt *stmt;
+    int rc;
+    rc = sqlite3_prepare_v2(this->db, query, -1, &stmt, 0);
+    if (rc != SQLITE_OK) {
+        std::cout<<"Error: recordsWithBeginTime - Failed to prepare statement - "<<sqlite3_errmsg(this->db)<<"\n";
+        return results;
+    }
+
+    sqlite3_bind_int(stmt, 1, begin);
+    sqlite3_bind_int(stmt, 2, range);
+    rc = sqlite3_step(stmt);
+    while (
+        rc == SQLITE_ROW
+    ) {
+        int id = sqlite3_column_int(stmt, 0),
+            espID = sqlite3_column_int(stmt, 1),
+            timestamp = sqlite3_column_int(stmt, 3);
+        
+        char* rawVol = (char*) sqlite3_column_text(stmt, 2);
+
+        Record record = Record(id, espID, rawVol, timestamp);
+
+        results.push_back(record);
+        rc = sqlite3_step(stmt);
+    }
+
+    return results;
+}
+
+std::vector<Record> PIRDB::recordsWithEndTime(int end, int range) {
+    std::vector<Record> results = {};
+    char* query = "SELECT * FROM pir WHERE time <= ? ORDER BY time DESC LIMIT ?";
+    sqlite3_stmt *stmt;
+    int rc;
+    rc = sqlite3_prepare_v2(this->db, query, -1, &stmt, 0);
+    if (rc != SQLITE_OK) {
+        std::cout<<"Error: recordsWithBeginTime - Failed to prepare statement - "<<sqlite3_errmsg(this->db)<<"\n";
+        return results;
+    }
+
+    sqlite3_bind_int(stmt, 1, end);
+    sqlite3_bind_int(stmt, 2, range);
+
+    while (
+        (rc = sqlite3_step(stmt)) == SQLITE_ROW
+    ) {
+        int id = sqlite3_column_int(stmt, 0),
+            espID = sqlite3_column_int(stmt, 1),
+            timestamp = sqlite3_column_int(stmt, 3);
+        
+        char* rawVol = (char*) sqlite3_column_text(stmt, 2);
+
+        Record record = Record(id, espID, rawVol, timestamp);
+
+        results.push_back(record);
+    }
+
+    return results;
+}
 PIRDB::PIRDB(std::string dbFileName)
 {
     // sqlite3 *db = this->db;
@@ -227,6 +289,34 @@ int PIRDB::allToCSV()
     return SUCCESS;
 };
 
+
+// Delete rows with timestamp from 'begin' to 'end' 
+int PIRDB::deleteRecords(int espID, int begin, int end) {
+    char* query = "DELETE FROM pir WHERE esp_id = ? AND time >= ? AND time <= ?;";
+    sqlite3_stmt* stmt;
+    int rc;
+    rc = sqlite3_prepare_v2(this->db, query, -1, &stmt, 0);
+    if (rc != SQLITE_OK) {
+        std::cout<<"Failed to prepare in deleteRecords: "<<sqlite3_errmsg(this-> db)<<"\n";
+        return FAIL;
+
+    }
+    // bind 
+    sqlite3_bind_int(stmt, 1, espID);
+    sqlite3_bind_int(stmt, 2, begin);
+    sqlite3_bind_int(stmt, 3, end);
+
+    rc = sqlite3_step(stmt);
+
+    if (rc != SQLITE_DONE) {
+        std::cout<<"Failed to execute in deleteRecords: "<<sqlite3_errmsg(this->db)<<"\n";
+        return FAIL;
+    }
+
+    std::cout<<"Delete resource(s) successfully. \n";
+    return SUCCESS;
+}
+
 class Record PIRDB::recordWithID(int ID)
 {
 
@@ -291,11 +381,12 @@ std::vector<Record> PIRDB::recordsWithTimestamp(int begin, int end){
         char *rawVols = (char *)sqlite3_column_text(stmt, 2);
 
         Record record = Record(id, espID, rawVols, timestamp);
+
         // std::cout<<record.getID()<<std::endl;
         result.push_back(record);
 
     }
-   
+    // Error loading webview: Error: Could not register service worker: InvalidStateError: Failed to register a ServiceWorker: The document is in an invalid state..std::cout<<result.size()<<"\n";
     return result;
 
 };
@@ -423,4 +514,4 @@ std::string Record::toJsonString()
     std::string output = fastWriter.write(root);
 
     return output;
-}
+};

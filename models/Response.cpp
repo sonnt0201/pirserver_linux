@@ -12,6 +12,7 @@ Response::Response(int status, std::string contentType)
         break;
     case 400: 
         this->_statusCode = "400 Bad Request";
+        break;
     default:
         this->_statusCode = "500 Internal Server Error";
         break;

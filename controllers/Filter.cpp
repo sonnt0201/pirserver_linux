@@ -70,36 +70,44 @@ bool filter(Request request)
             return false;}
 
 
-        return 1;
+        return true;
     }
 
-    if (request.method() == GET && request.path() == "/api/range")
-    {
-        std::string sBegin = request.value("begin");
-        std::string sEnd = request.value("end");
-        if (sBegin == "" || sEnd == "")
-        {
-            std::cout << "null \n";
-            return 0;
-        }
-        if (sBegin[0] == '0' || sEnd[0] == '0')
-        {
-            std::cout << "Invalid number in request params. \n";
-            return 0;
-        }
-        for (long i = 0; i < sBegin.length(); i++)
-            if (sBegin[i] < '0' || sBegin[i] > '9')
-                return 0;
-        for (long i = 0; i < sEnd.length(); i++)
-            if (sEnd[i] < '0' || sEnd[i] > '9')
-                return 0;
+    
+    if (request.method() == GET && request.path() == "/api/range") {
 
-        int iBegin = std::stoi(sBegin);
-        int iEnd = std::stoi(sEnd);
+        if (request.value("begin")== "" && request.value("end") == "")return false;
+        if (request.value("begin") != "" && request.value("end") != "")return false;
 
-        if (iBegin > iEnd)
-            return 0;
-        return 1;
+        if (
+           request.value("range") != "" 
+           && stringToUInt(request.value("range")) == -1
+        ) return false;
+
+        if (
+           request.value("begin") != "" 
+           && stringToUInt(request.value("begin")) == -1
+        ) return false;
+
+        if (
+           request.value("end") != "" 
+           && stringToUInt(request.value("end")) == -1
+        ) return false;
+
+        // if (request.value("end"))
+        return true;
+
+    }
+
+    if (request.method() == DEL && request.path() == "/range") {
+         if (request.value("begin")== "" || request.value("end") == "" || request.value("esp-id") == "")return false;
+         int begin = stringToUInt(request.value("begin")),
+            end = stringToUInt(request.value("end")),
+            espID = stringToUInt(request.value("esp-id"));
+        
+        if (begin == -1 || end == -1 || espID == -1 ) return false;
+        if (begin > end )return false;
+        return true;
     }
 
     // Default:

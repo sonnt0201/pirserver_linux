@@ -10,7 +10,7 @@ void send404(SOCKET client) {
 void send400(SOCKET client) {
     std::cout<<"\nFilter: Bad request! \n";
     Response response = Response(400, TEXT_PLAIN);
-    response.setPlainContent("OOPS!.. Bad Request! ");
+    response.setPlainContent("OOPS!.. Bad Request! \n");
     response.sendClient(client);
 }
 // Cast string to unsigned long int, if string is empty, return 0, if invalid string, return -1

@@ -117,17 +117,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named pirserver
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
-.PHONY : main
+pirserver: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pirserver
+.PHONY : pirserver
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
+pirserver/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/build
+.PHONY : pirserver/fast
 
 #=============================================================================
 # Target rules for targets named run
@@ -147,7 +147,7 @@ controllers/Controller.o: controllers/Controller.cpp.o
 
 # target to build an object file
 controllers/Controller.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/controllers/Controller.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/controllers/Controller.cpp.o
 .PHONY : controllers/Controller.cpp.o
 
 controllers/Controller.i: controllers/Controller.cpp.i
@@ -155,7 +155,7 @@ controllers/Controller.i: controllers/Controller.cpp.i
 
 # target to preprocess a source file
 controllers/Controller.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/controllers/Controller.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/controllers/Controller.cpp.i
 .PHONY : controllers/Controller.cpp.i
 
 controllers/Controller.s: controllers/Controller.cpp.s
@@ -163,7 +163,7 @@ controllers/Controller.s: controllers/Controller.cpp.s
 
 # target to generate assembly for a file
 controllers/Controller.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/controllers/Controller.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/controllers/Controller.cpp.s
 .PHONY : controllers/Controller.cpp.s
 
 controllers/Filter.o: controllers/Filter.cpp.o
@@ -171,7 +171,7 @@ controllers/Filter.o: controllers/Filter.cpp.o
 
 # target to build an object file
 controllers/Filter.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/controllers/Filter.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/controllers/Filter.cpp.o
 .PHONY : controllers/Filter.cpp.o
 
 controllers/Filter.i: controllers/Filter.cpp.i
@@ -179,7 +179,7 @@ controllers/Filter.i: controllers/Filter.cpp.i
 
 # target to preprocess a source file
 controllers/Filter.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/controllers/Filter.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/controllers/Filter.cpp.i
 .PHONY : controllers/Filter.cpp.i
 
 controllers/Filter.s: controllers/Filter.cpp.s
@@ -187,7 +187,7 @@ controllers/Filter.s: controllers/Filter.cpp.s
 
 # target to generate assembly for a file
 controllers/Filter.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/controllers/Filter.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/controllers/Filter.cpp.s
 .PHONY : controllers/Filter.cpp.s
 
 controllers/Server.o: controllers/Server.cpp.o
@@ -195,7 +195,7 @@ controllers/Server.o: controllers/Server.cpp.o
 
 # target to build an object file
 controllers/Server.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/controllers/Server.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/controllers/Server.cpp.o
 .PHONY : controllers/Server.cpp.o
 
 controllers/Server.i: controllers/Server.cpp.i
@@ -203,7 +203,7 @@ controllers/Server.i: controllers/Server.cpp.i
 
 # target to preprocess a source file
 controllers/Server.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/controllers/Server.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/controllers/Server.cpp.i
 .PHONY : controllers/Server.cpp.i
 
 controllers/Server.s: controllers/Server.cpp.s
@@ -211,7 +211,7 @@ controllers/Server.s: controllers/Server.cpp.s
 
 # target to generate assembly for a file
 controllers/Server.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/controllers/Server.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/controllers/Server.cpp.s
 .PHONY : controllers/Server.cpp.s
 
 lib/jsoncpp.o: lib/jsoncpp.cpp.o
@@ -219,7 +219,7 @@ lib/jsoncpp.o: lib/jsoncpp.cpp.o
 
 # target to build an object file
 lib/jsoncpp.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lib/jsoncpp.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/lib/jsoncpp.cpp.o
 .PHONY : lib/jsoncpp.cpp.o
 
 lib/jsoncpp.i: lib/jsoncpp.cpp.i
@@ -227,7 +227,7 @@ lib/jsoncpp.i: lib/jsoncpp.cpp.i
 
 # target to preprocess a source file
 lib/jsoncpp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lib/jsoncpp.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/lib/jsoncpp.cpp.i
 .PHONY : lib/jsoncpp.cpp.i
 
 lib/jsoncpp.s: lib/jsoncpp.cpp.s
@@ -235,7 +235,7 @@ lib/jsoncpp.s: lib/jsoncpp.cpp.s
 
 # target to generate assembly for a file
 lib/jsoncpp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lib/jsoncpp.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/lib/jsoncpp.cpp.s
 .PHONY : lib/jsoncpp.cpp.s
 
 lib/sqlite3.o: lib/sqlite3.c.o
@@ -243,7 +243,7 @@ lib/sqlite3.o: lib/sqlite3.c.o
 
 # target to build an object file
 lib/sqlite3.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lib/sqlite3.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/lib/sqlite3.c.o
 .PHONY : lib/sqlite3.c.o
 
 lib/sqlite3.i: lib/sqlite3.c.i
@@ -251,7 +251,7 @@ lib/sqlite3.i: lib/sqlite3.c.i
 
 # target to preprocess a source file
 lib/sqlite3.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lib/sqlite3.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/lib/sqlite3.c.i
 .PHONY : lib/sqlite3.c.i
 
 lib/sqlite3.s: lib/sqlite3.c.s
@@ -259,7 +259,7 @@ lib/sqlite3.s: lib/sqlite3.c.s
 
 # target to generate assembly for a file
 lib/sqlite3.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lib/sqlite3.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/lib/sqlite3.c.s
 .PHONY : lib/sqlite3.c.s
 
 lib/utils.o: lib/utils.cpp.o
@@ -267,7 +267,7 @@ lib/utils.o: lib/utils.cpp.o
 
 # target to build an object file
 lib/utils.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lib/utils.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/lib/utils.cpp.o
 .PHONY : lib/utils.cpp.o
 
 lib/utils.i: lib/utils.cpp.i
@@ -275,7 +275,7 @@ lib/utils.i: lib/utils.cpp.i
 
 # target to preprocess a source file
 lib/utils.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lib/utils.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/lib/utils.cpp.i
 .PHONY : lib/utils.cpp.i
 
 lib/utils.s: lib/utils.cpp.s
@@ -283,7 +283,7 @@ lib/utils.s: lib/utils.cpp.s
 
 # target to generate assembly for a file
 lib/utils.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lib/utils.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/lib/utils.cpp.s
 .PHONY : lib/utils.cpp.s
 
 main.o: main.cpp.o
@@ -291,7 +291,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -299,7 +299,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -307,7 +307,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 models/PIRDB.o: models/PIRDB.cpp.o
@@ -315,7 +315,7 @@ models/PIRDB.o: models/PIRDB.cpp.o
 
 # target to build an object file
 models/PIRDB.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/models/PIRDB.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/models/PIRDB.cpp.o
 .PHONY : models/PIRDB.cpp.o
 
 models/PIRDB.i: models/PIRDB.cpp.i
@@ -323,7 +323,7 @@ models/PIRDB.i: models/PIRDB.cpp.i
 
 # target to preprocess a source file
 models/PIRDB.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/models/PIRDB.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/models/PIRDB.cpp.i
 .PHONY : models/PIRDB.cpp.i
 
 models/PIRDB.s: models/PIRDB.cpp.s
@@ -331,7 +331,7 @@ models/PIRDB.s: models/PIRDB.cpp.s
 
 # target to generate assembly for a file
 models/PIRDB.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/models/PIRDB.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/models/PIRDB.cpp.s
 .PHONY : models/PIRDB.cpp.s
 
 models/Request.o: models/Request.cpp.o
@@ -339,7 +339,7 @@ models/Request.o: models/Request.cpp.o
 
 # target to build an object file
 models/Request.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/models/Request.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/models/Request.cpp.o
 .PHONY : models/Request.cpp.o
 
 models/Request.i: models/Request.cpp.i
@@ -347,7 +347,7 @@ models/Request.i: models/Request.cpp.i
 
 # target to preprocess a source file
 models/Request.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/models/Request.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/models/Request.cpp.i
 .PHONY : models/Request.cpp.i
 
 models/Request.s: models/Request.cpp.s
@@ -355,7 +355,7 @@ models/Request.s: models/Request.cpp.s
 
 # target to generate assembly for a file
 models/Request.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/models/Request.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/models/Request.cpp.s
 .PHONY : models/Request.cpp.s
 
 models/Response.o: models/Response.cpp.o
@@ -363,7 +363,7 @@ models/Response.o: models/Response.cpp.o
 
 # target to build an object file
 models/Response.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/models/Response.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/models/Response.cpp.o
 .PHONY : models/Response.cpp.o
 
 models/Response.i: models/Response.cpp.i
@@ -371,7 +371,7 @@ models/Response.i: models/Response.cpp.i
 
 # target to preprocess a source file
 models/Response.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/models/Response.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/models/Response.cpp.i
 .PHONY : models/Response.cpp.i
 
 models/Response.s: models/Response.cpp.s
@@ -379,7 +379,7 @@ models/Response.s: models/Response.cpp.s
 
 # target to generate assembly for a file
 models/Response.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/models/Response.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/models/Response.cpp.s
 .PHONY : models/Response.cpp.s
 
 # Help Target
@@ -391,7 +391,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... run"
-	@echo "... main"
+	@echo "... pirserver"
 	@echo "... controllers/Controller.o"
 	@echo "... controllers/Controller.i"
 	@echo "... controllers/Controller.s"

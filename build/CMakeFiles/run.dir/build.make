@@ -69,7 +69,7 @@ include CMakeFiles/run.dir/progress.make
 CMakeFiles/run:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Compile and run server"
 	make
-	/home/sonnguyen/Desktop/repos/pirserver/build/main
+	/home/sonnguyen/Desktop/repos/pirserver/build/pirserver
 
 run: CMakeFiles/run
 run: CMakeFiles/run.dir/build.make

@@ -16,7 +16,7 @@
 #define SUCCESS 1
 #define FAIL 0
 
-#define ROWMAX 10
+#define ROWMAX 1000
 
 // Separator for voltage data string
 #define SEPARATOR '_'
@@ -45,10 +45,14 @@ class PIRDB {
     // TO-DO: implement method  
     class Record recordWithID(int ID);
     std::vector<Record> recordsWithTimestamp(int begin, int end);
+    std::vector<Record> recordsWithBeginTime(int begin, int range);
+    std::vector<Record> recordsWithEndTime(int end, int range);
+    
     /* Add data to database - return SQLITE_DONE if saving sucessfully */
     int addData(int deviceID, std::string vol, int time);
     int latestTimestamp();
     int oldestTimestamp();
+    int deleteRecords(int espID, int begin, int end);
     int allToCSV() ;
 
     
@@ -73,4 +77,6 @@ class Record {
     Json::Value toJson();
 
     std::string toJsonString();
+
+    std::string toCsvRow();
 };
