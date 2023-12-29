@@ -78,7 +78,6 @@ void controller(int client, Request request)
 
             for (Record &record : records)
             {
-                std::cout << record.toJsonString() << "\n";
 
                 recordsArr.append(record.toJson());
             }

@@ -81,12 +81,22 @@ PIRDB::PIRDB(std::string dbFileName)
     int rc = sqlite3_open(charf, &this->db);
 
     const char *createTableSQL = "CREATE TABLE IF NOT EXISTS pir ("
-                                 "id INTEGER AUTOINCREMENT PRIMARY KEY,"
+                                 "id INTEGER PRIMARY KEY AUTOINCREMENT,"
                                  "esp_id INTEGER NOT NULL,"
                                  "vol VARCHAR NOT NULL,"
                                  "time INTEGER NOT NULL);";
 
-    rc = sqlite3_exec(db, createTableSQL, 0, 0, 0);
+    
+    sqlite3_stmt *stmt;
+    rc = sqlite3_prepare_v2(this->db, createTableSQL, -1, &stmt, 0);
+    if (rc!= SQLITE_OK) {
+        std::cout<<"Error: Database init - Failed to prepare statement - "<<sqlite3_errmsg(this->db)<<"\n";
+        return;
+    }
+    rc = sqlite3_step(stmt);
+    rc = sqlite3_finalize(stmt);
+    return;
+    // rc = sqlite3_exec(db, createTableSQL, 0, 0, 0);
 }
 
 std::string PIRDB::fileName()
