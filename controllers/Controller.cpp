@@ -2,9 +2,6 @@
 
 PIRDB db = PIRDB(DEVELOPMENT);
 
-// log the time of handling request
-
-std::stringstream ssLogger;
 // return TERMINATE | CONTINUE
 MAPPER v2(int client, Request request);
 MAPPER v1(int client, Request request);
@@ -12,7 +9,7 @@ MAPPER v1(int client, Request request);
 // register multiple api versions here.
 void controller(int client, Request request)
 {
-    
+
     // api version 2
     if (v2(client, request) == TERMINATE)
         return;
@@ -114,31 +111,36 @@ MAPPER v2(int client, Request request)
         return TERMINATE;
     }
 
-    if (request.method() == PUT && request.path() == "/api/v2/logger") {
-        std::ofstream logger("time.csv");
-        if (!logger.is_open()) {
-            std::cout<<"Failed to open log file. \n";
-            return TERMINATE;
-        } 
-        logger<<"rows,time(millisecs)\n";
-        logger << ssLogger.str();
+    // if (request.method() == PUT && request.path() == "/api/v2/logger")
+    // {
+    //     std::ofstream logger("time.csv");
+    //     if (!logger.is_open())
+    //     {
+    //         std::cout << "Failed to open log file. \n";
+    //         return TERMINATE;
+    //     }
+    //     logger << "rows,time(millisecs)\n";
+       
+    //    logger<<ssLog.str();
+
+    //     logger.close();
+    //     Response response = Response(200, TEXT_PLAIN);
+    //     response.setPlainContent("Create log file successfully.\n");
+    //     response.sendClient(client);
+    //     return TERMINATE;
+    // }
+
+    // if (request.method() == DEL && request.path() == "/api/v2/logger")
+    // {
         
-        logger.close();
-        Response response = Response(200, TEXT_PLAIN);
-        response.setPlainContent("Create log file successfully.\n");
-        response.sendClient(client);
-        return TERMINATE;
+    //     Response response = Response(200, TEXT_PLAIN);
 
-    }
-
-    if (request.method() == DEL && request.path() == "/api/v2/logger") {
-        ssLogger.clear();
-        ssLogger.str("");
-        Response response = Response(200, TEXT_PLAIN);
-        response.setPlainContent("Clear log value successfully.\n");
-        response.sendClient(client);
-        return TERMINATE;
-    }
+    //     ssLog.clear();
+    //     ssLog.str("");
+    //     response.setPlainContent("Clear log value successfully.\n");
+    //     response.sendClient(client);
+    //     return TERMINATE;
+    // }
 
     // end of v2 mapper
     return CONTINUE;
@@ -273,10 +275,7 @@ MAPPER v1(int client, Request request)
 
     if (request.method() == GET && request.path() == "/api/v1/range")
     {
-        // start timer
-        auto start = std::chrono::high_resolution_clock::now();
-
-        // std::cout<<"on /api/range/ \n";
+               // std::cout<<"on /api/range/ \n";
         std::vector<Record> records = {};
         long int range;
         if (request.value("range") == "")
@@ -317,12 +316,8 @@ MAPPER v1(int client, Request request)
         Response response = Response(200, APPLICATION_JSON);
         response.setJsonContent(root);
         response.sendClient(client);
+      
 
-        // end timer
-        auto end = std::chrono::high_resolution_clock::now();
-        auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
-        
-        ssLogger << range << "," << duration.count() << "\n";
         return TERMINATE;
     }
 

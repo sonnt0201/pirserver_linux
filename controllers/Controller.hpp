@@ -9,6 +9,7 @@
 #define CONTINUE false
 
 #define MAPPER bool
+#define LOGGER_MAX 4000000000
 
 #pragma once
 
