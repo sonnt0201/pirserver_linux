@@ -10,7 +10,7 @@ static int callback(void *data, int argc, char **argv, char **azColName)
     return 0;
 }
 
-std::vector<Record> PIRDB::recordsWithBeginTime(int begin, int range) {
+std::vector<Record> PIRDB::recordsWithBeginTime(long int begin, int range) {
     std::vector<Record> results = {};
     char* query = "SELECT * FROM pir WHERE time >= ? LIMIT ?";
     sqlite3_stmt *stmt;
@@ -42,7 +42,7 @@ std::vector<Record> PIRDB::recordsWithBeginTime(int begin, int range) {
     return results;
 }
 
-std::vector<Record> PIRDB::recordsWithEndTime(int end, int range) {
+std::vector<Record> PIRDB::recordsWithEndTime(long int end, int range) {
     std::vector<Record> results = {};
     char* query = "SELECT * FROM pir WHERE time <= ? ORDER BY time DESC LIMIT ?";
     sqlite3_stmt *stmt;
@@ -363,7 +363,7 @@ class Record PIRDB::recordWithID(int ID)
     }
 }
 
-std::vector<Record> PIRDB::recordsWithTimestamp(int begin, int end){
+std::vector<Record> PIRDB::recordsWithTimestamp(long int begin, long int end){
     std::vector<Record> result = {};
 
     char* query = "SELECT * FROM pir WHERE time >= ? AND time <= ? ;";
@@ -525,3 +525,21 @@ std::string Record::toJsonString()
 
     return output;
 };
+std::string Record::csvTitleRow(){
+    std::stringstream ss;
+    ss.clear();
+    ss.str("");
+    ss<< "id,esp_id,timestamp";
+    for (int i = 0; i < VOLNUM; i++) ss<<","<<i;
+    // ss<<"\n";
+    return ss.str();
+}
+std::string Record::toCsvRow(){
+    std::stringstream ss;
+    ss << this->_id <<","<<this->_espID<<","<<this->_timestamp;
+    std::vector<int> vols = this->getVols();
+
+    for (int i = 0; i < vols.size(); i ++)  ss<<","<<vols[i];
+    // ss<<"\n";
+    return ss.str();
+}

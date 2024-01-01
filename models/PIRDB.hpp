@@ -44,9 +44,9 @@ class PIRDB {
     int deleteAllTableContent() ;
     // TO-DO: implement method  
     class Record recordWithID(int ID);
-    std::vector<Record> recordsWithTimestamp(int begin, int end);
-    std::vector<Record> recordsWithBeginTime(int begin, int range);
-    std::vector<Record> recordsWithEndTime(int end, int range);
+    std::vector<Record> recordsWithTimestamp(long int begin,long int end);
+    std::vector<Record> recordsWithBeginTime(long int begin, int range);
+    std::vector<Record> recordsWithEndTime(long int end, int range);
     
     /* Add data to database - return SQLITE_DONE if saving sucessfully */
     int addData(int deviceID, std::string vol, int time);
@@ -77,6 +77,6 @@ class Record {
     Json::Value toJson();
 
     std::string toJsonString();
-
+    static std::string csvTitleRow();
     std::string toCsvRow();
 };

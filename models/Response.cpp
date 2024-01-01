@@ -111,3 +111,18 @@ void Response::setPlainContent(std::string text){
     this->_body = text;
 }
 
+ void Response::setCsvContent(std::vector<std::string> rows)  {
+    // Guard the Content-Type
+    if (this->_headers["Content-Type"]!= TEXT_CSV) {
+        std::cout<<"Wrong Content-Type to set CSV content.\n";
+        return;
+    }
+    this->_body = "";
+    this->_headers["Content-Disposition"] = "attachment; filename=pirdata.csv";
+
+    for (auto& row: rows) {
+        this->_body += row + "\n";
+    }
+    return;
+    
+ }

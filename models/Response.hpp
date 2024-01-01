@@ -39,6 +39,7 @@ class Response {
          void setJsonContent(Json::Value root);
         void setPlainContent(std::string text);
 
+        void setCsvContent(std::vector<std::string> rows);
         // get full raw text of the response
         char* rawText() ;
 

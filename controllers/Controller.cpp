@@ -2,7 +2,149 @@
 
 PIRDB db = PIRDB(DEVELOPMENT);
 
+// log the time of handling request
+
+std::stringstream ssLogger;
+// return TERMINATE | CONTINUE
+MAPPER v2(int client, Request request);
+MAPPER v1(int client, Request request);
+
+// register multiple api versions here.
 void controller(int client, Request request)
+{
+    
+    // api version 2
+    if (v2(client, request) == TERMINATE)
+        return;
+
+    // api version 1
+    if (v1(client, request) == TERMINATE)
+        return;
+
+    send404(client);
+}
+
+MAPPER v2(int client, Request request)
+{
+
+    if (request.method() == GET && request.path() == "/api/v2")
+    {
+
+        // Get value
+        std::string strBegin = request.value("begin"),
+                    strEnd = request.value("end");
+
+        long int begin = 0, end = 0;
+        begin = stringToUInt(strBegin);
+
+        if (strEnd == "")
+            end = time(NULL);
+        else
+            end = stringToUInt(strEnd);
+
+        std::cout << begin << " " << end << "\n";
+        // Get record
+        std::vector<Record> records = db.recordsWithTimestamp(begin, end);
+        std::cout << records.size();
+
+        std::vector<std::string> rows = {};
+
+        // TO-DO; push data to the "rows" array
+        // Guard for empty array
+        if (records.size() > 0)
+        {
+            rows.push_back(records[0].csvTitleRow());
+
+            for (Record &record : records)
+            {
+                rows.push_back(record.toCsvRow());
+            }
+
+            // set data
+        }
+
+        // std::cout<<root<<"\n";
+        // std::cout<<jsonArr<<"\n";
+        Response response = Response(200, TEXT_CSV);
+        response.setCsvContent(rows);
+
+        response.sendClient(client);
+        return TERMINATE;
+    };
+
+    if (request.method() == GET && request.path() == "/api/v2/range")
+    {
+        // std::cout<<"on /api/range/ \n";
+        std::vector<Record> records = {};
+        long int range;
+        if (request.value("range") == "")
+            range = ROWMAX;
+        else
+            range = stringToUInt(request.value("range"));
+        if ((request.value("begin")) != "")
+        {
+            long int begin = stringToUInt(request.value("begin"));
+            // range = stringToUInt(request.value("range"));
+            // std::cout<<"\nbegin "<<begin<<"\n"<<"range "<<range;
+            records = db.recordsWithBeginTime(begin, range);
+        }
+
+        if ((request.value("end")) != "")
+        {
+            long int end = stringToUInt(request.value("end"));
+            // range = stringToUInt(request.value("range"));
+            // std::cout<<"\nend "<<end<<"\n"<<"range "<<range;
+            records = db.recordsWithEndTime(end, range);
+        }
+
+        // rows init
+        std::vector<std::string> rows = {};
+        if (records.size() > 0)
+            rows.push_back(records[0].csvTitleRow());
+        for (auto &record : records)
+        {
+            rows.push_back(record.toCsvRow());
+        }
+
+        // config response and send
+        Response response = Response(200, TEXT_CSV);
+        response.setCsvContent(rows);
+        response.sendClient(client);
+
+        return TERMINATE;
+    }
+
+    if (request.method() == PUT && request.path() == "/api/v2/logger") {
+        std::ofstream logger("time.csv");
+        if (!logger.is_open()) {
+            std::cout<<"Failed to open log file. \n";
+            return TERMINATE;
+        } 
+        logger<<"rows,time(millisecs)\n";
+        logger << ssLogger.str();
+        
+        logger.close();
+        Response response = Response(200, TEXT_PLAIN);
+        response.setPlainContent("Create log file successfully.\n");
+        response.sendClient(client);
+        return TERMINATE;
+
+    }
+
+    if (request.method() == DEL && request.path() == "/api/v2/logger") {
+        ssLogger.clear();
+        ssLogger.str("");
+        Response response = Response(200, TEXT_PLAIN);
+        response.setPlainContent("Clear log value successfully.\n");
+        response.sendClient(client);
+        return TERMINATE;
+    }
+
+    // end of v2 mapper
+    return CONTINUE;
+};
+
+MAPPER v1(int client, Request request)
 {
 
     if (request.method() == POST)
@@ -29,19 +171,10 @@ void controller(int client, Request request)
             response.sendClient(client);
         }
 
-        return;
+        return TERMINATE;
     }
 
-    if (request.method() == GET && request.path() == "/")
-    {
-        Response response = Response(200, "text/html");
-        response.setHtmlContent("index.html");
-        // printf("%s\n",response.rawText();
-        response.sendClient(client);
-        return;
-    }
-
-    if (request.method() == GET && request.path() == "/api")
+    if (request.method() == GET && request.path() == "/api/v1")
     {
 
         // Get value
@@ -92,10 +225,10 @@ void controller(int client, Request request)
         Response response = Response(200, APPLICATION_JSON);
         response.setJsonContent(root);
         response.sendClient(client);
-        return;
+        return TERMINATE;
     }
 
-    if (request.method() == GET && request.path() == "/api/with-id")
+    if (request.method() == GET && request.path() == "/api/v1/with-id")
     {
         int id = stringToUInt(request.value("id"));
         class Record result = db.recordWithID(id);
@@ -105,15 +238,15 @@ void controller(int client, Request request)
             Response response = Response(200, APPLICATION_JSON);
             response.setJsonContent(result.toJson());
             response.sendClient(client);
-            return;
+            return TERMINATE;
         }
 
         send404(client);
-        return;
+        return TERMINATE;
     }
 
     // Get number of row
-    if (request.method() == GET && request.path() == "/api/count")
+    if (request.method() == GET && request.path() == "/api/v1/count")
     {
         int count = db.numOfRows(), oldest = db.oldestTimestamp(), latest = db.latestTimestamp();
         Response response = Response(200, APPLICATION_JSON);
@@ -123,7 +256,7 @@ void controller(int client, Request request)
         root["latest_timestamp"] = latest;
         response.setJsonContent(root);
         response.sendClient(client);
-        return;
+        return TERMINATE;
     }
 
     // test page
@@ -134,12 +267,15 @@ void controller(int client, Request request)
         response.setHtmlContent("test.html");
         // printf("%s\n",response.rawText();
         response.sendClient(client);
-        return;
+        return TERMINATE;
     }
     // std::cout << request.getText();
 
-    if (request.method() == GET && request.path() == "/api/range")
+    if (request.method() == GET && request.path() == "/api/v1/range")
     {
+        // start timer
+        auto start = std::chrono::high_resolution_clock::now();
+
         // std::cout<<"on /api/range/ \n";
         std::vector<Record> records = {};
         long int range;
@@ -182,24 +318,29 @@ void controller(int client, Request request)
         response.setJsonContent(root);
         response.sendClient(client);
 
-        return;
+        // end timer
+        auto end = std::chrono::high_resolution_clock::now();
+        auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+        
+        ssLogger << range << "," << duration.count() << "\n";
+        return TERMINATE;
     }
 
     // if (request.method() == GET && request.path() == "/api/")
 
-    if (request.method() == PUT && request.path() == "/tocsv")
+    if (request.method() == PUT && request.path() == "api/v1/tocsv")
     {
         db.allToCSV();
-        return;
+        return TERMINATE;
     }
 
-    if (request.method() == DEL && request.path() == "/all")
+    if (request.method() == DEL && request.path() == "api/v1/all")
     {
         db.deleteAllTableContent();
-        return;
+        return TERMINATE;
     }
 
-    if (request.method() == DEL && request.path() == "/range")
+    if (request.method() == DEL && request.path() == "api/v1/range")
     {
         int espID = stringToUInt(request.value("esp-id"));
         long int begin = stringToUInt(request.value("begin"));
@@ -214,10 +355,8 @@ void controller(int client, Request request)
             response.setPlainContent("Failed to delete resource");
 
         response.sendClient(client);
-        return;
+        return TERMINATE;
     }
-    
-    // return 404
-    send404(client);
-    return;
+
+    return CONTINUE;
 }

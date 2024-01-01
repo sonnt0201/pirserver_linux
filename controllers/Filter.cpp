@@ -1,6 +1,99 @@
 #include "Filter.hpp"
 
+bool v1(Request request);
+bool v2(Request request);
+
 bool filter(Request request)
+{
+    // priority to newest version;
+    if (v2(request))
+        return true;
+    if (v1(request))
+        return true;
+
+    return true;
+};
+
+bool v2(Request request)
+{
+
+    if (request.method() == GET && request.path() == "/api/v2")
+    {
+        // Check valid number
+        std::string strBegin = request.value("begin"), strEnd = request.value("end");
+        // std::cout << "begin: " << stringToUInt(strBegin)
+        //           << std::endl
+        //           << "end: " << stringToUInt(strEnd) << "\n";
+
+        long int begin = stringToUInt(strBegin), end;
+
+        if (strEnd == "")
+            end = time(NULL);
+        else
+            end = stringToUInt(strEnd);
+
+        if (begin == -1 || end == -1 || begin > end)
+        {
+            // std::cout<<"Filter: Bad request !\n";
+            return false;
+        }
+
+        return true;
+    }
+
+    if (request.method() == GET && request.path() == "/api/v2/range")
+    {
+
+        if (request.value("begin") == "" && request.value("end") == "")
+            return false;
+        if (request.value("begin") != "" && request.value("end") != "")
+            return false;
+
+        if (
+            request.value("range") != "" && stringToUInt(request.value("range")) == -1)
+            return false;
+
+        if (
+            request.value("begin") != "" && stringToUInt(request.value("begin")) == -1)
+            return false;
+
+        if (
+            request.value("end") != "" && stringToUInt(request.value("end")) == -1)
+            return false;
+
+        // if (request.value("end"))
+        return true;
+    }
+
+    if (request.method() == GET && request.path() == "/api/v1/range")
+    {
+
+        if (request.value("begin") == "" && request.value("end") == "")
+            return false;
+        if (request.value("begin") != "" && request.value("end") != "")
+            return false;
+
+        if (
+            request.value("range") != "" && (stringToUInt(request.value("range")) == -1 || stringToUInt(request.value("range")) >= 5000))
+            return false;
+
+        if (
+            request.value("begin") != "" && stringToUInt(request.value("begin")) == -1)
+            return false;
+
+        if (
+            request.value("end") != "" && stringToUInt(request.value("end")) == -1)
+            return false;
+
+        // if (request.value("end"))
+        return true;
+    }
+
+    // end of filter
+    return false;
+}
+
+bool v1(Request request)
 {
 
     // request
@@ -52,64 +145,79 @@ bool filter(Request request)
         }
     }
 
-    if (request.method() == GET && request.path() == "/api")
+    if (request.method() == GET && request.path() == "/api/v1")
     {
         // Check valid number
         std::string strBegin = request.value("begin"), strEnd = request.value("end");
         // std::cout << "begin: " << stringToUInt(strBegin)
         //           << std::endl
         //           << "end: " << stringToUInt(strEnd) << "\n";
-      
-       
+
         long int begin = stringToUInt(strBegin), end;
 
-        if (strEnd == "") end = time(NULL); else end = stringToUInt(strEnd);
+        if (strEnd == "")
+            end = time(NULL);
+        else
+            end = stringToUInt(strEnd);
 
-        if ( begin == -1 || end == -1 || begin > end) {
+        if (begin == -1 || end == -1 || begin > end)
+        {
             // std::cout<<"Filter: Bad request !\n";
-            return false;}
-
+            return false;
+        }
 
         return true;
     }
 
-    
-    if (request.method() == GET && request.path() == "/api/range") {
+    if (request.method() == GET && request.path() == "/api/v1/range")
+    {
 
-        if (request.value("begin")== "" && request.value("end") == "")return false;
-        if (request.value("begin") != "" && request.value("end") != "")return false;
-
-        if (
-           request.value("range") != "" 
-           && stringToUInt(request.value("range")) == -1
-        ) return false;
+        if (request.value("begin") == "" && request.value("end") == "")
+            return false;
+        if (request.value("begin") != "" && request.value("end") != "")
+            return false;
 
         if (
-           request.value("begin") != "" 
-           && stringToUInt(request.value("begin")) == -1
-        ) return false;
+            request.value("range") != "" && (stringToUInt(request.value("range")) == -1 || stringToUInt(request.value("range")) >= 5000))
+            return false;
 
         if (
-           request.value("end") != "" 
-           && stringToUInt(request.value("end")) == -1
-        ) return false;
+            request.value("begin") != "" && stringToUInt(request.value("begin")) == -1)
+            return false;
+
+        if (
+            request.value("end") != "" && stringToUInt(request.value("end")) == -1)
+            return false;
 
         // if (request.value("end"))
         return true;
-
     }
 
-    if (request.method() == DEL && request.path() == "/range") {
-         if (request.value("begin")== "" || request.value("end") == "" || request.value("esp-id") == "")return false;
-         int begin = stringToUInt(request.value("begin")),
+    if (request.method() == DEL && request.path() == "api/v1/range")
+    {
+        if (request.value("begin") == "" || request.value("end") == "" || request.value("esp-id") == "")
+            return false;
+        int begin = stringToUInt(request.value("begin")),
             end = stringToUInt(request.value("end")),
             espID = stringToUInt(request.value("esp-id"));
-        
-        if (begin == -1 || end == -1 || espID == -1 ) return false;
-        if (begin > end )return false;
+
+        if (begin == -1 || end == -1 || espID == -1)
+            return false;
+        if (begin > end)
+            return false;
+        return true;
+    }
+
+    if (request.method() == GET && request.path() == "/test")
+    {
+        return true;
+    }
+
+    if (request.method() == DEL && request.path() == "api/v1/all")
+    {
         return true;
     }
 
     // Default:
-    return true;
+    return false;
 }
