@@ -11,7 +11,7 @@ Abstraction
 
 API Reference
 -------------
-Our API with 2 versions provides multichoice to get data with 
+Our API with 2 versions provides multichoice to get data in 
 2 formats: JSON and CSV.
 
 Replace **root_url** with the actual server address
