@@ -14,7 +14,7 @@ API Reference
 Our API with 2 versions provides multichoice to get data with 
 2 formats: JSON and CSV.
 
-Replace **url** with the actual server address
+Replace **root_url** with the actual server address
 ### Version 2 (recommended): Get data in CSV format 
 
 | Method  | URL | Parameters | Description |
