@@ -3,7 +3,7 @@ C++ Back-End System for PIR
 
 Abstraction
 -------------
-**This project gives a fast, lightweight and easy-to-maintain way to send and store PIR records from PIR-ESP32 Client, also to provide data via API for other clients:**
+**This project gives a fast, lightweight and easy-to-maintain way to receive and store PIR records from PIR-ESP32 Client, also to provide data via API for other clients:**
 
 - Platform: Linux (recommended for Debian-based systems)
 - Language: C++
