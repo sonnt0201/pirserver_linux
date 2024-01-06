@@ -23,6 +23,17 @@ void controller(int client, Request request)
 
 MAPPER v2(int client, Request request)
 {
+    // map endpoint
+    if (request.method()  == POST && request.path() == "/api/v2/video") {
+
+        std::cout<<"Request raw text: \n"<<request.getText()<<std::endl;
+
+        Response response = Response(200, TEXT_PLAIN);
+        response.setPlainContent("Request logged in server. ");
+        response.sendClient(client);
+
+        return TERMINATE;
+    }
 
     if (request.method() == GET && request.path() == "/api/v2")
     {

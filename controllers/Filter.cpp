@@ -17,6 +17,11 @@ bool filter(Request request)
 bool v2(Request request)
 {
 
+    if (request.method() == POST && request.path() == "/api/v2/video") {
+
+        return true;
+    }
+
     if (request.method() == GET && request.path() == "/api/v2")
     {
         // Check valid number
