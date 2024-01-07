@@ -218,7 +218,7 @@ MAPPER v1(int client, Request request)
 
             root["meta"]["time_begin"] = records[0].getTimestamp();
             root["meta"]["time_end"] = records[records.size() - 1].getTimestamp();
-            root["records"] = Json::arrayValue;
+            root["payload"] = Json::arrayValue;
 
             Json::Value recordsArr = Json::arrayValue;
 
@@ -230,7 +230,7 @@ MAPPER v1(int client, Request request)
 
             // set data
 
-            root["records"] = recordsArr;
+            root["payload"] = recordsArr;
         }
 
         // std::cout<<root<<"\n";
