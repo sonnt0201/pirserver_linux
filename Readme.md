@@ -22,7 +22,7 @@ Replace **root_url** with the actual server address
 | GET  | **root_url**/api/v2?begin=`{begin}`&end=`{end}` | `begin`: begin timestamp, `end`: end timestamp  | Get records with begin and end timestamp
 | GET |  **root_url**/api/v2/range?begin=`{begin}`&range=`{range}`  | `begin`: begin timestamp, `range`: number of records  | Get records with `begin` timestamp and in a specific number |
 | GET |  **root_url**/api/v2/range?end=`{end}`&range=`{range}`  | `end`: end timestamp, `range`: number of records  | Get records with `end` timestamp and in a specific number |
-
+| DELETE |  **root_url**/api/v2/range?end=`{end}`&range=`{range}`  | `end`: end timestamp, `range`: number of records  | Get records with `end` timestamp and in a specific number |
 ### Version 1 (legacy): Add, get (with JSON format) and delete data 
 
 | Method  | URL | Parameters | Description |

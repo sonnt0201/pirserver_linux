@@ -11,7 +11,7 @@ bool filter(Request request)
     if (v1(request))
         return true;
 
-    return true;
+    return false;
 };
 
 bool v2(Request request)
@@ -70,30 +70,7 @@ bool v2(Request request)
         return true;
     }
 
-    if (request.method() == GET && request.path() == "/api/v1/range")
-    {
-
-        if (request.value("begin") == "" && request.value("end") == "")
-            return false;
-        if (request.value("begin") != "" && request.value("end") != "")
-            return false;
-
-        if (
-            request.value("range") != "" && (stringToUInt(request.value("range")) == -1 || stringToUInt(request.value("range")) >= 5000))
-            return false;
-
-        if (
-            request.value("begin") != "" && stringToUInt(request.value("begin")) == -1)
-            return false;
-
-        if (
-            request.value("end") != "" && stringToUInt(request.value("end")) == -1)
-            return false;
-
-        // if (request.value("end"))
-        return true;
-    }
-
+   
     // end of filter
     return false;
 }
@@ -148,6 +125,8 @@ bool v1(Request request)
             if (count > 4)
                 return 0;
         }
+
+        return true;
     }
 
     if (request.method() == GET && request.path() == "/api/v1")

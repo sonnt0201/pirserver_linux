@@ -122,36 +122,7 @@ MAPPER v2(int client, Request request)
         return TERMINATE;
     }
 
-    // if (request.method() == PUT && request.path() == "/api/v2/logger")
-    // {
-    //     std::ofstream logger("time.csv");
-    //     if (!logger.is_open())
-    //     {
-    //         std::cout << "Failed to open log file. \n";
-    //         return TERMINATE;
-    //     }
-    //     logger << "rows,time(millisecs)\n";
-       
-    //    logger<<ssLog.str();
-
-    //     logger.close();
-    //     Response response = Response(200, TEXT_PLAIN);
-    //     response.setPlainContent("Create log file successfully.\n");
-    //     response.sendClient(client);
-    //     return TERMINATE;
-    // }
-
-    // if (request.method() == DEL && request.path() == "/api/v2/logger")
-    // {
-        
-    //     Response response = Response(200, TEXT_PLAIN);
-
-    //     ssLog.clear();
-    //     ssLog.str("");
-    //     response.setPlainContent("Clear log value successfully.\n");
-    //     response.sendClient(client);
-    //     return TERMINATE;
-    // }
+  
 
     // end of v2 mapper
     return CONTINUE;
