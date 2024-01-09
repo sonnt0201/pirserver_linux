@@ -122,7 +122,16 @@ MAPPER v2(int client, Request request)
         return TERMINATE;
     }
 
-  
+    if (request.method() == DEL && request.path() == "/api/v2/all") {
+        int espID = stringToUInt(request.value("esp-id"));
+
+        db.deleteRecords(espID);
+        Response response = Response(200, TEXT_PLAIN);
+        response.setPlainContent("Records deleted");
+        response.sendClient(client);
+        
+        return TERMINATE;
+    }
 
     // end of v2 mapper
     return CONTINUE;

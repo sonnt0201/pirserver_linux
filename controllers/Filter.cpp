@@ -70,6 +70,14 @@ bool v2(Request request)
         return true;
     }
 
+    if (request.method() == DEL && request.path() == "/api/v2/all") {
+        int espID = stringToUInt(request.value("esp-id"));
+        if (espID == -1) return false;
+
+        return true;
+    }
+
+    //add more endpoints above
    
     // end of filter
     return false;

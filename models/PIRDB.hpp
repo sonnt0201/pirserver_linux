@@ -52,7 +52,7 @@ class PIRDB {
     int addData(int deviceID, std::string vol, int time);
     int latestTimestamp();
     int oldestTimestamp();
-    int deleteRecords(int espID, int begin, int end);
+    int deleteRecords(int espID, int begin = 0, int end = time(NULL));
     int allToCSV() ;
 
     
