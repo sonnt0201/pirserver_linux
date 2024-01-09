@@ -3,7 +3,7 @@ C++ Back-End System for PIR
 
 Abstraction
 -------------
-**This project gives a fast, lightweight and easy-to-maintain way to receive and store PIR records from PIR-ESP32 Client, also to provide data via API for other clients:**
+**This project gives a lightweight, asynchronous and easy-to-maintain way to receive and store PIR records from PIR-ESP32 Client, also to provide data via API for other clients:**
 
 - Platform: Linux (recommended for Debian-based systems)
 - Language: C++
@@ -22,8 +22,8 @@ Replace **root_url** with the actual server address
 | GET  | **root_url**/api/v2?begin=`{begin}`&end=`{end}` | `begin`: begin timestamp, `end`: end timestamp  | Get records with begin and end timestamp
 | GET |  **root_url**/api/v2/range?begin=`{begin}`&range=`{range}`  | `begin`: begin timestamp, `range`: number of records  | Get records with `begin` timestamp and in a specific number |
 | GET |  **root_url**/api/v2/range?end=`{end}`&range=`{range}`  | `end`: end timestamp, `range`: number of records  | Get records with `end` timestamp and in a specific number |
-| DELETE |  **root_url**/api/v2/range?end=`{end}`&range=`{range}`  | `end`: end timestamp, `range`: number of records  | Get records with `end` timestamp and in a specific number |
-### Version 1 (legacy): Add, get (with JSON format) and delete data 
+| DELETE |  **root_url**/api/v2/all?esp-id=`{esp-id}`  | `esp-id`: id of the ESP32 device to be deleted  | ⚠️ Be cautious when using, it will delete all records of a specific ESP32 device in the database  |
+### Version 1 (legacy): Add, get (in JSON format) and delete data 
 
 | Method  | URL | Parameters | Description |
 | --------| --- | -----------| ----------- |
