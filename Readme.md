@@ -5,12 +5,13 @@ Abstraction
 -------------
 **This project gives a lightweight, asynchronous and easy-to-maintain way to receive and store PIR records from PIR-ESP32 Client, also to provide data via API for other clients:**
 
-- Platform: Linux (recommended for Debian-based systems)
-- Language: C++
-- Protocol: HTTP
+- Platform: `Linux` (recommended for Debian-based systems)
+- Language: `C++`
+- Protocol: `HTTP`
+- Build tool: `CMake`
 - Dependencies: [JsonCpp](https://github.com/open-source-parsers/jsoncpp), [SQLite](https://www.sqlite.org/index.html)
 
-(Dependencies are already amalgamated in source files so no need of any additional installation).
+(Dependencies are already amalgamated in source files so they have no need of any additional installation).
 
 Installation
 ----------
