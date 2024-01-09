@@ -8,6 +8,48 @@ Abstraction
 - Platform: Linux (recommended for Debian-based systems)
 - Language: C++
 - Protocol: HTTP
+- Dependencies: [JsonCpp](https://github.com/open-source-parsers/jsoncpp), [SQLite](https://www.sqlite.org/index.html)
+
+(Dependencies are already amalgamated in source files so no need of any additional installation).
+
+Installation
+----------
+
+### Prerequisites:
+
+This project requires `CMake` and `Git` to build and run the production.
+
+### Installation via `Git`
+
+You can clone this repository for usage or developemnt purposes:
+
+```shell
+$ git clone https://github.com/sonnt0201/pirserver_linux
+```
+
+(Or contribute to this repository using `fork`)
+
+Delete old build folder then make a new one using CMake:
+
+Open terminal in root directory then run `CMake` command
+
+```shell
+$ mkdir build
+$ cd build
+$ cmake ..
+```
+
+Create a `db` folder in `build` directory to hold your database file
+
+```shell
+$ mkdir db 
+```
+
+Then compile and run the server in a single command
+
+```shell
+$ make run
+```
 
 API Reference
 -------------
