@@ -22,7 +22,7 @@ This project requires `CMake` and `Git` to build and run the production.
 
 ### Installation via `Git`
 
-You can clone this repository for usage or developement purposes:
+You can clone this repository for usage or development purposes:
 
 ```shell
 $ git clone https://github.com/sonnt0201/pirserver_linux
