@@ -30,7 +30,7 @@ $ git clone https://github.com/sonnt0201/pirserver_linux
 
 (Or contribute to this repository using `fork`)
 
-Delete old build folder then make a new one using CMake:
+Delete old `build` folder then make a new one using CMake:
 
 Open terminal in root directory then run `CMake` command
 
@@ -78,7 +78,7 @@ Replace **root_url** with the actual server address
 | GET |  **root_url**/test  | NONE  | Run a test page to check the communication and send fake data (for development environment only) |
 | POST |  **root_url**?esp-id=`{esp-id}`&vol=`{vol}`&time=`{time}`  | `esp-id`: id of the esp client, `vol`: a string including voltages, `time`: record timestamp (in second)   | This POST is for ESP-32 device only to send records to server |
 | DELETE |  **root_url**/api/v1/all  | NONE  | ⚠️ Be cautious when using, it will delete all records in the database |
-| DELETE |  **root_url**/api/v1/range?begin=`begin`&end=`end`&esp-id=`esp-id`  | `begin`, `end`: begin and end timestamp of the records to be deleted, `esp-id`: id of the ESP-32 device to delete its records  | ⚠️ Be cautious when using, it will delete a specific range of records in database |
+| DELETE |  **root_url**/api/v1/range?begin=`begin`&end=`end`&esp-id=`esp-id`  | `begin`, `end`: begin and end timestamp of the records to be deleted, `esp-id`: id of the ESP32 device to delete its records  | ⚠️ Be cautious when using, it will delete a specific range of records in database |
 
 ***
 #### January 2023  by Thai-Son Nguyen.
