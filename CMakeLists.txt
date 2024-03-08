@@ -3,21 +3,13 @@ cmake_minimum_required(VERSION 3.10)
 project(PirServer VERSION 1.0)
 
 
-# file(GLOB MODELS ./models/*.cpp)
-# file(GLOB CONTROLLERS ./controllers/*.cpp)
+# Globbing source files
+file(GLOB_RECURSE SOURCES "src/*.cpp" "src/*.c" "modules/*.cpp" "modules/*.c")
+
  # Include directory for libpq headers
 
 add_executable(pirserver 
-main.cpp 
-controllers/Server.cpp
-controllers/Controller.cpp 
-controllers/Filter.cpp 
-models/PIRDB.cpp 
-models/Request.cpp 
-models/Response.cpp 
-lib/sqlite3.c 
-lib/jsoncpp.cpp 
-lib/utils.cpp
+pirserver ${SOURCES}
 )
 
 target_link_libraries(pirserver PUBLIC)  

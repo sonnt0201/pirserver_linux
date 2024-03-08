@@ -142,245 +142,173 @@ run/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/build
 .PHONY : run/fast
 
-controllers/Controller.o: controllers/Controller.cpp.o
-.PHONY : controllers/Controller.o
+modules/http/Request.o: modules/http/Request.cpp.o
+.PHONY : modules/http/Request.o
 
 # target to build an object file
-controllers/Controller.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/controllers/Controller.cpp.o
-.PHONY : controllers/Controller.cpp.o
+modules/http/Request.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/http/Request.cpp.o
+.PHONY : modules/http/Request.cpp.o
 
-controllers/Controller.i: controllers/Controller.cpp.i
-.PHONY : controllers/Controller.i
+modules/http/Request.i: modules/http/Request.cpp.i
+.PHONY : modules/http/Request.i
 
 # target to preprocess a source file
-controllers/Controller.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/controllers/Controller.cpp.i
-.PHONY : controllers/Controller.cpp.i
+modules/http/Request.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/http/Request.cpp.i
+.PHONY : modules/http/Request.cpp.i
 
-controllers/Controller.s: controllers/Controller.cpp.s
-.PHONY : controllers/Controller.s
+modules/http/Request.s: modules/http/Request.cpp.s
+.PHONY : modules/http/Request.s
 
 # target to generate assembly for a file
-controllers/Controller.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/controllers/Controller.cpp.s
-.PHONY : controllers/Controller.cpp.s
+modules/http/Request.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/http/Request.cpp.s
+.PHONY : modules/http/Request.cpp.s
 
-controllers/Filter.o: controllers/Filter.cpp.o
-.PHONY : controllers/Filter.o
+modules/http/Response.o: modules/http/Response.cpp.o
+.PHONY : modules/http/Response.o
 
 # target to build an object file
-controllers/Filter.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/controllers/Filter.cpp.o
-.PHONY : controllers/Filter.cpp.o
+modules/http/Response.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/http/Response.cpp.o
+.PHONY : modules/http/Response.cpp.o
 
-controllers/Filter.i: controllers/Filter.cpp.i
-.PHONY : controllers/Filter.i
+modules/http/Response.i: modules/http/Response.cpp.i
+.PHONY : modules/http/Response.i
 
 # target to preprocess a source file
-controllers/Filter.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/controllers/Filter.cpp.i
-.PHONY : controllers/Filter.cpp.i
+modules/http/Response.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/http/Response.cpp.i
+.PHONY : modules/http/Response.cpp.i
 
-controllers/Filter.s: controllers/Filter.cpp.s
-.PHONY : controllers/Filter.s
+modules/http/Response.s: modules/http/Response.cpp.s
+.PHONY : modules/http/Response.s
 
 # target to generate assembly for a file
-controllers/Filter.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/controllers/Filter.cpp.s
-.PHONY : controllers/Filter.cpp.s
+modules/http/Response.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/http/Response.cpp.s
+.PHONY : modules/http/Response.cpp.s
 
-controllers/Server.o: controllers/Server.cpp.o
-.PHONY : controllers/Server.o
+modules/http/Router.o: modules/http/Router.cpp.o
+.PHONY : modules/http/Router.o
 
 # target to build an object file
-controllers/Server.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/controllers/Server.cpp.o
-.PHONY : controllers/Server.cpp.o
+modules/http/Router.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/http/Router.cpp.o
+.PHONY : modules/http/Router.cpp.o
 
-controllers/Server.i: controllers/Server.cpp.i
-.PHONY : controllers/Server.i
+modules/http/Router.i: modules/http/Router.cpp.i
+.PHONY : modules/http/Router.i
 
 # target to preprocess a source file
-controllers/Server.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/controllers/Server.cpp.i
-.PHONY : controllers/Server.cpp.i
+modules/http/Router.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/http/Router.cpp.i
+.PHONY : modules/http/Router.cpp.i
 
-controllers/Server.s: controllers/Server.cpp.s
-.PHONY : controllers/Server.s
+modules/http/Router.s: modules/http/Router.cpp.s
+.PHONY : modules/http/Router.s
 
 # target to generate assembly for a file
-controllers/Server.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/controllers/Server.cpp.s
-.PHONY : controllers/Server.cpp.s
+modules/http/Router.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/http/Router.cpp.s
+.PHONY : modules/http/Router.cpp.s
 
-lib/jsoncpp.o: lib/jsoncpp.cpp.o
-.PHONY : lib/jsoncpp.o
+modules/http/Server.o: modules/http/Server.cpp.o
+.PHONY : modules/http/Server.o
 
 # target to build an object file
-lib/jsoncpp.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/lib/jsoncpp.cpp.o
-.PHONY : lib/jsoncpp.cpp.o
+modules/http/Server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/http/Server.cpp.o
+.PHONY : modules/http/Server.cpp.o
 
-lib/jsoncpp.i: lib/jsoncpp.cpp.i
-.PHONY : lib/jsoncpp.i
+modules/http/Server.i: modules/http/Server.cpp.i
+.PHONY : modules/http/Server.i
 
 # target to preprocess a source file
-lib/jsoncpp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/lib/jsoncpp.cpp.i
-.PHONY : lib/jsoncpp.cpp.i
+modules/http/Server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/http/Server.cpp.i
+.PHONY : modules/http/Server.cpp.i
 
-lib/jsoncpp.s: lib/jsoncpp.cpp.s
-.PHONY : lib/jsoncpp.s
+modules/http/Server.s: modules/http/Server.cpp.s
+.PHONY : modules/http/Server.s
 
 # target to generate assembly for a file
-lib/jsoncpp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/lib/jsoncpp.cpp.s
-.PHONY : lib/jsoncpp.cpp.s
+modules/http/Server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/http/Server.cpp.s
+.PHONY : modules/http/Server.cpp.s
 
-lib/sqlite3.o: lib/sqlite3.c.o
-.PHONY : lib/sqlite3.o
+modules/lib/jsoncpp.o: modules/lib/jsoncpp.cpp.o
+.PHONY : modules/lib/jsoncpp.o
 
 # target to build an object file
-lib/sqlite3.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/lib/sqlite3.c.o
-.PHONY : lib/sqlite3.c.o
+modules/lib/jsoncpp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.o
+.PHONY : modules/lib/jsoncpp.cpp.o
 
-lib/sqlite3.i: lib/sqlite3.c.i
-.PHONY : lib/sqlite3.i
+modules/lib/jsoncpp.i: modules/lib/jsoncpp.cpp.i
+.PHONY : modules/lib/jsoncpp.i
 
 # target to preprocess a source file
-lib/sqlite3.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/lib/sqlite3.c.i
-.PHONY : lib/sqlite3.c.i
+modules/lib/jsoncpp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.i
+.PHONY : modules/lib/jsoncpp.cpp.i
 
-lib/sqlite3.s: lib/sqlite3.c.s
-.PHONY : lib/sqlite3.s
+modules/lib/jsoncpp.s: modules/lib/jsoncpp.cpp.s
+.PHONY : modules/lib/jsoncpp.s
 
 # target to generate assembly for a file
-lib/sqlite3.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/lib/sqlite3.c.s
-.PHONY : lib/sqlite3.c.s
+modules/lib/jsoncpp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.s
+.PHONY : modules/lib/jsoncpp.cpp.s
 
-lib/utils.o: lib/utils.cpp.o
-.PHONY : lib/utils.o
+modules/lib/sqlite3.o: modules/lib/sqlite3.c.o
+.PHONY : modules/lib/sqlite3.o
 
 # target to build an object file
-lib/utils.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/lib/utils.cpp.o
-.PHONY : lib/utils.cpp.o
+modules/lib/sqlite3.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/lib/sqlite3.c.o
+.PHONY : modules/lib/sqlite3.c.o
 
-lib/utils.i: lib/utils.cpp.i
-.PHONY : lib/utils.i
+modules/lib/sqlite3.i: modules/lib/sqlite3.c.i
+.PHONY : modules/lib/sqlite3.i
 
 # target to preprocess a source file
-lib/utils.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/lib/utils.cpp.i
-.PHONY : lib/utils.cpp.i
+modules/lib/sqlite3.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/lib/sqlite3.c.i
+.PHONY : modules/lib/sqlite3.c.i
 
-lib/utils.s: lib/utils.cpp.s
-.PHONY : lib/utils.s
+modules/lib/sqlite3.s: modules/lib/sqlite3.c.s
+.PHONY : modules/lib/sqlite3.s
 
 # target to generate assembly for a file
-lib/utils.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/lib/utils.cpp.s
-.PHONY : lib/utils.cpp.s
+modules/lib/sqlite3.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/lib/sqlite3.c.s
+.PHONY : modules/lib/sqlite3.c.s
 
-main.o: main.cpp.o
-.PHONY : main.o
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/main.cpp.o
-.PHONY : main.cpp.o
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/main.cpp.s
-.PHONY : main.cpp.s
-
-models/PIRDB.o: models/PIRDB.cpp.o
-.PHONY : models/PIRDB.o
-
-# target to build an object file
-models/PIRDB.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/models/PIRDB.cpp.o
-.PHONY : models/PIRDB.cpp.o
-
-models/PIRDB.i: models/PIRDB.cpp.i
-.PHONY : models/PIRDB.i
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-models/PIRDB.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/models/PIRDB.cpp.i
-.PHONY : models/PIRDB.cpp.i
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-models/PIRDB.s: models/PIRDB.cpp.s
-.PHONY : models/PIRDB.s
-
-# target to generate assembly for a file
-models/PIRDB.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/models/PIRDB.cpp.s
-.PHONY : models/PIRDB.cpp.s
-
-models/Request.o: models/Request.cpp.o
-.PHONY : models/Request.o
-
-# target to build an object file
-models/Request.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/models/Request.cpp.o
-.PHONY : models/Request.cpp.o
-
-models/Request.i: models/Request.cpp.i
-.PHONY : models/Request.i
-
-# target to preprocess a source file
-models/Request.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/models/Request.cpp.i
-.PHONY : models/Request.cpp.i
-
-models/Request.s: models/Request.cpp.s
-.PHONY : models/Request.s
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-models/Request.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/models/Request.cpp.s
-.PHONY : models/Request.cpp.s
-
-models/Response.o: models/Response.cpp.o
-.PHONY : models/Response.o
-
-# target to build an object file
-models/Response.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/models/Response.cpp.o
-.PHONY : models/Response.cpp.o
-
-models/Response.i: models/Response.cpp.i
-.PHONY : models/Response.i
-
-# target to preprocess a source file
-models/Response.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/models/Response.cpp.i
-.PHONY : models/Response.cpp.i
-
-models/Response.s: models/Response.cpp.s
-.PHONY : models/Response.s
-
-# target to generate assembly for a file
-models/Response.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/models/Response.cpp.s
-.PHONY : models/Response.cpp.s
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -392,36 +320,27 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... run"
 	@echo "... pirserver"
-	@echo "... controllers/Controller.o"
-	@echo "... controllers/Controller.i"
-	@echo "... controllers/Controller.s"
-	@echo "... controllers/Filter.o"
-	@echo "... controllers/Filter.i"
-	@echo "... controllers/Filter.s"
-	@echo "... controllers/Server.o"
-	@echo "... controllers/Server.i"
-	@echo "... controllers/Server.s"
-	@echo "... lib/jsoncpp.o"
-	@echo "... lib/jsoncpp.i"
-	@echo "... lib/jsoncpp.s"
-	@echo "... lib/sqlite3.o"
-	@echo "... lib/sqlite3.i"
-	@echo "... lib/sqlite3.s"
-	@echo "... lib/utils.o"
-	@echo "... lib/utils.i"
-	@echo "... lib/utils.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... models/PIRDB.o"
-	@echo "... models/PIRDB.i"
-	@echo "... models/PIRDB.s"
-	@echo "... models/Request.o"
-	@echo "... models/Request.i"
-	@echo "... models/Request.s"
-	@echo "... models/Response.o"
-	@echo "... models/Response.i"
-	@echo "... models/Response.s"
+	@echo "... modules/http/Request.o"
+	@echo "... modules/http/Request.i"
+	@echo "... modules/http/Request.s"
+	@echo "... modules/http/Response.o"
+	@echo "... modules/http/Response.i"
+	@echo "... modules/http/Response.s"
+	@echo "... modules/http/Router.o"
+	@echo "... modules/http/Router.i"
+	@echo "... modules/http/Router.s"
+	@echo "... modules/http/Server.o"
+	@echo "... modules/http/Server.i"
+	@echo "... modules/http/Server.s"
+	@echo "... modules/lib/jsoncpp.o"
+	@echo "... modules/lib/jsoncpp.i"
+	@echo "... modules/lib/jsoncpp.s"
+	@echo "... modules/lib/sqlite3.o"
+	@echo "... modules/lib/sqlite3.i"
+	@echo "... modules/lib/sqlite3.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 
