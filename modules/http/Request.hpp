@@ -49,8 +49,14 @@ public:
     // Get the value of a parameter in the request
     std::string value(std::string param);
 
+    /*
+        Used for application/json content-type only
+        Parse request body to JSON object
+    */ 
+    Json::Value toJson();
     // return origin request in raw text
     std::string getText();
-    
+
+
     
 };

@@ -15,5 +15,10 @@ int main()
                 std::cout<<agent<<std::endl;
             });
 
+    app.get("another/*", [](Request *req, Response *res, bool *next) {
+        res->setContentType(TEXT_HTML);
+        res->setHtmlBody("../web-views/index.html");
+
+    });
     app.run();
 }

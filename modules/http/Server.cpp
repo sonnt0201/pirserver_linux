@@ -1,5 +1,7 @@
 #include "Server.hpp"
 
+bool endpointMatched(Request& req,MiddleWare& mw);
+
 Server::Server(int port)
 {
     // bind port
@@ -92,11 +94,11 @@ void Server::onClientConnection(int clientSocket)
 
         for (MiddleWare mw : this->router.getMiddleWares())
         {
-            if (mw.method == req.method() && mw.endpoint == req.path())
-            {
-                hasMiddleware = true;
+            // Check all invalid cases, if invalid, continue
+            if (!endpointMatched(req, mw)) continue;
+
+            hasMiddleware = true;
                 mw.handler(&req, &res, &next);
-            }
             if (!next)
                 break;
         }
@@ -127,3 +129,21 @@ void Server::put(std::string endpoint, HANDLER handler) {
 void Server::del(std::string endpoint, HANDLER handler) {
   this->router.del(endpoint, handler);
 };
+
+bool endpointMatched(Request &req, MiddleWare &mw) {
+    
+    if (req.method() != mw.method) return false;
+
+    // Check for * first
+    if (mw.endpoint == "*") return true;
+
+    if (mw.endpoint[mw.endpoint.length() - 1] == '*') {
+        std::string destinationPath = mw.endpoint.substr(0, mw.endpoint.length() - 1);
+        if (destinationPath == req.path().substr(0, destinationPath.length())) return true;
+
+    }
+
+    if (mw.endpoint == req.path()) return true;
+
+    return false;
+}

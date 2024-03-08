@@ -65,6 +65,11 @@ std::string Request::path()
 
 std::string Request::value(std::string param)
 {
+    // guard content type
+    if (this->headerValue(CONTENT_TYPE) != APPLICATION_URLENCODED) {
+        std::cout<<"Error: Wrong request content type to call Request::value. \n";
+        return "";
+    }
     std::string request = this->rawText;
 
     // Find the position of the parameter in the request
@@ -226,7 +231,14 @@ std::string Request::headerValue(std::string key){
 
 std::vector<std::string> Request::params()
 {
-    std::vector<std::string> paramNames;
+    
+    std::vector<std::string> paramNames  = {};
+
+    // guard content type
+    if (this->headerValue(CONTENT_TYPE) != APPLICATION_URLENCODED) {
+        std::cout<<"Error: Wrong request content type to call Request::params. \n";
+        return paramNames;
+    }
 
     // Check the request method to determine where to look for parameter names
     int methodType = this->method();
@@ -314,6 +326,26 @@ void Request::initBody()
     this->_body = requestBody;
     return;
 };
+
+Json::Value Request::toJson(){
+    Json::Value root;
+
+    // guard content type
+    if (this->headerValue(CONTENT_TYPE) != APPLICATION_JSON) {
+        std::cout<<"ERROR: Wrong content type to call Request::toJson. \n";
+        return root;
+    }
+
+    // Json::Value root;
+    Json::Reader reader;
+    bool parsingSuccessful = reader.parse(this->_body, root);
+    if (!parsingSuccessful) {
+        std::cout<<"Error: Invalid JSON format. \n";
+        return NULL;
+    }
+
+    return root;
+}
 
 std::string Request::getText()
 {
