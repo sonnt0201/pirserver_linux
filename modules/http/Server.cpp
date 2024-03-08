@@ -114,7 +114,7 @@ void Server::onClientConnection(int clientSocket)
                GET /api/v1/example
                Finish in 12 milliseconds.
 
-             * Look at how expressjs log content for more information.
+             * Look for how expressjs log content for more information.
             */
 
             if (!next)
