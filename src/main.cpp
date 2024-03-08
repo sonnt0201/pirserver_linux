@@ -7,17 +7,17 @@ int main()
 {
     Server app = Server(PORT);
 
-    app.get("/hello", [](Request *req, Response *res, bool *next)
+    app.get("*", [](Request *req, Response *res, bool *next)
             { 
                 res->setContentType(TEXT_HTML);
-                res->setHtmlBody("../web-views/index.html");
+                res->asHtmlFile("../web-views/index.html");
                 std::string agent = req->headerValue("Content-Type");
                 std::cout<<agent<<std::endl;
             });
 
     app.get("another/*", [](Request *req, Response *res, bool *next) {
         res->setContentType(TEXT_HTML);
-        res->setHtmlBody("../web-views/index.html");
+        res->asHtmlFile("../web-views/index.html");
 
     });
 

@@ -13,15 +13,6 @@
 
 #pragma once
 
-/*
-    MIDDLEWARE is a 2-dimension map object with 2 keys:
-    - First key as request method in int type.
-    - Second key as request endpoint in std::string.
-    - Value as lamda function to handle request and send response to client
-    Eg: handler[GET]["/api"] = [&](request, response) {
-        // code
-    }
-*/
 
 
 class Server {

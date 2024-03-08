@@ -29,7 +29,7 @@ void Response::setStatusCode(int status){
     }
 }
 
-void Response::setHeaderParam(std::string key, std::string value) {
+void Response::setHeader(std::string key, std::string value) {
     this->_header[key] = value;
     
 }
@@ -65,7 +65,7 @@ void Response::setContentType(std::string type){
     this->_header["Content-Type"] = type;
 };
 
-void Response::setHtmlBody(std::string fileName)
+void Response::asHtmlFile(std::string fileName)
 {
     // Guard
     if (this->_header["Content-Type"] != TEXT_HTML) {
@@ -111,15 +111,10 @@ void Response::setJsonBody(Json::Value root) {
 }
 
 void Response::setPlainBody(std::string text){
-    if (this->_header["Content-Type"] != TEXT_PLAIN) {
-        std::cout<<"Wrong Content-Type to set plain-text content.\n";
-        return;
-    }
-
     this->_body = text;
 }
 
- void Response::setCsvBody(std::vector<std::string> rows)  {
+void Response::setCsvBody(std::vector<std::string> rows)  {
     // Guard the Content-Type
     if (this->_header["Content-Type"]!= TEXT_CSV) {
         std::cout<<"Wrong Content-Type to set CSV content.\n";

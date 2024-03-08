@@ -27,14 +27,18 @@ class Response {
         Response(int status, std::string contentType );
 
         void setStatusCode(int status);
+
         void setContentType(std::string type);
-        std::string htmlPath;
-        std::string jsonData;
-        void setHtmlBody(std::string fileName);
+
+       
+
+        void asHtmlFile(std::string fileName);
         // body content for response
         
-        void setHeaderParam(std::string key, std::string value);
-         void setJsonBody(Json::Value root);
+        void setHeader(std::string key, std::string value);
+
+        void setJsonBody(Json::Value root);
+        
         void setPlainBody(std::string text);
 
         void setCsvBody(std::vector<std::string> rows);
