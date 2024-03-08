@@ -74,7 +74,7 @@ void Response::asHtmlFile(std::string fileName)
     }
 
     // Assuming htmlPath is the root directory followed by the fileName
-    std::string fullPath = fileName;
+    std::string fullPath = ROOT + fileName;
 
     // Open the file
     std::ifstream file(fullPath);
@@ -93,7 +93,7 @@ void Response::asHtmlFile(std::string fileName)
     else
     {
         // If the file couldn't be opened, set an appropriate message in the body
-        this->_body = "Error: Unable to open file " + fileName;
+        this->_body = "Error: Unable to open file " + fullPath;
     }
 }
 
@@ -128,4 +128,10 @@ void Response::setCsvBody(std::vector<std::string> rows)  {
     }
     return;
     
+ }
+
+
+ void Response::asDefault404() {
+    this->_header["Content-Type"] = TEXT_HTML;
+    this->asHtmlFile("web-views/404.html");
  }

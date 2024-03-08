@@ -125,10 +125,38 @@ CMakeFiles/pirserver.dir/modules/http/Server.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pirserver.dir/modules/http/Server.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sonnguyen/Desktop/repos/pirserver/modules/http/Server.cpp -o CMakeFiles/pirserver.dir/modules/http/Server.cpp.s
 
+CMakeFiles/pirserver.dir/modules/http/Timer.cpp.o: CMakeFiles/pirserver.dir/flags.make
+CMakeFiles/pirserver.dir/modules/http/Timer.cpp.o: ../modules/http/Timer.cpp
+CMakeFiles/pirserver.dir/modules/http/Timer.cpp.o: CMakeFiles/pirserver.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/pirserver.dir/modules/http/Timer.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pirserver.dir/modules/http/Timer.cpp.o -MF CMakeFiles/pirserver.dir/modules/http/Timer.cpp.o.d -o CMakeFiles/pirserver.dir/modules/http/Timer.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver/modules/http/Timer.cpp
+
+CMakeFiles/pirserver.dir/modules/http/Timer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pirserver.dir/modules/http/Timer.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sonnguyen/Desktop/repos/pirserver/modules/http/Timer.cpp > CMakeFiles/pirserver.dir/modules/http/Timer.cpp.i
+
+CMakeFiles/pirserver.dir/modules/http/Timer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pirserver.dir/modules/http/Timer.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sonnguyen/Desktop/repos/pirserver/modules/http/Timer.cpp -o CMakeFiles/pirserver.dir/modules/http/Timer.cpp.s
+
+CMakeFiles/pirserver.dir/modules/http/jsoncpp.cpp.o: CMakeFiles/pirserver.dir/flags.make
+CMakeFiles/pirserver.dir/modules/http/jsoncpp.cpp.o: ../modules/http/jsoncpp.cpp
+CMakeFiles/pirserver.dir/modules/http/jsoncpp.cpp.o: CMakeFiles/pirserver.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/pirserver.dir/modules/http/jsoncpp.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pirserver.dir/modules/http/jsoncpp.cpp.o -MF CMakeFiles/pirserver.dir/modules/http/jsoncpp.cpp.o.d -o CMakeFiles/pirserver.dir/modules/http/jsoncpp.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver/modules/http/jsoncpp.cpp
+
+CMakeFiles/pirserver.dir/modules/http/jsoncpp.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pirserver.dir/modules/http/jsoncpp.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sonnguyen/Desktop/repos/pirserver/modules/http/jsoncpp.cpp > CMakeFiles/pirserver.dir/modules/http/jsoncpp.cpp.i
+
+CMakeFiles/pirserver.dir/modules/http/jsoncpp.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pirserver.dir/modules/http/jsoncpp.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sonnguyen/Desktop/repos/pirserver/modules/http/jsoncpp.cpp -o CMakeFiles/pirserver.dir/modules/http/jsoncpp.cpp.s
+
 CMakeFiles/pirserver.dir/modules/http/utils.cpp.o: CMakeFiles/pirserver.dir/flags.make
 CMakeFiles/pirserver.dir/modules/http/utils.cpp.o: ../modules/http/utils.cpp
 CMakeFiles/pirserver.dir/modules/http/utils.cpp.o: CMakeFiles/pirserver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/pirserver.dir/modules/http/utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/pirserver.dir/modules/http/utils.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pirserver.dir/modules/http/utils.cpp.o -MF CMakeFiles/pirserver.dir/modules/http/utils.cpp.o.d -o CMakeFiles/pirserver.dir/modules/http/utils.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver/modules/http/utils.cpp
 
 CMakeFiles/pirserver.dir/modules/http/utils.cpp.i: cmake_force
@@ -139,24 +167,10 @@ CMakeFiles/pirserver.dir/modules/http/utils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pirserver.dir/modules/http/utils.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sonnguyen/Desktop/repos/pirserver/modules/http/utils.cpp -o CMakeFiles/pirserver.dir/modules/http/utils.cpp.s
 
-CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.o: CMakeFiles/pirserver.dir/flags.make
-CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.o: ../modules/lib/jsoncpp.cpp
-CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.o: CMakeFiles/pirserver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.o -MF CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.o.d -o CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver/modules/lib/jsoncpp.cpp
-
-CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sonnguyen/Desktop/repos/pirserver/modules/lib/jsoncpp.cpp > CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.i
-
-CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sonnguyen/Desktop/repos/pirserver/modules/lib/jsoncpp.cpp -o CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.s
-
 CMakeFiles/pirserver.dir/modules/lib/sqlite3.c.o: CMakeFiles/pirserver.dir/flags.make
 CMakeFiles/pirserver.dir/modules/lib/sqlite3.c.o: ../modules/lib/sqlite3.c
 CMakeFiles/pirserver.dir/modules/lib/sqlite3.c.o: CMakeFiles/pirserver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/pirserver.dir/modules/lib/sqlite3.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/pirserver.dir/modules/lib/sqlite3.c.o"
 	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pirserver.dir/modules/lib/sqlite3.c.o -MF CMakeFiles/pirserver.dir/modules/lib/sqlite3.c.o.d -o CMakeFiles/pirserver.dir/modules/lib/sqlite3.c.o -c /home/sonnguyen/Desktop/repos/pirserver/modules/lib/sqlite3.c
 
 CMakeFiles/pirserver.dir/modules/lib/sqlite3.c.i: cmake_force
@@ -170,7 +184,7 @@ CMakeFiles/pirserver.dir/modules/lib/sqlite3.c.s: cmake_force
 CMakeFiles/pirserver.dir/src/main.cpp.o: CMakeFiles/pirserver.dir/flags.make
 CMakeFiles/pirserver.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/pirserver.dir/src/main.cpp.o: CMakeFiles/pirserver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/pirserver.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/pirserver.dir/src/main.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pirserver.dir/src/main.cpp.o -MF CMakeFiles/pirserver.dir/src/main.cpp.o.d -o CMakeFiles/pirserver.dir/src/main.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver/src/main.cpp
 
 CMakeFiles/pirserver.dir/src/main.cpp.i: cmake_force
@@ -187,8 +201,9 @@ pirserver_OBJECTS = \
 "CMakeFiles/pirserver.dir/modules/http/Response.cpp.o" \
 "CMakeFiles/pirserver.dir/modules/http/Router.cpp.o" \
 "CMakeFiles/pirserver.dir/modules/http/Server.cpp.o" \
+"CMakeFiles/pirserver.dir/modules/http/Timer.cpp.o" \
+"CMakeFiles/pirserver.dir/modules/http/jsoncpp.cpp.o" \
 "CMakeFiles/pirserver.dir/modules/http/utils.cpp.o" \
-"CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.o" \
 "CMakeFiles/pirserver.dir/modules/lib/sqlite3.c.o" \
 "CMakeFiles/pirserver.dir/src/main.cpp.o"
 
@@ -199,13 +214,14 @@ pirserver: CMakeFiles/pirserver.dir/modules/http/Request.cpp.o
 pirserver: CMakeFiles/pirserver.dir/modules/http/Response.cpp.o
 pirserver: CMakeFiles/pirserver.dir/modules/http/Router.cpp.o
 pirserver: CMakeFiles/pirserver.dir/modules/http/Server.cpp.o
+pirserver: CMakeFiles/pirserver.dir/modules/http/Timer.cpp.o
+pirserver: CMakeFiles/pirserver.dir/modules/http/jsoncpp.cpp.o
 pirserver: CMakeFiles/pirserver.dir/modules/http/utils.cpp.o
-pirserver: CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.o
 pirserver: CMakeFiles/pirserver.dir/modules/lib/sqlite3.c.o
 pirserver: CMakeFiles/pirserver.dir/src/main.cpp.o
 pirserver: CMakeFiles/pirserver.dir/build.make
 pirserver: CMakeFiles/pirserver.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable pirserver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable pirserver"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/pirserver.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

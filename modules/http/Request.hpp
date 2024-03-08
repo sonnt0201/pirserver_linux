@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include "define.h"
+#include "config.h"
 #pragma once
 
 // HTTP Request class - contains read-only attributes and methods
@@ -54,6 +55,7 @@ public:
         Parse request body to JSON object
     */ 
     Json::Value toJson();
+    
     // return origin request in raw text
     std::string getText();
 

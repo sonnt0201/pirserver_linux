@@ -10,7 +10,6 @@
 
 #pragma once
 
-const std::string ROOT = "../";
 
 class Response {
     private:
@@ -30,8 +29,6 @@ class Response {
 
         void setContentType(std::string type);
 
-       
-
         void asHtmlFile(std::string fileName);
         // body content for response
         
@@ -45,10 +42,8 @@ class Response {
         // get full raw text of the response
         char* rawText() ;
 
-        
-        
 
-       
-        
-        
+        // 404 Page
+        void asDefault404();
+
 };

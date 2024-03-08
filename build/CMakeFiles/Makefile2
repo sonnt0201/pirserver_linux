@@ -82,12 +82,12 @@ clean: CMakeFiles/run.dir/clean
 CMakeFiles/pirserver.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target pirserver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target pirserver"
 .PHONY : CMakeFiles/pirserver.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/pirserver.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/pirserver.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles 0
 .PHONY : CMakeFiles/pirserver.dir/rule
@@ -108,12 +108,12 @@ CMakeFiles/pirserver.dir/clean:
 CMakeFiles/run.dir/all: CMakeFiles/pirserver.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles --progress-num=10 "Built target run"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles --progress-num=11 "Built target run"
 .PHONY : CMakeFiles/run.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/run.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles 11
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/run.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles 0
 .PHONY : CMakeFiles/run.dir/rule

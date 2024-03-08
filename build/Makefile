@@ -238,6 +238,54 @@ modules/http/Server.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/http/Server.cpp.s
 .PHONY : modules/http/Server.cpp.s
 
+modules/http/Timer.o: modules/http/Timer.cpp.o
+.PHONY : modules/http/Timer.o
+
+# target to build an object file
+modules/http/Timer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/http/Timer.cpp.o
+.PHONY : modules/http/Timer.cpp.o
+
+modules/http/Timer.i: modules/http/Timer.cpp.i
+.PHONY : modules/http/Timer.i
+
+# target to preprocess a source file
+modules/http/Timer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/http/Timer.cpp.i
+.PHONY : modules/http/Timer.cpp.i
+
+modules/http/Timer.s: modules/http/Timer.cpp.s
+.PHONY : modules/http/Timer.s
+
+# target to generate assembly for a file
+modules/http/Timer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/http/Timer.cpp.s
+.PHONY : modules/http/Timer.cpp.s
+
+modules/http/jsoncpp.o: modules/http/jsoncpp.cpp.o
+.PHONY : modules/http/jsoncpp.o
+
+# target to build an object file
+modules/http/jsoncpp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/http/jsoncpp.cpp.o
+.PHONY : modules/http/jsoncpp.cpp.o
+
+modules/http/jsoncpp.i: modules/http/jsoncpp.cpp.i
+.PHONY : modules/http/jsoncpp.i
+
+# target to preprocess a source file
+modules/http/jsoncpp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/http/jsoncpp.cpp.i
+.PHONY : modules/http/jsoncpp.cpp.i
+
+modules/http/jsoncpp.s: modules/http/jsoncpp.cpp.s
+.PHONY : modules/http/jsoncpp.s
+
+# target to generate assembly for a file
+modules/http/jsoncpp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/http/jsoncpp.cpp.s
+.PHONY : modules/http/jsoncpp.cpp.s
+
 modules/http/utils.o: modules/http/utils.cpp.o
 .PHONY : modules/http/utils.o
 
@@ -261,30 +309,6 @@ modules/http/utils.s: modules/http/utils.cpp.s
 modules/http/utils.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/http/utils.cpp.s
 .PHONY : modules/http/utils.cpp.s
-
-modules/lib/jsoncpp.o: modules/lib/jsoncpp.cpp.o
-.PHONY : modules/lib/jsoncpp.o
-
-# target to build an object file
-modules/lib/jsoncpp.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.o
-.PHONY : modules/lib/jsoncpp.cpp.o
-
-modules/lib/jsoncpp.i: modules/lib/jsoncpp.cpp.i
-.PHONY : modules/lib/jsoncpp.i
-
-# target to preprocess a source file
-modules/lib/jsoncpp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.i
-.PHONY : modules/lib/jsoncpp.cpp.i
-
-modules/lib/jsoncpp.s: modules/lib/jsoncpp.cpp.s
-.PHONY : modules/lib/jsoncpp.s
-
-# target to generate assembly for a file
-modules/lib/jsoncpp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.s
-.PHONY : modules/lib/jsoncpp.cpp.s
 
 modules/lib/sqlite3.o: modules/lib/sqlite3.c.o
 .PHONY : modules/lib/sqlite3.o
@@ -356,12 +380,15 @@ help:
 	@echo "... modules/http/Server.o"
 	@echo "... modules/http/Server.i"
 	@echo "... modules/http/Server.s"
+	@echo "... modules/http/Timer.o"
+	@echo "... modules/http/Timer.i"
+	@echo "... modules/http/Timer.s"
+	@echo "... modules/http/jsoncpp.o"
+	@echo "... modules/http/jsoncpp.i"
+	@echo "... modules/http/jsoncpp.s"
 	@echo "... modules/http/utils.o"
 	@echo "... modules/http/utils.i"
 	@echo "... modules/http/utils.s"
-	@echo "... modules/lib/jsoncpp.o"
-	@echo "... modules/lib/jsoncpp.i"
-	@echo "... modules/lib/jsoncpp.s"
 	@echo "... modules/lib/sqlite3.o"
 	@echo "... modules/lib/sqlite3.i"
 	@echo "... modules/lib/sqlite3.s"

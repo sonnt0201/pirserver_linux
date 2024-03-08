@@ -9,7 +9,7 @@
 #include <fstream>
 #include <algorithm>
 #include <functional>
-#include "../lib/json.h"
+#include "json.h"
 
 // HTTP Content types
 #define TEXT_HTML "text/html"
@@ -28,8 +28,7 @@
 // Header Keys
 #define HOST "Host"
 #define CONTENT_TYPE "Content-Type"
-
 typedef int SOCKET;
-
+#include "config.h"
 #pragma once
 

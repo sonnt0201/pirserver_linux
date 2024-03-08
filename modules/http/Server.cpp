@@ -97,16 +97,33 @@ void Server::onClientConnection(int clientSocket)
             // Check all invalid cases, if invalid, continue
             if (!endpointMatched(req, mw)) continue;
 
+            // TO-DO: Set a timer here to count handling time. 
+            
+
             hasMiddleware = true;
                 mw.handler(&req, &res, &next);
+
+            // TO-DO: After handling request and sending response, log result's infor in cout.
+            /**
+             * Result infor includes:
+             * - Method and Endpoint.
+             * - Time to handle.
+             * Example:
+             
+               ======================
+               GET /api/v1/example
+               Finish in 12 milliseconds.
+
+             * Look at how expressjs log content for more information.
+            */
+
             if (!next)
                 break;
         }
 
         if (!hasMiddleware)
         {
-            res.setStatusCode(400);
-            res.setPlainBody("404 Not Found.");
+            res.asDefault404();
         }
 
         // send to client
