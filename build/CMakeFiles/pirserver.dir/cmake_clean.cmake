@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/pirserver.dir/modules/http/Router.cpp.o.d"
   "CMakeFiles/pirserver.dir/modules/http/Server.cpp.o"
   "CMakeFiles/pirserver.dir/modules/http/Server.cpp.o.d"
+  "CMakeFiles/pirserver.dir/modules/http/utils.cpp.o"
+  "CMakeFiles/pirserver.dir/modules/http/utils.cpp.o.d"
   "CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.o"
   "CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.o.d"
   "CMakeFiles/pirserver.dir/modules/lib/sqlite3.c.o"

@@ -1114,6 +1114,9 @@ CMakeFiles/pirserver.dir/modules/http/Server.cpp.o: ../modules/http/Server.cpp \
   ../modules/http/Response.hpp \
   ../modules/http/Router.hpp
 
+CMakeFiles/pirserver.dir/modules/http/utils.cpp.o: ../modules/http/utils.cpp \
+  /usr/include/stdc-predef.h
+
 CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.o: ../modules/lib/jsoncpp.cpp \
   /usr/include/stdc-predef.h \
   ../modules/lib/json.h \
@@ -1917,6 +1920,8 @@ CMakeFiles/pirserver.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/assert.h:
 
 /usr/include/c++/11/cassert:
+
+../modules/http/utils.cpp:
 
 /usr/include/c++/11/bits/parse_numbers.h:
 

@@ -21,6 +21,11 @@
 },
 {
   "directory": "/home/sonnguyen/Desktop/repos/pirserver/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/pirserver.dir/modules/http/utils.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver/modules/http/utils.cpp",
+  "file": "/home/sonnguyen/Desktop/repos/pirserver/modules/http/utils.cpp"
+},
+{
+  "directory": "/home/sonnguyen/Desktop/repos/pirserver/build",
   "command": "/usr/bin/g++   -g -o CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver/modules/lib/jsoncpp.cpp",
   "file": "/home/sonnguyen/Desktop/repos/pirserver/modules/lib/jsoncpp.cpp"
 },

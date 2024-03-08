@@ -1118,6 +1118,10 @@ CMakeFiles/pirserver.dir/modules/http/Server.cpp.o
  /home/sonnguyen/Desktop/repos/pirserver/modules/http/Response.hpp
  /home/sonnguyen/Desktop/repos/pirserver/modules/http/Router.hpp
 
+CMakeFiles/pirserver.dir/modules/http/utils.cpp.o
+ /home/sonnguyen/Desktop/repos/pirserver/modules/http/utils.cpp
+ /usr/include/stdc-predef.h
+
 CMakeFiles/pirserver.dir/modules/lib/jsoncpp.cpp.o
  /home/sonnguyen/Desktop/repos/pirserver/modules/lib/jsoncpp.cpp
  /usr/include/stdc-predef.h

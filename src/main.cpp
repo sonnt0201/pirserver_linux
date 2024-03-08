@@ -20,5 +20,12 @@ int main()
         res->setHtmlBody("../web-views/index.html");
 
     });
+
+    app.post("/api/v1", [](Request *req, Response *res, bool *next) {
+        Json::Value json = req->toJson();
+        std::string type = req->headerValue("Content-Type");
+        std::cout<<json<<std::endl;
+
+    });
     app.run();
 }

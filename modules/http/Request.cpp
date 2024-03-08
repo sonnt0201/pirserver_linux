@@ -209,22 +209,22 @@ std::string Request::headerValue(std::string key){
     }
 
     // Move the position to the value of the parameter
-    paramPos += key.length() + 2; // Add 1 to skip the ': '
+    paramPos += key.length() + 2; // Add 2 to skip the ': '
 
     // Find the end position of the value
-    size_t valueEnd = header.find("\n", paramPos);
-    if (valueEnd == std::string::npos)
-        // If there is no '&' after the parameter, consider the value until the end of the string
-        valueEnd = header.find(" ", paramPos);
+    size_t valueEnd = std::min(
+        header.find("\n", paramPos),
+        header.find("\r\n", paramPos)
+    );
 
     if (valueEnd == std::string::npos)
-        valueEnd = header.find(";", paramPos);
-
-    if (valueEnd == std::string::npos)
-        valueEnd = header.length();
+        valueEnd = paramPos;
 
     // Extract the substring representing the value
     std::string value = header.substr(paramPos, valueEnd - paramPos);
+
+      value.erase(0, value.find_first_not_of(" \n\r\t"));
+    value.erase(value.find_last_not_of(" \n\r\t") + 1);
     // std::cout<<"queryVal::value: "<<value<<std::endl;
     return value;
 }
@@ -329,12 +329,21 @@ void Request::initBody()
 
 Json::Value Request::toJson(){
     Json::Value root;
+    std::string type = this->headerValue(CONTENT_TYPE);
+
+    // Trim leading and trailing whitespace from the content type
+  
+
+    // Convert content type to lowercase for case-insensitive comparison
+    std::transform(type.begin(), type.end(), type.begin(), ::tolower);
 
     // guard content type
-    if (this->headerValue(CONTENT_TYPE) != APPLICATION_JSON) {
-        std::cout<<"ERROR: Wrong content type to call Request::toJson. \n";
+    if (type != "application/json") {
+        std::cout << "ERROR: Wrong content type to call Request::toJson.\n";
+        std::cout << "*" << type << "aa" << std::endl;
         return root;
     }
+
 
     // Json::Value root;
     Json::Reader reader;

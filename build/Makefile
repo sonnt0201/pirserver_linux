@@ -238,6 +238,30 @@ modules/http/Server.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/http/Server.cpp.s
 .PHONY : modules/http/Server.cpp.s
 
+modules/http/utils.o: modules/http/utils.cpp.o
+.PHONY : modules/http/utils.o
+
+# target to build an object file
+modules/http/utils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/http/utils.cpp.o
+.PHONY : modules/http/utils.cpp.o
+
+modules/http/utils.i: modules/http/utils.cpp.i
+.PHONY : modules/http/utils.i
+
+# target to preprocess a source file
+modules/http/utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/http/utils.cpp.i
+.PHONY : modules/http/utils.cpp.i
+
+modules/http/utils.s: modules/http/utils.cpp.s
+.PHONY : modules/http/utils.s
+
+# target to generate assembly for a file
+modules/http/utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/http/utils.cpp.s
+.PHONY : modules/http/utils.cpp.s
+
 modules/lib/jsoncpp.o: modules/lib/jsoncpp.cpp.o
 .PHONY : modules/lib/jsoncpp.o
 
@@ -332,6 +356,9 @@ help:
 	@echo "... modules/http/Server.o"
 	@echo "... modules/http/Server.i"
 	@echo "... modules/http/Server.s"
+	@echo "... modules/http/utils.o"
+	@echo "... modules/http/utils.i"
+	@echo "... modules/http/utils.s"
 	@echo "... modules/lib/jsoncpp.o"
 	@echo "... modules/lib/jsoncpp.i"
 	@echo "... modules/lib/jsoncpp.s"
