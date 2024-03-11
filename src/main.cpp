@@ -1,20 +1,22 @@
 #include <iostream>
 #include "../modules/modules.h"
 
-#define PORT 8080
+#define PORT 8081
 
 int main()
-{
+ {
     Server app = Server(PORT);
 
-    app.get("*", [](Request *req, Response *res, bool *next)
+    app.get("api/example", [](Request *req, Response *res, bool *next)
             { 
                
-                res->asHtmlFile("../web-views/index.html");
-                std::string agent = req->headerValue("Content-Type");
-                std::cout<<agent<<std::endl;
+                Json::Value root;
+                root["data"] = "hello world";
+
+                res->asJson(root);
             });
 
    
+
     app.run();
 }

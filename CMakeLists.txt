@@ -9,7 +9,7 @@ file(GLOB_RECURSE SOURCES "src/*.cpp" "src/*.c" "modules/*.cpp" "modules/*.c")
  # Include directory for libpq headers
 
 add_executable(pirserver 
-pirserver ${SOURCES}
+${SOURCES}
 )
 
 target_link_libraries(pirserver PUBLIC)  

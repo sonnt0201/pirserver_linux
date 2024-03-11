@@ -12,8 +12,8 @@ typedef std::function<void(Request* req, Response* res ,bool* next)> HANDLER;
     HANDLER is a callback function taking over that handling.
 */
 struct MiddleWare {
-    int method;
-    std::string endpoint;
+    int method = -1;
+    std::string endpoint = "";
     HANDLER handler;
 };
 

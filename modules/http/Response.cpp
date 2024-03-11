@@ -103,9 +103,13 @@ void Response::asHtmlFile(std::string fileName)
     }
     else
     {
-        this->asDefault404();
-        // If the file couldn't be opened, set an appropriate message in the body
+              
         std::cout<<"Error: Unable to open file "<<fullPath<<std::endl;
+        this->_header["Content-Type"] = TEXT_HTML;
+        this->_statusCode = "404 Not Found";
+        this->_body = "Not Found";
+        // If the file couldn't be opened, set an appropriate message in the body
+     
         
     }
 }
@@ -147,8 +151,35 @@ void Response::clearBody() {
 }
 
 void Response::asDefault404() {
+    // Guard
     this->_header["Content-Type"] = TEXT_HTML;
-    this->asHtmlFile(DEFAULT_404);
+    // Assuming htmlPath is the root directory followed by the fileName
+    std::string fullPath = DEFAULT_404;
+
+    // Open the file
+    std::ifstream file(fullPath);
+
+    if (file.is_open())
+    {
+        // Read the content into a string
+        std::string content((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
+
+        // Assign the content to the body member variable
+        this->_body = content;
+        // std::cout<<content<<std::endl;
+        // Close the file
+        file.close();
+    }
+    else
+    {
+        std::cout<<"Error: Unable to open file "<<fullPath<<std::endl;
+        this->_header["Content-Type"] = TEXT_HTML;
+        this->_statusCode = "404 Not Found";
+        this->_body = "Not Found";
+        // If the file couldn't be opened, set an appropriate message in the body
+        
+    }
+    
  }
 
 
