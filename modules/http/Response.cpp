@@ -23,6 +23,15 @@ void Response::setStatusCode(int status){
     case 400: 
         this->_statusCode = "400 Bad Request";
         break;
+    case 301:
+        this->_statusCode = "301 Moved Permanently";
+        break;
+    case 302:
+        this->_statusCode = "302 Found";
+        break;
+    case 303:
+        this->_statusCode = "303 See Other";
+        break;
     default:
         this->_statusCode = "500 Internal Server Error";
         break;
@@ -65,16 +74,18 @@ void Response::setContentType(std::string type){
     this->_header["Content-Type"] = type;
 };
 
+void Response::asHtml(std::string text) {
+    // set content type
+    this->_header["Content-Type"] = TEXT_HTML;
+    this->_body = text;
+};
+
 void Response::asHtmlFile(std::string fileName)
 {
     // Guard
-    if (this->_header["Content-Type"] != TEXT_HTML) {
-        std::cout<<"Wrong Content-Type to set HTML content.\n";
-        return;
-    }
-
+    this->_header["Content-Type"] = TEXT_HTML;
     // Assuming htmlPath is the root directory followed by the fileName
-    std::string fullPath = ROOT + fileName;
+    std::string fullPath = fileName;
 
     // Open the file
     std::ifstream file(fullPath);
@@ -92,17 +103,17 @@ void Response::asHtmlFile(std::string fileName)
     }
     else
     {
+        this->asDefault404();
         // If the file couldn't be opened, set an appropriate message in the body
-        this->_body = "Error: Unable to open file " + fullPath;
+        std::cout<<"Error: Unable to open file "<<fullPath<<std::endl;
+        
     }
 }
 
-void Response::setJsonBody(Json::Value root) {
-    // Guard the Content-Type
-    if (this->_header["Content-Type"] != APPLICATION_JSON) {
-        std::cout<<"Wrong Content-Type to set JSON content.\n";
-        return;
-    }
+
+void Response::asJson(Json::Value root) {
+    // Set the Content-Type
+    this->_header["Content-Type"] = APPLICATION_JSON;
     // Cast Json::Value to std::string
     Json::FastWriter fastWriter;
     std::string output = fastWriter.write(root);
@@ -110,16 +121,13 @@ void Response::setJsonBody(Json::Value root) {
     this->_body = output;
 }
 
-void Response::setPlainBody(std::string text){
+void Response::asPlainText(std::string text){
     this->_body = text;
 }
 
-void Response::setCsvBody(std::vector<std::string> rows)  {
-    // Guard the Content-Type
-    if (this->_header["Content-Type"]!= TEXT_CSV) {
-        std::cout<<"Wrong Content-Type to set CSV content.\n";
-        return;
-    }
+void Response::asCsv(std::vector<std::string> rows)  {
+    // set the Content-Type
+    this->_header["Content-Type"]!= TEXT_CSV;
     this->_body = "";
     this->_header["Content-Disposition"] = "attachment; filename=pirdata.csv";
 
@@ -130,8 +138,22 @@ void Response::setCsvBody(std::vector<std::string> rows)  {
     
  }
 
+void Response::write(std::string content) {
+    this->_body = _body + content;
+}
 
- void Response::asDefault404() {
+void Response::clearBody() {
+    this->_body.clear();
+}
+
+void Response::asDefault404() {
     this->_header["Content-Type"] = TEXT_HTML;
-    this->asHtmlFile("web-views/404.html");
+    this->asHtmlFile(DEFAULT_404);
  }
+
+
+void Response::redirect(std::string link) {
+    this->setStatusCode(302);
+    this->_header[LOCATION] = link;
+
+}

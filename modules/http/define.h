@@ -19,6 +19,7 @@
 #define TEXT_CSV "text/csv"
 
 // HTTP Request Methods
+
 #define GET 0
 #define POST 1
 #define PUT 2
@@ -27,8 +28,13 @@
 
 // Header Keys
 #define HOST "Host"
+#define LOCATION "Location"
 #define CONTENT_TYPE "Content-Type"
+
+// type def 
 typedef int SOCKET;
+
+// other resources
 #include "config.h"
 #pragma once
 
