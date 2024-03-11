@@ -33,6 +33,7 @@ public:
     // METHOD of HTTP Request (GET | POST | PUT | DELETE)
     int method();
 
+    std::string methodAsString();
     // Path of the Request
     std::string path();
 

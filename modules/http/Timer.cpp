@@ -7,7 +7,7 @@ Timer::Timer() {
 }
 
 void Timer::start() {
-    if (!_isStart) {
+    if (_isStart) {
         std::cout<<"Error: Failed to start timer.\n Timer is already running.\n";
         return ;
     }
@@ -48,7 +48,7 @@ int Timer::getDuration() {
    
 }
 
-int Timer::now(){
-    // Mừng
-    // TO-DO: Implement now() using ctime to get current timestamp in second.
+char* Timer::now(){
+    time_t now = time(NULL);
+    return ctime(&now);
 }

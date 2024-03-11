@@ -1,7 +1,7 @@
 
 #include <chrono>
 #include <iostream>
-#pragma once;
+#pragma once
 /*
     Timer give an easy way to count the time of a running process.
     Timer give results of time in milliseconds.
@@ -27,5 +27,5 @@ public:
     int getDuration();
 
     // Get current timestamps in seconds
-    int now();
+    char* now();
 };

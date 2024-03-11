@@ -31,6 +31,26 @@ int Request::method()
     return INVALID_METHOD;
 }
 
+std::string Request::methodAsString()
+{
+    switch (this->method())
+    {
+    case GET:
+        return "GET";
+        break;
+    case POST:
+        return "POST";
+    case PUT:
+        return "PUT";
+    case DEL:
+        return "DELETE";
+
+    default:
+        return "unknown";
+        break;
+    }
+}
+
 void Request::initHeader()
 {
     std::string raw = this->rawText;
@@ -66,8 +86,9 @@ std::string Request::path()
 std::string Request::value(std::string param)
 {
     // guard content type
-    if (this->headerValue(CONTENT_TYPE) != APPLICATION_URLENCODED) {
-        std::cout<<"Error: Wrong request content type to call Request::value. \n";
+    if (this->headerValue(CONTENT_TYPE) != APPLICATION_URLENCODED)
+    {
+        std::cout << "Error: Wrong request content type to call Request::value. \n";
         return "";
     }
     std::string request = this->rawText;
@@ -121,9 +142,8 @@ std::vector<std::string> Request::allQueryKeys()
         (end = query.find("=", begin)) < std::string::npos)
     {
 
-       
         token = query.substr(begin + 1, end - begin - 1);
-       
+
         keys.push_back(token);
         begin = query.find("&", end + 1);
     };
@@ -144,7 +164,7 @@ std::string Request::queryValue(std::string key)
     // If the parameter is not found, return an empty string
     if (paramPos == std::string::npos)
     {
-        std::cout<<"queryVal::notfound?: "<<std::endl;
+        std::cout << "queryVal::notfound?: " << std::endl;
         return "";
     }
 
@@ -169,10 +189,12 @@ std::string Request::queryValue(std::string key)
     return value;
 }
 
-std::vector<std::string> Request::allHeaderKeys() {
-    std::cout<<this->_header<<std::endl<<"\n";
-     std::string header = this->_header;
-    
+std::vector<std::string> Request::allHeaderKeys()
+{
+    std::cout << this->_header << std::endl
+              << "\n";
+    std::string header = this->_header;
+
     std::vector<std::string> keys = {};
     std::string token = "";
 
@@ -183,9 +205,8 @@ std::vector<std::string> Request::allHeaderKeys() {
         (end = header.find(": ", begin)) < std::string::npos)
     {
 
-       
         token = header.substr(begin + 1, end - begin - 1);
-       
+
         keys.push_back(token);
         // std::cout<<"request::header keys: \n";
         // std::cout<<token<<"\n";
@@ -195,7 +216,8 @@ std::vector<std::string> Request::allHeaderKeys() {
     return keys;
 }
 
-std::string Request::headerValue(std::string key){
+std::string Request::headerValue(std::string key)
+{
     std::string header = this->_header;
     // std::cout<<header<<"\n\n";
     // Find the position of the parameter in the request
@@ -214,8 +236,7 @@ std::string Request::headerValue(std::string key){
     // Find the end position of the value
     size_t valueEnd = std::min(
         header.find("\n", paramPos),
-        header.find("\r\n", paramPos)
-    );
+        header.find("\r\n", paramPos));
 
     if (valueEnd == std::string::npos)
         valueEnd = paramPos;
@@ -223,7 +244,7 @@ std::string Request::headerValue(std::string key){
     // Extract the substring representing the value
     std::string value = header.substr(paramPos, valueEnd - paramPos);
 
-      value.erase(0, value.find_first_not_of(" \n\r\t"));
+    value.erase(0, value.find_first_not_of(" \n\r\t"));
     value.erase(value.find_last_not_of(" \n\r\t") + 1);
     // std::cout<<"queryVal::value: "<<value<<std::endl;
     return value;
@@ -231,12 +252,13 @@ std::string Request::headerValue(std::string key){
 
 std::vector<std::string> Request::params()
 {
-    
-    std::vector<std::string> paramNames  = {};
+
+    std::vector<std::string> paramNames = {};
 
     // guard content type
-    if (this->headerValue(CONTENT_TYPE) != APPLICATION_URLENCODED) {
-        std::cout<<"Error: Wrong request content type to call Request::params. \n";
+    if (this->headerValue(CONTENT_TYPE) != APPLICATION_URLENCODED)
+    {
+        std::cout << "Error: Wrong request content type to call Request::params. \n";
         return paramNames;
     }
 
@@ -327,29 +349,30 @@ void Request::initBody()
     return;
 };
 
-Json::Value Request::toJson(){
+Json::Value Request::toJson()
+{
     Json::Value root;
     std::string type = this->headerValue(CONTENT_TYPE);
 
     // Trim leading and trailing whitespace from the content type
-  
 
     // Convert content type to lowercase for case-insensitive comparison
     std::transform(type.begin(), type.end(), type.begin(), ::tolower);
 
     // guard content type
-    if (type != "application/json") {
+    if (type != "application/json")
+    {
         std::cout << "ERROR: Wrong content type to call Request::toJson.\n";
         std::cout << "*" << type << "aa" << std::endl;
         return root;
     }
 
-
     // Json::Value root;
     Json::Reader reader;
     bool parsingSuccessful = reader.parse(this->_body, root);
-    if (!parsingSuccessful) {
-        std::cout<<"Error: Invalid JSON format. \n";
+    if (!parsingSuccessful)
+    {
+        std::cout << "Error: Invalid JSON format. \n";
         return NULL;
     }
 

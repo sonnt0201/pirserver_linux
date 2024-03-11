@@ -1057,6 +1057,7 @@ CMakeFiles/pirserver.dir/modules/http/Server.cpp.o: ../modules/http/Server.cpp \
   /usr/include/c++/11/limits \
   /usr/include/c++/11/ctime \
   /usr/include/c++/11/bits/parse_numbers.h \
+  ../modules/http/Timer.hpp \
   ../modules/http/Request.hpp \
   ../modules/http/define.h \
   /usr/include/c++/11/vector \
@@ -1959,6 +1960,7 @@ CMakeFiles/pirserver.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/c++/11/limits \
   /usr/include/c++/11/ctime \
   /usr/include/c++/11/bits/parse_numbers.h \
+  ../modules/http/Timer.hpp \
   ../modules/http/Request.hpp \
   ../modules/http/define.h \
   /usr/include/c++/11/vector \

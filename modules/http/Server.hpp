@@ -5,6 +5,7 @@
 #include <sys/socket.h>
 #include <unistd.h>
 #include <thread>
+#include "Timer.hpp"
 #include "Request.hpp"
 #include "Response.hpp"
 #include "Router.hpp"
@@ -21,7 +22,7 @@ class Server {
     int serverSocket;
     void onClientConnection(int clientSocket);
     Router router = Router();
-    
+   
     public:
     Server(int port);
     void run();

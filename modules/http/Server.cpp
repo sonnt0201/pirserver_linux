@@ -87,6 +87,8 @@ void Server::onClientConnection(int clientSocket)
     while (
         (valRead = read(clientSocket, request, sizeof(request))) > 0)
     {
+        Timer timer = Timer();
+        timer.start();
         Request req = Request(request);
         Response res = Response(200, TEXT_PLAIN);
         bool hasMiddleware = false;
@@ -103,19 +105,7 @@ void Server::onClientConnection(int clientSocket)
             hasMiddleware = true;
                 mw.handler(&req, &res, &next);
 
-            // TO-DO: After handling request and sending response, log result's infor in cout.
-            /**
-             * Result infor includes:
-             * - Method and Endpoint.
-             * - Time to handle.
-             * Example:
-             
-               ======================
-               GET /api/v1/example
-               Finish in 12 milliseconds.
-
-             * Look for how expressjs log content for more information.
-            */
+          
 
             if (!next)
                 break;
@@ -129,6 +119,14 @@ void Server::onClientConnection(int clientSocket)
         // send to client
         char *text = res.rawText();
         send(clientSocket, text, strlen(text), 0);
+
+
+        // stop timer
+        timer.stop();
+        std::cout<<"______________________________\n"
+        <<timer.now()
+        << req.methodAsString()<<" "<<req.path()
+        << "\nFinished handling request in: "<<timer.getDuration()<<" milliseconds\n";
 
         close(clientSocket);
     }

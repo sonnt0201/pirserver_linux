@@ -182,6 +182,7 @@ CMakeFiles/pirserver.dir/modules/http/Server.cpp.o: \
  /usr/include/c++/11/bits/this_thread_sleep.h /usr/include/c++/11/chrono \
  /usr/include/c++/11/ratio /usr/include/c++/11/limits \
  /usr/include/c++/11/ctime /usr/include/c++/11/bits/parse_numbers.h \
+ /home/sonnguyen/Desktop/repos/pirserver/modules/http/Timer.hpp \
  /home/sonnguyen/Desktop/repos/pirserver/modules/http/Request.hpp \
  /home/sonnguyen/Desktop/repos/pirserver/modules/http/define.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_uninitialized.h \
