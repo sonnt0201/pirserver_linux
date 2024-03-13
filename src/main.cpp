@@ -2,7 +2,6 @@
 #include "../modules/modules.h"
 
 #define PORT 8081
-
 int main()
  {
     Server app = Server(PORT);
@@ -14,9 +13,7 @@ int main()
                 root["data"] = "hello world";
 
                 res->asJson(root);
-            });
-
-   
+            }); 
 
     app.run();
 }
