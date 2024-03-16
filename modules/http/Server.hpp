@@ -21,7 +21,7 @@ class Server {
     int port;
     int serverSocket;
     void onClientConnection(int clientSocket);
-    Router router = Router();
+    Router _router = Router();
    
     public:
     Server(int port);

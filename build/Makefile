@@ -310,29 +310,221 @@ modules/http/utils.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/http/utils.cpp.s
 .PHONY : modules/http/utils.cpp.s
 
-modules/lib/sqlite3.o: modules/lib/sqlite3.c.o
-.PHONY : modules/lib/sqlite3.o
+modules/sqlite/sqlite3.o: modules/sqlite/sqlite3.c.o
+.PHONY : modules/sqlite/sqlite3.o
 
 # target to build an object file
-modules/lib/sqlite3.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/lib/sqlite3.c.o
-.PHONY : modules/lib/sqlite3.c.o
+modules/sqlite/sqlite3.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/sqlite/sqlite3.c.o
+.PHONY : modules/sqlite/sqlite3.c.o
 
-modules/lib/sqlite3.i: modules/lib/sqlite3.c.i
-.PHONY : modules/lib/sqlite3.i
+modules/sqlite/sqlite3.i: modules/sqlite/sqlite3.c.i
+.PHONY : modules/sqlite/sqlite3.i
 
 # target to preprocess a source file
-modules/lib/sqlite3.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/lib/sqlite3.c.i
-.PHONY : modules/lib/sqlite3.c.i
+modules/sqlite/sqlite3.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/sqlite/sqlite3.c.i
+.PHONY : modules/sqlite/sqlite3.c.i
 
-modules/lib/sqlite3.s: modules/lib/sqlite3.c.s
-.PHONY : modules/lib/sqlite3.s
+modules/sqlite/sqlite3.s: modules/sqlite/sqlite3.c.s
+.PHONY : modules/sqlite/sqlite3.s
 
 # target to generate assembly for a file
-modules/lib/sqlite3.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/lib/sqlite3.c.s
-.PHONY : modules/lib/sqlite3.c.s
+modules/sqlite/sqlite3.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/modules/sqlite/sqlite3.c.s
+.PHONY : modules/sqlite/sqlite3.c.s
+
+src/controllers/api_example.o: src/controllers/api_example.cpp.o
+.PHONY : src/controllers/api_example.o
+
+# target to build an object file
+src/controllers/api_example.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/api_example.cpp.o
+.PHONY : src/controllers/api_example.cpp.o
+
+src/controllers/api_example.i: src/controllers/api_example.cpp.i
+.PHONY : src/controllers/api_example.i
+
+# target to preprocess a source file
+src/controllers/api_example.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/api_example.cpp.i
+.PHONY : src/controllers/api_example.cpp.i
+
+src/controllers/api_example.s: src/controllers/api_example.cpp.s
+.PHONY : src/controllers/api_example.s
+
+# target to generate assembly for a file
+src/controllers/api_example.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/api_example.cpp.s
+.PHONY : src/controllers/api_example.cpp.s
+
+src/controllers/createGroup.o: src/controllers/createGroup.cpp.o
+.PHONY : src/controllers/createGroup.o
+
+# target to build an object file
+src/controllers/createGroup.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/createGroup.cpp.o
+.PHONY : src/controllers/createGroup.cpp.o
+
+src/controllers/createGroup.i: src/controllers/createGroup.cpp.i
+.PHONY : src/controllers/createGroup.i
+
+# target to preprocess a source file
+src/controllers/createGroup.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/createGroup.cpp.i
+.PHONY : src/controllers/createGroup.cpp.i
+
+src/controllers/createGroup.s: src/controllers/createGroup.cpp.s
+.PHONY : src/controllers/createGroup.s
+
+# target to generate assembly for a file
+src/controllers/createGroup.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/createGroup.cpp.s
+.PHONY : src/controllers/createGroup.cpp.s
+
+src/controllers/createPir.o: src/controllers/createPir.cpp.o
+.PHONY : src/controllers/createPir.o
+
+# target to build an object file
+src/controllers/createPir.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/createPir.cpp.o
+.PHONY : src/controllers/createPir.cpp.o
+
+src/controllers/createPir.i: src/controllers/createPir.cpp.i
+.PHONY : src/controllers/createPir.i
+
+# target to preprocess a source file
+src/controllers/createPir.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/createPir.cpp.i
+.PHONY : src/controllers/createPir.cpp.i
+
+src/controllers/createPir.s: src/controllers/createPir.cpp.s
+.PHONY : src/controllers/createPir.s
+
+# target to generate assembly for a file
+src/controllers/createPir.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/createPir.cpp.s
+.PHONY : src/controllers/createPir.cpp.s
+
+src/controllers/createRecord.o: src/controllers/createRecord.cpp.o
+.PHONY : src/controllers/createRecord.o
+
+# target to build an object file
+src/controllers/createRecord.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/createRecord.cpp.o
+.PHONY : src/controllers/createRecord.cpp.o
+
+src/controllers/createRecord.i: src/controllers/createRecord.cpp.i
+.PHONY : src/controllers/createRecord.i
+
+# target to preprocess a source file
+src/controllers/createRecord.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/createRecord.cpp.i
+.PHONY : src/controllers/createRecord.cpp.i
+
+src/controllers/createRecord.s: src/controllers/createRecord.cpp.s
+.PHONY : src/controllers/createRecord.s
+
+# target to generate assembly for a file
+src/controllers/createRecord.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/createRecord.cpp.s
+.PHONY : src/controllers/createRecord.cpp.s
+
+src/controllers/home.o: src/controllers/home.cpp.o
+.PHONY : src/controllers/home.o
+
+# target to build an object file
+src/controllers/home.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/home.cpp.o
+.PHONY : src/controllers/home.cpp.o
+
+src/controllers/home.i: src/controllers/home.cpp.i
+.PHONY : src/controllers/home.i
+
+# target to preprocess a source file
+src/controllers/home.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/home.cpp.i
+.PHONY : src/controllers/home.cpp.i
+
+src/controllers/home.s: src/controllers/home.cpp.s
+.PHONY : src/controllers/home.s
+
+# target to generate assembly for a file
+src/controllers/home.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/home.cpp.s
+.PHONY : src/controllers/home.cpp.s
+
+src/controllers/invalidUser.o: src/controllers/invalidUser.cpp.o
+.PHONY : src/controllers/invalidUser.o
+
+# target to build an object file
+src/controllers/invalidUser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/invalidUser.cpp.o
+.PHONY : src/controllers/invalidUser.cpp.o
+
+src/controllers/invalidUser.i: src/controllers/invalidUser.cpp.i
+.PHONY : src/controllers/invalidUser.i
+
+# target to preprocess a source file
+src/controllers/invalidUser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/invalidUser.cpp.i
+.PHONY : src/controllers/invalidUser.cpp.i
+
+src/controllers/invalidUser.s: src/controllers/invalidUser.cpp.s
+.PHONY : src/controllers/invalidUser.s
+
+# target to generate assembly for a file
+src/controllers/invalidUser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/invalidUser.cpp.s
+.PHONY : src/controllers/invalidUser.cpp.s
+
+src/controllers/randomuuid.o: src/controllers/randomuuid.cpp.o
+.PHONY : src/controllers/randomuuid.o
+
+# target to build an object file
+src/controllers/randomuuid.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/randomuuid.cpp.o
+.PHONY : src/controllers/randomuuid.cpp.o
+
+src/controllers/randomuuid.i: src/controllers/randomuuid.cpp.i
+.PHONY : src/controllers/randomuuid.i
+
+# target to preprocess a source file
+src/controllers/randomuuid.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/randomuuid.cpp.i
+.PHONY : src/controllers/randomuuid.cpp.i
+
+src/controllers/randomuuid.s: src/controllers/randomuuid.cpp.s
+.PHONY : src/controllers/randomuuid.s
+
+# target to generate assembly for a file
+src/controllers/randomuuid.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/randomuuid.cpp.s
+.PHONY : src/controllers/randomuuid.cpp.s
+
+src/controllers/validUser.o: src/controllers/validUser.cpp.o
+.PHONY : src/controllers/validUser.o
+
+# target to build an object file
+src/controllers/validUser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/validUser.cpp.o
+.PHONY : src/controllers/validUser.cpp.o
+
+src/controllers/validUser.i: src/controllers/validUser.cpp.i
+.PHONY : src/controllers/validUser.i
+
+# target to preprocess a source file
+src/controllers/validUser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/validUser.cpp.i
+.PHONY : src/controllers/validUser.cpp.i
+
+src/controllers/validUser.s: src/controllers/validUser.cpp.s
+.PHONY : src/controllers/validUser.s
+
+# target to generate assembly for a file
+src/controllers/validUser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/validUser.cpp.s
+.PHONY : src/controllers/validUser.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -357,6 +549,30 @@ src/main.s: src/main.cpp.s
 src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/models/PIR_ORM.o: src/models/PIR_ORM.cpp.o
+.PHONY : src/models/PIR_ORM.o
+
+# target to build an object file
+src/models/PIR_ORM.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/models/PIR_ORM.cpp.o
+.PHONY : src/models/PIR_ORM.cpp.o
+
+src/models/PIR_ORM.i: src/models/PIR_ORM.cpp.i
+.PHONY : src/models/PIR_ORM.i
+
+# target to preprocess a source file
+src/models/PIR_ORM.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/models/PIR_ORM.cpp.i
+.PHONY : src/models/PIR_ORM.cpp.i
+
+src/models/PIR_ORM.s: src/models/PIR_ORM.cpp.s
+.PHONY : src/models/PIR_ORM.s
+
+# target to generate assembly for a file
+src/models/PIR_ORM.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/models/PIR_ORM.cpp.s
+.PHONY : src/models/PIR_ORM.cpp.s
 
 # Help Target
 help:
@@ -389,12 +605,39 @@ help:
 	@echo "... modules/http/utils.o"
 	@echo "... modules/http/utils.i"
 	@echo "... modules/http/utils.s"
-	@echo "... modules/lib/sqlite3.o"
-	@echo "... modules/lib/sqlite3.i"
-	@echo "... modules/lib/sqlite3.s"
+	@echo "... modules/sqlite/sqlite3.o"
+	@echo "... modules/sqlite/sqlite3.i"
+	@echo "... modules/sqlite/sqlite3.s"
+	@echo "... src/controllers/api_example.o"
+	@echo "... src/controllers/api_example.i"
+	@echo "... src/controllers/api_example.s"
+	@echo "... src/controllers/createGroup.o"
+	@echo "... src/controllers/createGroup.i"
+	@echo "... src/controllers/createGroup.s"
+	@echo "... src/controllers/createPir.o"
+	@echo "... src/controllers/createPir.i"
+	@echo "... src/controllers/createPir.s"
+	@echo "... src/controllers/createRecord.o"
+	@echo "... src/controllers/createRecord.i"
+	@echo "... src/controllers/createRecord.s"
+	@echo "... src/controllers/home.o"
+	@echo "... src/controllers/home.i"
+	@echo "... src/controllers/home.s"
+	@echo "... src/controllers/invalidUser.o"
+	@echo "... src/controllers/invalidUser.i"
+	@echo "... src/controllers/invalidUser.s"
+	@echo "... src/controllers/randomuuid.o"
+	@echo "... src/controllers/randomuuid.i"
+	@echo "... src/controllers/randomuuid.s"
+	@echo "... src/controllers/validUser.o"
+	@echo "... src/controllers/validUser.i"
+	@echo "... src/controllers/validUser.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/models/PIR_ORM.o"
+	@echo "... src/models/PIR_ORM.i"
+	@echo "... src/models/PIR_ORM.s"
 .PHONY : help
 
 

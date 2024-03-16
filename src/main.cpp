@@ -1,19 +1,41 @@
 #include <iostream>
-#include "../modules/modules.h"
+#include "../modules/export.h"
+#include "config.h"
+#include "controllers/export.h"
 
-#define PORT 8081
+extern HANDLER validUser,
+    createGroup,
+    home,
+    api_example,
+    ramdomuuid,
+    createGroup,
+    createPir,
+    createRecord;
+
 int main()
- {
+{
     Server app = Server(PORT);
 
-    app.get("api/example", [](Request *req, Response *res, bool *next)
-            { 
-               
-                Json::Value root;
-                root["data"] = "hello world";
+    Router route = Router();
 
-                res->asJson(root);
-            }); 
+    // map all routes
+    route.get("/", home);
+    route.get("/api/example", api_example);
+    route.get("/api/random_uuid", ramdomuuid);
+    //    route.get("/invalid-user", )
+
+    route.post("/api/user", validUser);
+    route.post("api/create-group", createGroup);
+    route.post("api/create-pir", createPir);
+    route.post("api/create-record", createRecord);
+
+
+
+
+
+    std::cout << "Router initialized." << std::endl;
+
+    app.use(route);
 
     app.run();
 }

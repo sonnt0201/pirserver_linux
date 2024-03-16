@@ -15,6 +15,7 @@ ${SOURCES}
 target_link_libraries(pirserver PUBLIC)  
 
 add_custom_target(run 
+    COMMAND cmake ..
     COMMAND make
     COMMAND pirserver
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}

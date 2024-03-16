@@ -173,7 +173,7 @@ void Response::asDefault404() {
     else
     {
         std::cout<<"Error: Unable to open file "<<fullPath<<std::endl;
-        this->_header["Content-Type"] = TEXT_HTML;
+        this->_header["Content-Type"] = TEXT_PLAIN;
         this->_statusCode = "404 Not Found";
         this->_body = "Not Found";
         // If the file couldn't be opened, set an appropriate message in the body

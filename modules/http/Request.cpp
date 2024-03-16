@@ -373,7 +373,7 @@ Json::Value Request::toJson()
     if (!parsingSuccessful)
     {
         std::cout << "Error: Invalid JSON format. \n";
-        return NULL;
+        return root;
     }
 
     return root;

@@ -59,6 +59,12 @@
         "set": "cpp",
         "iomanip": "cpp",
         "sstream": "cpp",
-        "cinttypes": "cpp"
+        "cinttypes": "cpp",
+        "optional": "cpp",
+        "span": "cpp",
+        "strstream": "c",
+        "complex": "c",
+        "unordered_set": "c",
+        "cfenv": "c"
     }
 }

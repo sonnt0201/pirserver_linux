@@ -31,7 +31,7 @@ Server::Server(int port)
 
 void Server::use(Router router)
 {
-    this->router = router;
+    this->_router = router;
 };
 
 void Server::run()
@@ -94,7 +94,7 @@ void Server::onClientConnection(int clientSocket)
         bool hasMiddleware = false;
         bool next = false;
 
-        for (MiddleWare mw : this->router.getMiddleWares())
+        for (MiddleWare mw : this->_router.getMiddleWares())
         {
             // Check all invalid cases, if invalid, continue
             if (!endpointMatched(req, mw)) continue;
@@ -133,16 +133,16 @@ void Server::onClientConnection(int clientSocket)
 }
 
 void Server::get( std::string endpoint, HANDLER handler) {
-    this->router.get(endpoint, handler);
+    this->_router.get(endpoint, handler);
 };
 void Server::post(std::string endpoint, HANDLER handler) {
-    this->router.post(endpoint, handler);
+    this->_router.post(endpoint, handler);
 };
 void Server::put(std::string endpoint, HANDLER handler) {
-   this->router.put(endpoint, handler);
+   this->_router.put(endpoint, handler);
 };
 void Server::del(std::string endpoint, HANDLER handler) {
-  this->router.del(endpoint, handler);
+  this->_router.del(endpoint, handler);
 };
 
 bool endpointMatched(Request &req, MiddleWare &mw) {
