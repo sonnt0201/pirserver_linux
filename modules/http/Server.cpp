@@ -1,6 +1,6 @@
 #include "Server.hpp"
 
-bool endpointMatched(Request& req,MiddleWare& mw);
+bool endpointMatched(Request &req, MiddleWare &mw);
 
 Server::Server(int port)
 {
@@ -56,7 +56,7 @@ void Server::run()
         exit(EXIT_FAILURE);
     }
 
-    std::cout << "Server is listening on port: " << this->port << std::endl;
+    std::cout << "Server is listening on port: " << this->port << std::endl<<"\n";
 
     int valRead;
     char request[8000] = "";
@@ -97,18 +97,30 @@ void Server::onClientConnection(int clientSocket)
         for (MiddleWare mw : this->_router.getMiddleWares())
         {
             // Check all invalid cases, if invalid, continue
-            if (!endpointMatched(req, mw)) continue;
+            if (!endpointMatched(req, mw))
+                continue;
 
-            // TO-DO: Set a timer here to count handling time. 
-            
+            // TO-DO: Set a timer here to count handling time.
 
             hasMiddleware = true;
+
+            try
+            {
                 mw.handler(&req, &res, &next);
-
-          
-
-            if (!next)
+                if (!next)
                 break;
+            }
+            catch (const std::exception &e)
+            {
+                std::cerr << "Error: Exception Type: " << typeid(e).name() << std::endl;
+                std::cerr << "Exception Message: " << e.what() << std::endl;
+                std::cerr << "Bad Request. \n";
+               
+                res.asDefaultBadRequest();
+            }
+
+              
+          
         }
 
         if (!hasMiddleware)
@@ -120,45 +132,54 @@ void Server::onClientConnection(int clientSocket)
         char *text = res.rawText();
         send(clientSocket, text, strlen(text), 0);
 
-
         // stop timer
         timer.stop();
-        std::cout<<"______________________________\n"
-        <<timer.now()
-        << req.methodAsString()<<" "<<req.path()
-        << "\nFinished handling request in: "<<timer.getDuration()<<" milliseconds\n";
+        std::cout 
+                  << timer.now()
+                  << req.methodAsString() << " " << req.path()
+                  << "\nFinished handling request in: " << timer.getDuration() << " milliseconds\n"
+                  << "_____________________________________\n\n";
 
         close(clientSocket);
     }
 }
 
-void Server::get( std::string endpoint, HANDLER handler) {
+void Server::get(std::string endpoint, HANDLER handler)
+{
     this->_router.get(endpoint, handler);
 };
-void Server::post(std::string endpoint, HANDLER handler) {
+void Server::post(std::string endpoint, HANDLER handler)
+{
     this->_router.post(endpoint, handler);
 };
-void Server::put(std::string endpoint, HANDLER handler) {
-   this->_router.put(endpoint, handler);
+void Server::put(std::string endpoint, HANDLER handler)
+{
+    this->_router.put(endpoint, handler);
 };
-void Server::del(std::string endpoint, HANDLER handler) {
-  this->_router.del(endpoint, handler);
+void Server::del(std::string endpoint, HANDLER handler)
+{
+    this->_router.del(endpoint, handler);
 };
 
-bool endpointMatched(Request &req, MiddleWare &mw) {
-    
-    if (req.method() != mw.method) return false;
+bool endpointMatched(Request &req, MiddleWare &mw)
+{
+
+    if (req.method() != mw.method)
+        return false;
 
     // Check for * first
-    if (mw.endpoint == "*") return true;
+    if (mw.endpoint == "*")
+        return true;
 
-    if (mw.endpoint[mw.endpoint.length() - 1] == '*') {
+    if (mw.endpoint[mw.endpoint.length() - 1] == '*')
+    {
         std::string destinationPath = mw.endpoint.substr(0, mw.endpoint.length() - 1);
-        if (destinationPath == req.path().substr(0, destinationPath.length())) return true;
-
+        if (destinationPath == req.path().substr(0, destinationPath.length()))
+            return true;
     }
 
-    if (mw.endpoint == req.path()) return true;
+    if (mw.endpoint == req.path())
+        return true;
 
     return false;
 }

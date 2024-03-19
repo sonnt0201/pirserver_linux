@@ -64,7 +64,8 @@ public:
     */
     int createRecord(ID pir, String vol, int timestamp);
 
-    
+    std::vector<ID> readPIRsOfGroup(ID group);
+
     /*
         Read a list of records within a specified group and time range.
         [in] group: ID of the group to query records from.
@@ -103,13 +104,14 @@ public:
 class Record
 {
 private:
-    int _id, _PIRID, _timestamp;
+    ID _id, _PIRID;
+    int _timestamp;
     std::string _rawVol;
 
 public:
-    Record(int id, int espID, char *rawVol, int timestamp);
-    int getID();
-    int getPIRID();
+    Record(char* recordId, char* pirID, char *rawVol, int timestamp);
+    ID getID();
+    ID getPIRID();
     std::vector<int> getVols();
     int getTimestamp();
 

@@ -9,31 +9,48 @@
     <h1>This page is for API Testing</h1>
     <h1>Sending data each 1 second ...</h1>
     <script>
-      const url = "http://localhost:8080";
+      const url = "http://localhost:8080/api/new-records";
 
-      setInterval(() => {
+      setInterval(async () => {
         const randomNumbersArray = Array.from({ length: 100 }, () =>
           Math.floor(Math.random() * 4097)
         );
 
         // Convert the array to a string with '_' separator
-        const vol = randomNumbersArray.join("_");
-
+        const vol = await randomNumbersArray.join("_");
+        const vol1 = await randomNumbersArray.join("_");
         const now = Math.floor(Date.now() / 1000);
+
+        const json = {
+          user_token: "super0201",
+          records: [
+          {
+            pir: "pir-id-test",
+            vol: vol,
+            timestamp: now,
+          },
+          {
+            pir: "pir-id-test1",
+            vol: vol1,
+            timestamp: now,
+          }
+        ]};
+
+
+        console.log(JSON.stringify(json));
+
         const requestOptions = {
           method: "POST",
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded", // Set the content type to form data
+            "Content-Type": "application/json", // Set the content type to form data
             // Add any other headers if needed
           },
-          body: `esp-id=1&vol=${vol}&time=${now.toString()}&\n\r`, // Convert the form data to a string
+          body: JSON.stringify(json), // Convert the form data to a string
         };
 
         // Make the POST request using fetch
-        fetch(url, requestOptions);
-      }, 1000);
-
-
+        await fetch(url, requestOptions);
+      }, 2000);
     </script>
   </body>
 </html>

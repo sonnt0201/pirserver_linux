@@ -179,7 +179,7 @@ int PIR_ORM::createRecord(ID pir, String vol, int timestamp) {
     sqlite3_bind_text(stmt, 1 , (char*) newid.c_str(), -1, NULL);
 
 
-     sqlite3_bind_text(stmt, 2 , (char*) pir.c_str(), -1, NULL);
+    sqlite3_bind_text(stmt, 2 , (char*) pir.c_str(), -1, NULL);
     sqlite3_bind_text(stmt,3, (char*)vol.c_str(), -1, NULL);
     sqlite3_bind_int(stmt, 4, timestamp);
    
@@ -197,22 +197,85 @@ int PIR_ORM::createRecord(ID pir, String vol, int timestamp) {
 }
 
 
+std::vector<ID> PIR_ORM::readPIRsOfGroup(ID group) {
+    std::vector<ID> results = {};
+    char* query = "SELECT (pir_id) FROM PIRs WHERE (pir_group = ?)";
+    sqlite3_stmt *stmt;
+    int rc;
+
+    rc = sqlite3_prepare_v2(this->_db, query, -1, &stmt, 0);
+    if (rc != SQLITE_OK) {
+        std::cout<<"Error: Failed to prepare - "<<sqlite3_errmsg(this->_db)<<"\n";
+        return results;
+    }
+
+    sqlite3_bind_text(stmt, 1 , (char*) group.c_str(), -1, NULL);
+
+    while (
+        (rc = sqlite3_step(stmt)) == SQLITE_ROW
+    ) {
+        char* pirID_CString = (char*) sqlite3_column_text(stmt, 1);
+        ID pirID(pirID_CString);
+        results.push_back(pirID);
+    }
+
+    return results;
+}
+
+std::vector<class Record> PIR_ORM::readRecords(ID group, int begin, int end ) {
+    
+    std::vector<class Record> results = {};
+
+    char* query = "SELECT * FROM Records WHERE ("
+    "pir_id IN (SELECT pir_id FROM PIRs WHERE (pir_group = ?))"
+    "AND time BETWEEN ? AND ?)"
+    ;
+     
+     
+     sqlite3_stmt *stmt;
+    int rc;
+
+    rc = sqlite3_prepare_v2(this->_db, query, -1, &stmt, 0);
+    if (rc != SQLITE_OK) {
+        std::cout<<"Error: Failed to prepare - "<<sqlite3_errmsg(this->_db)<<"\n";
+        return results;
+    }
+
+    sqlite3_bind_text(stmt, 1 , (char*) group.c_str(), -1, NULL);
+    sqlite3_bind_int(stmt, 2, begin);
+    sqlite3_bind_int(stmt, 3, end);
+    while (
+        (rc = sqlite3_step(stmt)) == SQLITE_ROW
+    ) {
+        char* recordId = (char*) sqlite3_column_text(stmt, 0);
+        // std::cout<<"record id: "<<recordId<<std::endl;
+        char* pirId = (char*) sqlite3_column_text(stmt, 1);
+        char* rawVol = (char*) sqlite3_column_text(stmt, 2);
+        int timestamp = sqlite3_column_int(stmt, 3);
+        
+        Record record = Record(recordId, pirId, rawVol, timestamp);
+        
+        results.push_back(record);
+    }
+
+    return results;
+}
 
 /* Implement class Record*/
-Record::Record(int id, int espID, char *rawVol, int timestamp)
+Record::Record(char* recordId, char* pirID, char *rawVol, int timestamp)
 {
-    this->_id = id;
-    this->_PIRID = espID;
+    this->_id = String(recordId);
+    this->_PIRID = String(pirID);
     this->_rawVol = std::string(rawVol);
     this->_timestamp = timestamp;
 };
 
-int Record::getID()
+ID Record::getID()
 {
     return this->_id;
 }
 
-int Record::getPIRID()
+ID Record::getPIRID()
 {
     return this->_PIRID;
 }
@@ -246,11 +309,11 @@ Json::Value Record::toJson()
     Json::Value root;
 
     // Guard NULL
-    if (this->_id < 0)
+    if (this->_id == "")
         return root;
 
-    root["id"] = this->_id;
-    root["esp_id"] = this->_PIRID;
+    root["record_id"] = this->_id;
+    root["pir_id"] = this->_PIRID;
     root["timestamp"] = this->_timestamp;
     root["voltages"] = Json::arrayValue;
     std::vector<int> vols = this->getVols();

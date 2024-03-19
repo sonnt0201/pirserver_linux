@@ -182,6 +182,11 @@ void Response::asDefault404() {
     
  }
 
+void Response::asDefaultBadRequest() {
+    this->_statusCode = "400 Bad Request";
+    this->setContentType(TEXT_PLAIN);
+    this->asPlainText("Opps! Bad Request.");
+}
 
 void Response::redirect(std::string link) {
     this->setStatusCode(302);

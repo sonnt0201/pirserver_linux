@@ -10,7 +10,13 @@ extern HANDLER validUser,
     ramdomuuid,
     createGroup,
     createPir,
-    createRecord;
+    createRecord,
+    invalidUser,
+    testPage,
+    getRecordsOfGroup,
+    userAuthen,
+    createRecordsOfGroup
+    ;
 
 int main()
 {
@@ -22,13 +28,19 @@ int main()
     route.get("/", home);
     route.get("/api/example", api_example);
     route.get("/api/random_uuid", ramdomuuid);
+    route.get("/invalid-user",invalidUser);
+    route.get("/test", testPage);
+    route.get("/api/records", getRecordsOfGroup);
     //    route.get("/invalid-user", )
 
-    route.post("/api/user", validUser);
-    route.post("api/create-group", createGroup);
-    route.post("api/create-pir", createPir);
-    route.post("api/create-record", createRecord);
-
+    // POST
+    // authen goes firsts
+    route.post("*", userAuthen);
+    route.post("/api/new-user", validUser);
+    route.post("api/new-group", createGroup);
+    route.post("api/new-pir", createPir);
+    route.post("api/new-record", createRecord);
+    route.post("api/new-records", createRecordsOfGroup);
 
 
 

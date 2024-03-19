@@ -1,8 +1,16 @@
 #include "export.h"
 
+/*
+{
+    "user_token": String,
+    "pir": String,
+    "vol": String,
+    "timestamp": number
+}
+*/
 HANDLER createRecord = [](Request *req, Response *res, bool *next) {
     JSON reqJson = req->toJson();
-    std::cout<<reqJson<<std::endl;
+//     std::cout<<reqJson<<std::endl;
     JSON resJson;
     int rc;
     try {

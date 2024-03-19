@@ -35,6 +35,7 @@
 typedef int SOCKET;
 typedef std::string String;
 typedef Json::Value JSON;
+
 // other resources
 #include "config.h"
 #pragma once

@@ -430,6 +430,54 @@ src/controllers/createRecord.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/createRecord.cpp.s
 .PHONY : src/controllers/createRecord.cpp.s
 
+src/controllers/createRecordsForGroup.o: src/controllers/createRecordsForGroup.cpp.o
+.PHONY : src/controllers/createRecordsForGroup.o
+
+# target to build an object file
+src/controllers/createRecordsForGroup.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/createRecordsForGroup.cpp.o
+.PHONY : src/controllers/createRecordsForGroup.cpp.o
+
+src/controllers/createRecordsForGroup.i: src/controllers/createRecordsForGroup.cpp.i
+.PHONY : src/controllers/createRecordsForGroup.i
+
+# target to preprocess a source file
+src/controllers/createRecordsForGroup.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/createRecordsForGroup.cpp.i
+.PHONY : src/controllers/createRecordsForGroup.cpp.i
+
+src/controllers/createRecordsForGroup.s: src/controllers/createRecordsForGroup.cpp.s
+.PHONY : src/controllers/createRecordsForGroup.s
+
+# target to generate assembly for a file
+src/controllers/createRecordsForGroup.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/createRecordsForGroup.cpp.s
+.PHONY : src/controllers/createRecordsForGroup.cpp.s
+
+src/controllers/getRecordsOfGroup.o: src/controllers/getRecordsOfGroup.cpp.o
+.PHONY : src/controllers/getRecordsOfGroup.o
+
+# target to build an object file
+src/controllers/getRecordsOfGroup.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/getRecordsOfGroup.cpp.o
+.PHONY : src/controllers/getRecordsOfGroup.cpp.o
+
+src/controllers/getRecordsOfGroup.i: src/controllers/getRecordsOfGroup.cpp.i
+.PHONY : src/controllers/getRecordsOfGroup.i
+
+# target to preprocess a source file
+src/controllers/getRecordsOfGroup.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/getRecordsOfGroup.cpp.i
+.PHONY : src/controllers/getRecordsOfGroup.cpp.i
+
+src/controllers/getRecordsOfGroup.s: src/controllers/getRecordsOfGroup.cpp.s
+.PHONY : src/controllers/getRecordsOfGroup.s
+
+# target to generate assembly for a file
+src/controllers/getRecordsOfGroup.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/getRecordsOfGroup.cpp.s
+.PHONY : src/controllers/getRecordsOfGroup.cpp.s
+
 src/controllers/home.o: src/controllers/home.cpp.o
 .PHONY : src/controllers/home.o
 
@@ -501,6 +549,54 @@ src/controllers/randomuuid.s: src/controllers/randomuuid.cpp.s
 src/controllers/randomuuid.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/randomuuid.cpp.s
 .PHONY : src/controllers/randomuuid.cpp.s
+
+src/controllers/testPage.o: src/controllers/testPage.cpp.o
+.PHONY : src/controllers/testPage.o
+
+# target to build an object file
+src/controllers/testPage.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/testPage.cpp.o
+.PHONY : src/controllers/testPage.cpp.o
+
+src/controllers/testPage.i: src/controllers/testPage.cpp.i
+.PHONY : src/controllers/testPage.i
+
+# target to preprocess a source file
+src/controllers/testPage.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/testPage.cpp.i
+.PHONY : src/controllers/testPage.cpp.i
+
+src/controllers/testPage.s: src/controllers/testPage.cpp.s
+.PHONY : src/controllers/testPage.s
+
+# target to generate assembly for a file
+src/controllers/testPage.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/testPage.cpp.s
+.PHONY : src/controllers/testPage.cpp.s
+
+src/controllers/userAuthen.o: src/controllers/userAuthen.cpp.o
+.PHONY : src/controllers/userAuthen.o
+
+# target to build an object file
+src/controllers/userAuthen.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/userAuthen.cpp.o
+.PHONY : src/controllers/userAuthen.cpp.o
+
+src/controllers/userAuthen.i: src/controllers/userAuthen.cpp.i
+.PHONY : src/controllers/userAuthen.i
+
+# target to preprocess a source file
+src/controllers/userAuthen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/userAuthen.cpp.i
+.PHONY : src/controllers/userAuthen.cpp.i
+
+src/controllers/userAuthen.s: src/controllers/userAuthen.cpp.s
+.PHONY : src/controllers/userAuthen.s
+
+# target to generate assembly for a file
+src/controllers/userAuthen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/userAuthen.cpp.s
+.PHONY : src/controllers/userAuthen.cpp.s
 
 src/controllers/validUser.o: src/controllers/validUser.cpp.o
 .PHONY : src/controllers/validUser.o
@@ -620,6 +716,12 @@ help:
 	@echo "... src/controllers/createRecord.o"
 	@echo "... src/controllers/createRecord.i"
 	@echo "... src/controllers/createRecord.s"
+	@echo "... src/controllers/createRecordsForGroup.o"
+	@echo "... src/controllers/createRecordsForGroup.i"
+	@echo "... src/controllers/createRecordsForGroup.s"
+	@echo "... src/controllers/getRecordsOfGroup.o"
+	@echo "... src/controllers/getRecordsOfGroup.i"
+	@echo "... src/controllers/getRecordsOfGroup.s"
 	@echo "... src/controllers/home.o"
 	@echo "... src/controllers/home.i"
 	@echo "... src/controllers/home.s"
@@ -629,6 +731,12 @@ help:
 	@echo "... src/controllers/randomuuid.o"
 	@echo "... src/controllers/randomuuid.i"
 	@echo "... src/controllers/randomuuid.s"
+	@echo "... src/controllers/testPage.o"
+	@echo "... src/controllers/testPage.i"
+	@echo "... src/controllers/testPage.s"
+	@echo "... src/controllers/userAuthen.o"
+	@echo "... src/controllers/userAuthen.i"
+	@echo "... src/controllers/userAuthen.s"
 	@echo "... src/controllers/validUser.o"
 	@echo "... src/controllers/validUser.i"
 	@echo "... src/controllers/validUser.s"

@@ -58,6 +58,9 @@ class Response {
         // 404 Page
         void asDefault404();
 
+        // bad request
+        void asDefaultBadRequest();
+
         // redirect
         void redirect(std::string link);
 

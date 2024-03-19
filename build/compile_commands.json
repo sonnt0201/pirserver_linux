@@ -61,6 +61,16 @@
 },
 {
   "directory": "/home/sonnguyen/Desktop/repos/pirserver/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/pirserver.dir/src/controllers/createRecordsForGroup.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver/src/controllers/createRecordsForGroup.cpp",
+  "file": "/home/sonnguyen/Desktop/repos/pirserver/src/controllers/createRecordsForGroup.cpp"
+},
+{
+  "directory": "/home/sonnguyen/Desktop/repos/pirserver/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/pirserver.dir/src/controllers/getRecordsOfGroup.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver/src/controllers/getRecordsOfGroup.cpp",
+  "file": "/home/sonnguyen/Desktop/repos/pirserver/src/controllers/getRecordsOfGroup.cpp"
+},
+{
+  "directory": "/home/sonnguyen/Desktop/repos/pirserver/build",
   "command": "/usr/bin/g++   -g -o CMakeFiles/pirserver.dir/src/controllers/home.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver/src/controllers/home.cpp",
   "file": "/home/sonnguyen/Desktop/repos/pirserver/src/controllers/home.cpp"
 },
@@ -73,6 +83,16 @@
   "directory": "/home/sonnguyen/Desktop/repos/pirserver/build",
   "command": "/usr/bin/g++   -g -o CMakeFiles/pirserver.dir/src/controllers/randomuuid.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver/src/controllers/randomuuid.cpp",
   "file": "/home/sonnguyen/Desktop/repos/pirserver/src/controllers/randomuuid.cpp"
+},
+{
+  "directory": "/home/sonnguyen/Desktop/repos/pirserver/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/pirserver.dir/src/controllers/testPage.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver/src/controllers/testPage.cpp",
+  "file": "/home/sonnguyen/Desktop/repos/pirserver/src/controllers/testPage.cpp"
+},
+{
+  "directory": "/home/sonnguyen/Desktop/repos/pirserver/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/pirserver.dir/src/controllers/userAuthen.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver/src/controllers/userAuthen.cpp",
+  "file": "/home/sonnguyen/Desktop/repos/pirserver/src/controllers/userAuthen.cpp"
 },
 {
   "directory": "/home/sonnguyen/Desktop/repos/pirserver/build",
