@@ -21,3 +21,14 @@ add_custom_target(run
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
     COMMENT "Compile and run server"
 )
+
+add_custom_target(bundle
+    COMMAND cmake ..
+    COMMAND make
+    COMMAND mkdir ../product
+    COMMAND cp pirserver ../product
+    COMMAND cp -r ../web-views ../product
+    
+    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+    COMMENT "Compile and run server"
+)

@@ -45,4 +45,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/pirserver.dir/DependInfo.cmake"
   "CMakeFiles/run.dir/DependInfo.cmake"
+  "CMakeFiles/bundle.dir/DependInfo.cmake"
   )

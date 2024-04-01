@@ -142,6 +142,19 @@ run/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/build
 .PHONY : run/fast
 
+#=============================================================================
+# Target rules for targets named bundle
+
+# Build rule for target.
+bundle: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bundle
+.PHONY : bundle
+
+# fast build rule for target.
+bundle/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bundle.dir/build.make CMakeFiles/bundle.dir/build
+.PHONY : bundle/fast
+
 modules/http/Request.o: modules/http/Request.cpp.o
 .PHONY : modules/http/Request.o
 
@@ -750,6 +763,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... bundle"
 	@echo "... run"
 	@echo "... pirserver"
 	@echo "... modules/http/Request.o"
