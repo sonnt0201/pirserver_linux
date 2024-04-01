@@ -15,7 +15,10 @@ extern HANDLER validUser,
     testPage,
     getRecordsOfGroup,
     userAuthen,
-    createRecordsOfGroup
+    createRecordsOfGroup,
+    getPir,
+    getUserInfo,
+    getPirsOfGroup
     ;
 
 int main()
@@ -31,6 +34,9 @@ int main()
     route.get("/invalid-user",invalidUser);
     route.get("/test", testPage);
     route.get("/api/records", getRecordsOfGroup);
+    route.get("api/pir", getPir);
+    route.get("api/user-info", getUserInfo);
+    route.get("api/pirs/group", getPirsOfGroup);
     //    route.get("/invalid-user", )
 
     // POST
@@ -41,9 +47,6 @@ int main()
     route.post("api/new-pir", createPir);
     route.post("api/new-record", createRecord);
     route.post("api/new-records", createRecordsOfGroup);
-
-
-
 
     std::cout << "Router initialized." << std::endl;
 

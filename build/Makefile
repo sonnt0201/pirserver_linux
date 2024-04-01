@@ -454,6 +454,54 @@ src/controllers/createRecordsForGroup.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/createRecordsForGroup.cpp.s
 .PHONY : src/controllers/createRecordsForGroup.cpp.s
 
+src/controllers/getPir.o: src/controllers/getPir.cpp.o
+.PHONY : src/controllers/getPir.o
+
+# target to build an object file
+src/controllers/getPir.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/getPir.cpp.o
+.PHONY : src/controllers/getPir.cpp.o
+
+src/controllers/getPir.i: src/controllers/getPir.cpp.i
+.PHONY : src/controllers/getPir.i
+
+# target to preprocess a source file
+src/controllers/getPir.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/getPir.cpp.i
+.PHONY : src/controllers/getPir.cpp.i
+
+src/controllers/getPir.s: src/controllers/getPir.cpp.s
+.PHONY : src/controllers/getPir.s
+
+# target to generate assembly for a file
+src/controllers/getPir.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/getPir.cpp.s
+.PHONY : src/controllers/getPir.cpp.s
+
+src/controllers/getPirsOfGroup.o: src/controllers/getPirsOfGroup.cpp.o
+.PHONY : src/controllers/getPirsOfGroup.o
+
+# target to build an object file
+src/controllers/getPirsOfGroup.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/getPirsOfGroup.cpp.o
+.PHONY : src/controllers/getPirsOfGroup.cpp.o
+
+src/controllers/getPirsOfGroup.i: src/controllers/getPirsOfGroup.cpp.i
+.PHONY : src/controllers/getPirsOfGroup.i
+
+# target to preprocess a source file
+src/controllers/getPirsOfGroup.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/getPirsOfGroup.cpp.i
+.PHONY : src/controllers/getPirsOfGroup.cpp.i
+
+src/controllers/getPirsOfGroup.s: src/controllers/getPirsOfGroup.cpp.s
+.PHONY : src/controllers/getPirsOfGroup.s
+
+# target to generate assembly for a file
+src/controllers/getPirsOfGroup.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/getPirsOfGroup.cpp.s
+.PHONY : src/controllers/getPirsOfGroup.cpp.s
+
 src/controllers/getRecordsOfGroup.o: src/controllers/getRecordsOfGroup.cpp.o
 .PHONY : src/controllers/getRecordsOfGroup.o
 
@@ -477,6 +525,30 @@ src/controllers/getRecordsOfGroup.s: src/controllers/getRecordsOfGroup.cpp.s
 src/controllers/getRecordsOfGroup.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/getRecordsOfGroup.cpp.s
 .PHONY : src/controllers/getRecordsOfGroup.cpp.s
+
+src/controllers/getUserInfo.o: src/controllers/getUserInfo.cpp.o
+.PHONY : src/controllers/getUserInfo.o
+
+# target to build an object file
+src/controllers/getUserInfo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/getUserInfo.cpp.o
+.PHONY : src/controllers/getUserInfo.cpp.o
+
+src/controllers/getUserInfo.i: src/controllers/getUserInfo.cpp.i
+.PHONY : src/controllers/getUserInfo.i
+
+# target to preprocess a source file
+src/controllers/getUserInfo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/getUserInfo.cpp.i
+.PHONY : src/controllers/getUserInfo.cpp.i
+
+src/controllers/getUserInfo.s: src/controllers/getUserInfo.cpp.s
+.PHONY : src/controllers/getUserInfo.s
+
+# target to generate assembly for a file
+src/controllers/getUserInfo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/getUserInfo.cpp.s
+.PHONY : src/controllers/getUserInfo.cpp.s
 
 src/controllers/home.o: src/controllers/home.cpp.o
 .PHONY : src/controllers/home.o
@@ -719,9 +791,18 @@ help:
 	@echo "... src/controllers/createRecordsForGroup.o"
 	@echo "... src/controllers/createRecordsForGroup.i"
 	@echo "... src/controllers/createRecordsForGroup.s"
+	@echo "... src/controllers/getPir.o"
+	@echo "... src/controllers/getPir.i"
+	@echo "... src/controllers/getPir.s"
+	@echo "... src/controllers/getPirsOfGroup.o"
+	@echo "... src/controllers/getPirsOfGroup.i"
+	@echo "... src/controllers/getPirsOfGroup.s"
 	@echo "... src/controllers/getRecordsOfGroup.o"
 	@echo "... src/controllers/getRecordsOfGroup.i"
 	@echo "... src/controllers/getRecordsOfGroup.s"
+	@echo "... src/controllers/getUserInfo.o"
+	@echo "... src/controllers/getUserInfo.i"
+	@echo "... src/controllers/getUserInfo.s"
 	@echo "... src/controllers/home.o"
 	@echo "... src/controllers/home.i"
 	@echo "... src/controllers/home.s"

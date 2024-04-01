@@ -3,13 +3,13 @@ C++ Back-End System for PIR
 
 Abstraction
 -------------
-**This project gives a lightweight, asynchronous and easy-to-maintain way to receive and store PIR records from PIR-ESP32 Client, also to provide data via API for other clients:**
+**This is a C++ Back-End System used for collecting records from PIR (Passive infrared sensor) modules and providing PIR data in mutiple formats. Powered by our [HTTP_Module](), this system gives a light-weight, asynchronous and scalable way to receive, store and read PIR data records**
 
 - Platform: `Linux` (recommended for Debian-based systems)
 - Language: `C++`
 - Protocol: `HTTP`
 - Build tool: `CMake`
-- Dependencies: [JsonCpp](https://github.com/open-source-parsers/jsoncpp), [SQLite](https://www.sqlite.org/index.html)
+- Dependencies: [JsonCpp](https://github.com/open-source-parsers/jsoncpp), [SQLite](https://www.sqlite.org/index.html), [Boost::UUID]()
 
 (Dependencies are already amalgamated in source files so they have no need of any additional installation).
 

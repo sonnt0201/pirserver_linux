@@ -5,7 +5,6 @@
 
 #include "../../modules/export.h"
 
-
 #pragma once
 
 #define VOLNUM 100
@@ -17,11 +16,10 @@ class PIR_ORM
 {
 private:
     sqlite3 *_db;
-    char* _filename;
+    char *_filename;
 
 public:
-
-    PIR_ORM(char* filename);
+    PIR_ORM(char *filename);
 
     /*
         Create a new user and assign a unique user token (ID).
@@ -33,27 +31,26 @@ public:
     /*
         Check if user_token is valid
     */
-   bool validUser(ID user_token);
+    bool validUser(ID user_token);
 
     /*
         Create a new group of PIRs
         Return error code : SUCCESS or FAIL.
         [in] description: Description in String type for group.
         [out] group: pointer to variable receiving the group ID
-    */ 
+    */
     int createGroup(String description, ID *group);
 
     bool isGroupExists(ID group);
 
-     /* 
-        Create a new PIR (Passive Infrared sensor) within a group.
-        Return error code: SUCCESS or FAIL.
-        [in] group: ID of the group to which the PIR belongs.
-        [in] description: Description in String type for the PIR.
-        [out] pir: pointer to variable receiving the PIR ID.
-    */
-    int createPIR(ID group, String description, ID* pir );
-
+    /*
+       Create a new PIR (Passive Infrared sensor) within a group.
+       Return error code: SUCCESS or FAIL.
+       [in] group: ID of the group to which the PIR belongs.
+       [in] description: Description in String type for the PIR.
+       [out] pir: pointer to variable receiving the PIR ID.
+   */
+    int createPIR(ID group, String description, ID *pir);
 
     /*
         Create a new record associated with a specific PIR.
@@ -78,26 +75,30 @@ public:
     /*
         Read all PIRs associated with a specific group.
         [in] group: ID of the group to query PIRs from.
-        [out] pirs: vector containing the retrieved PIR objects.
+        [return] pirs: vector containing the retrieved PIR objects.
     */
     std::vector<class PIR> readPIRs(ID group);
 
-     /*
-        Read the description of a group.
-        [in] group: ID of the group to retrieve description for.
-        [out] description: String containing the group's description.
-    */
-    String readGroupDescription(ID group);
+    /*
+       Read the description of a group.
+       [in] group: ID of the group to retrieve description for.
+       [out] description: String containing the group's description.
+   */
+    int readGroupDescription(ID group, String *description);
 
     /*
         Read information about a specific PIR.
-        [in] pir: ID of the PIR to retrieve information for.
+        [in] pir_id: ID of the PIR to retrieve information for.
         [out] pir: PIR object containing the retrieved information.
     */
-    class PIR readPIR(ID pir);
+    int readPIR(ID pir_id, class PIR *pir);
 
-
-    
+    /*
+        Read information about a specific User.
+        [in] user_token: ID of the User to retrieve information for.
+        [out] user: User object containing the retrieved information.
+    */
+    int readUser(ID user_token, class User *user);
 };
 
 /* TO-DO: Implement Request Row class */
@@ -109,7 +110,7 @@ private:
     std::string _rawVol;
 
 public:
-    Record(char* recordId, char* pirID, char *rawVol, int timestamp);
+    Record(char *recordId, char *pirID, char *rawVol, int timestamp);
     ID getID();
     ID getPIRID();
     std::vector<int> getVols();
@@ -122,25 +123,63 @@ public:
     std::string toCsvRow();
 };
 
-class PIR {
-    private:
+class PIR
+{
+private:
     ID _id, _group;
     String _description;
 
-    public: 
-    inline PIR(ID id, ID group, String description){
+public:
+    inline PIR(ID id, ID group, String description)
+    {
         _id = id;
         _group = group;
         _description = description;
     };
 
-    inline ID id() {
+    inline ID id()
+    {
         return _id;
-    }; 
+    };
 
-    inline String description() {
+    inline String description()
+    {
         return _description;
     }
 
-    
+    inline JSON toJson()
+    {
+        JSON json;
+        json["pir_id"] = _id;
+        json["group_id"] = _group;
+        json["pir_description"] = _description;
+
+        return json;
+    }
+};
+
+class User
+{
+private:
+    String _token, _name, _description;
+
+public:
+    inline User(String token, String name, String description)
+    {
+        _token = token;
+        _name = name;
+        _description = description;
+    };
+
+    inline ID token() { return _token; }
+    inline String name() { return _name; }
+    inline String description() { return _description; }
+
+    inline JSON toJson() {
+        JSON json;
+        json["user_token"] = _token;
+        json["name"] = _name;
+        json["description"] = _description;
+        return json;
+    }
 };

@@ -15,12 +15,11 @@ PIR_ORM::PIR_ORM(char *filename)
     }
 
     std::vector<const char *> creatingQueries = {
-    "CREATE TABLE IF NOT EXISTS Users (user_token VARCHAR PRIMARY KEY, name VARCHAR, description VARCHAR);",
-     "CREATE TABLE IF NOT EXISTS PIRGroups (pir_group VARCHAR PRIMARY KEY, description VARCHAR);",
-    "CREATE TABLE IF NOT EXISTS PIRs (pir_id VARCHAR PRIMARY KEY, pir_group VARCHAR NOT NULL, description VARCHAR, FOREIGN KEY (pir_group) REFERENCES PIRGroups(pir_group));",
-    "CREATE TABLE IF NOT EXISTS Records (record_id VARCHAR PRIMARY KEY, pir_id VARCHAR NOT NULL, vol VARCHAR NOT NULL, time INTEGER NOT NULL, FOREIGN KEY (pir_id) REFERENCES PIRs(pir_id));",
-     };
-
+        "CREATE TABLE IF NOT EXISTS Users (user_token VARCHAR PRIMARY KEY, name VARCHAR, description VARCHAR);",
+        "CREATE TABLE IF NOT EXISTS PIRGroups (pir_group VARCHAR PRIMARY KEY, description VARCHAR);",
+        "CREATE TABLE IF NOT EXISTS PIRs (pir_id VARCHAR PRIMARY KEY, pir_group VARCHAR NOT NULL, description VARCHAR, FOREIGN KEY (pir_group) REFERENCES PIRGroups(pir_group));",
+        "CREATE TABLE IF NOT EXISTS Records (record_id VARCHAR PRIMARY KEY, pir_id VARCHAR NOT NULL, vol VARCHAR NOT NULL, time INTEGER NOT NULL, FOREIGN KEY (pir_id) REFERENCES PIRs(pir_id));",
+    };
 
     sqlite3_stmt *stmt;
 
@@ -31,7 +30,7 @@ PIR_ORM::PIR_ORM(char *filename)
         if (rc != SQLITE_OK)
         {
             std::cout << "Error: Unable to prepare statement in PIR_ORM initialization - "
-            <<sqlite3_errmsg(_db) << std::endl;
+                      << sqlite3_errmsg(_db) << std::endl;
         }
 
         rc = sqlite3_step(stmt);
@@ -44,116 +43,128 @@ PIR_ORM::PIR_ORM(char *filename)
     return;
 }
 
-bool PIR_ORM::validUser(ID user_token) {
-    char* query = "SELECT * FROM Users WHERE (user_token = ?);";
+bool PIR_ORM::validUser(ID user_token)
+{
+    char *query = "SELECT * FROM Users WHERE (user_token = ?);";
 
     sqlite3_stmt *stmt;
 
     int rc = sqlite3_prepare_v2(_db, query, -1, &stmt, 0);
 
-    if (rc != SQLITE_OK) {
-        std::cout<<"Error: Check valid user failed - "<< sqlite3_errmsg(_db) << std::endl;
+    if (rc != SQLITE_OK)
+    {
+        std::cout << "Error: Check valid user failed - " << sqlite3_errmsg(_db) << std::endl;
         return FAIL;
     }
 
-    rc = sqlite3_bind_text(stmt, 1,(char*) user_token.c_str(), -1, NULL);
+    rc = sqlite3_bind_text(stmt, 1, (char *)user_token.c_str(), -1, NULL);
 
     rc = sqlite3_step(stmt);
 
-    if (rc == SQLITE_ROW) return true;
+    if (rc == SQLITE_ROW)
+        return true;
     return false;
 }
 
-int PIR_ORM::createGroup(String description, ID *group) {
-    char* query = "INSERT INTO PIRGroups VALUES (?, ?);";
-    sqlite3_stmt* stmt;
+int PIR_ORM::createGroup(String description, ID *group)
+{
+    char *query = "INSERT INTO PIRGroups VALUES (?, ?);";
+    sqlite3_stmt *stmt;
     int rc;
 
-    //prepare
+    // prepare
     rc = sqlite3_prepare_v2(_db, query, -1, &stmt, 0);
 
-    if (rc != SQLITE_OK) {
-        std::cout<<"Error: Create group failed - "<< sqlite3_errmsg(_db) << std::endl;
+    if (rc != SQLITE_OK)
+    {
+        std::cout << "Error: Create group failed - " << sqlite3_errmsg(_db) << std::endl;
         return FAIL;
     }
 
     // bind
     ID newgroup = uuid_v4();
 
-    sqlite3_bind_text(stmt, 1, (char*) newgroup.c_str(), -1, NULL);
-    sqlite3_bind_text(stmt, 2, (char*) description.c_str(), -1, NULL);
+    sqlite3_bind_text(stmt, 1, (char *)newgroup.c_str(), -1, NULL);
+    sqlite3_bind_text(stmt, 2, (char *)description.c_str(), -1, NULL);
 
-    if (rc != SQLITE_OK) {
-        std::cout<<"Error: Bind failed - "<< sqlite3_errmsg(_db) << std::endl;
+    if (rc != SQLITE_OK)
+    {
+        std::cout << "Error: Bind failed - " << sqlite3_errmsg(_db) << std::endl;
         return FAIL;
     }
 
     // execute
     rc = sqlite3_step(stmt);
-    
-    if (rc != SQLITE_DONE) {
-        std::cout<<"Error: Execution failed - "<< sqlite3_errmsg(_db) << std::endl;
+
+    if (rc != SQLITE_DONE)
+    {
+        std::cout << "Error: Execution failed - " << sqlite3_errmsg(_db) << std::endl;
         return FAIL;
     }
 
     *group = newgroup;
     return SUCCESS;
-
 }
 
-bool PIR_ORM::isGroupExists(ID group){
-     char* query = "SELECT * FROM PIRGroups WHERE (pir_group = ?);";
+bool PIR_ORM::isGroupExists(ID group)
+{
+    char *query = "SELECT * FROM PIRGroups WHERE (pir_group = ?);";
 
     sqlite3_stmt *stmt;
 
     int rc = sqlite3_prepare_v2(_db, query, -1, &stmt, 0);
 
-    if (rc != SQLITE_OK) {
-        std::cout<<"Error: Check valid user failed - "<< sqlite3_errmsg(_db) << std::endl;
+    if (rc != SQLITE_OK)
+    {
+        std::cout << "Error: Check valid user failed - " << sqlite3_errmsg(_db) << std::endl;
         return FAIL;
     }
 
-    rc = sqlite3_bind_text(stmt, 1,(char*) group.c_str(), -1, NULL);
+    rc = sqlite3_bind_text(stmt, 1, (char *)group.c_str(), -1, NULL);
 
     rc = sqlite3_step(stmt);
 
-    if (rc == SQLITE_ROW) return true;
+    if (rc == SQLITE_ROW)
+        return true;
     return false;
 }
 
-int PIR_ORM::createPIR(ID group, String description, ID* pir ) {
-     char* query = "INSERT INTO PIRs VALUES (?, ?, ?);";
-    sqlite3_stmt* stmt;
+int PIR_ORM::createPIR(ID group, String description, ID *pir)
+{
+    char *query = "INSERT INTO PIRs VALUES (?, ?, ?);";
+    sqlite3_stmt *stmt;
     int rc;
 
-    //prepare
+    // prepare
     rc = sqlite3_prepare_v2(_db, query, -1, &stmt, 0);
 
-    if (rc != SQLITE_OK) {
-        std::cout<<"Error: Create group failed - "<< sqlite3_errmsg(_db) << std::endl;
+    if (rc != SQLITE_OK)
+    {
+        std::cout << "Error: Create group failed - " << sqlite3_errmsg(_db) << std::endl;
         return FAIL;
     }
 
     // bind
     ID newpir = uuid_v4();
 
-    sqlite3_bind_text(stmt, 1, (char*) newpir.c_str(), -1, NULL);
-    sqlite3_bind_text(stmt, 2, (char*) group.c_str(), -1, NULL);
-    sqlite3_bind_text(stmt, 3, (char*) description.c_str(), -1, NULL);
+    sqlite3_bind_text(stmt, 1, (char *)newpir.c_str(), -1, NULL);
+    sqlite3_bind_text(stmt, 2, (char *)group.c_str(), -1, NULL);
+    sqlite3_bind_text(stmt, 3, (char *)description.c_str(), -1, NULL);
 
-    if (rc != SQLITE_OK) {
-        std::cout<<"Error: Bind failed - "<< sqlite3_errmsg(_db) << std::endl;
+    if (rc != SQLITE_OK)
+    {
+        std::cout << "Error: Bind failed - " << sqlite3_errmsg(_db) << std::endl;
         return FAIL;
     }
 
     // execute
     rc = sqlite3_step(stmt);
-    
-     std::cout<<"Creating PIR: "<< sqlite3_errmsg(_db) << std::endl;
-        
 
-    if (rc != SQLITE_DONE) {
-        std::cout<<"Error: Execution failed - "<< sqlite3_errmsg(_db) << std::endl;
+    std::cout << "Creating PIR: " << sqlite3_errmsg(_db) << std::endl;
+
+    if (rc != SQLITE_DONE)
+    {
+        std::cout << "Error: Execution failed - " << sqlite3_errmsg(_db) << std::endl;
         return FAIL;
     }
 
@@ -161,60 +172,59 @@ int PIR_ORM::createPIR(ID group, String description, ID* pir ) {
     return SUCCESS;
 }
 
-int PIR_ORM::createRecord(ID pir, String vol, int timestamp) {
-   char* query = "INSERT INTO Records(record_id, pir_id, vol, time) VALUES ( ?, ?, ?, ? );";
-   sqlite3_stmt * stmt;
+int PIR_ORM::createRecord(ID pir, String vol, int timestamp)
+{
+    char *query = "INSERT INTO Records(record_id, pir_id, vol, time) VALUES ( ?, ?, ?, ? );";
+    sqlite3_stmt *stmt;
 
-   int rc = sqlite3_prepare_v2(_db, query, -1, &stmt, 0);
+    int rc = sqlite3_prepare_v2(_db, query, -1, &stmt, 0);
 
     if (rc != SQLITE_OK)
     {
-        std::cout << "Error: Unable to prepare statement: "<<query << " - " 
+        std::cout << "Error: Unable to prepare statement: " << query << " - "
                   << sqlite3_errmsg(_db) << std::endl;
         return FAIL;
     }
 
     ID newid = uuid_v4();
 
-    sqlite3_bind_text(stmt, 1 , (char*) newid.c_str(), -1, NULL);
+    sqlite3_bind_text(stmt, 1, (char *)newid.c_str(), -1, NULL);
 
-
-    sqlite3_bind_text(stmt, 2 , (char*) pir.c_str(), -1, NULL);
-    sqlite3_bind_text(stmt,3, (char*)vol.c_str(), -1, NULL);
+    sqlite3_bind_text(stmt, 2, (char *)pir.c_str(), -1, NULL);
+    sqlite3_bind_text(stmt, 3, (char *)vol.c_str(), -1, NULL);
     sqlite3_bind_int(stmt, 4, timestamp);
-   
+
     rc = sqlite3_step(stmt);
-    if (rc != SQLITE_DONE) {
-      
-        std::cout<<"Error: Failed to execute. "<<sqlite3_errmsg(_db)<<std::endl;
+    if (rc != SQLITE_DONE)
+    {
+
+        std::cout << "Error: Failed to execute. " << sqlite3_errmsg(_db) << std::endl;
         return FAIL;
-   
     }
 
     return SUCCESS;
-
-
 }
 
-
-std::vector<ID> PIR_ORM::readPIRsOfGroup(ID group) {
+std::vector<ID> PIR_ORM::readPIRsOfGroup(ID group)
+{
     std::vector<ID> results = {};
-    char* query = "SELECT (pir_id) FROM PIRs WHERE (pir_group = ?)";
+    char *query = "SELECT (pir_id) FROM PIRs WHERE (pir_group = ?)";
     sqlite3_stmt *stmt;
     int rc;
 
     rc = sqlite3_prepare_v2(this->_db, query, -1, &stmt, 0);
-    if (rc != SQLITE_OK) {
-        std::cout<<"Error: Failed to prepare - "<<sqlite3_errmsg(this->_db)<<"\n";
+    if (rc != SQLITE_OK)
+    {
+        std::cout << "Error: Failed to prepare - " << sqlite3_errmsg(this->_db) << "\n";
         return results;
     }
 
-    sqlite3_bind_text(stmt, 1 , (char*) group.c_str(), -1, NULL);
+    sqlite3_bind_text(stmt, 1, (char *)group.c_str(), -1, NULL);
 
     while (
-        (rc = sqlite3_step(stmt)) == SQLITE_ROW
-    ) {
-        char* pirID_CString = (char*) sqlite3_column_text(stmt, 1);
+        (rc = sqlite3_step(stmt)) == SQLITE_ROW)
+    {
+        char *pirID_CString = (char *)sqlite3_column_text(stmt, 1);
         ID pirID(pirID_CString);
         results.push_back(pirID);
     }
@@ -222,39 +232,39 @@ std::vector<ID> PIR_ORM::readPIRsOfGroup(ID group) {
     return results;
 }
 
-std::vector<class Record> PIR_ORM::readRecords(ID group, int begin, int end ) {
-    
+std::vector<class Record> PIR_ORM::readRecords(ID group, int begin, int end)
+{
+
     std::vector<class Record> results = {};
 
-    char* query = "SELECT * FROM Records WHERE ("
-    "pir_id IN (SELECT pir_id FROM PIRs WHERE (pir_group = ?))"
-    "AND time BETWEEN ? AND ?)"
-    ;
-     
-     
-     sqlite3_stmt *stmt;
+    char *query = "SELECT * FROM Records WHERE ("
+                  "pir_id IN (SELECT pir_id FROM PIRs WHERE (pir_group = ?))"
+                  "AND time BETWEEN ? AND ?)";
+
+    sqlite3_stmt *stmt;
     int rc;
 
     rc = sqlite3_prepare_v2(this->_db, query, -1, &stmt, 0);
-    if (rc != SQLITE_OK) {
-        std::cout<<"Error: Failed to prepare - "<<sqlite3_errmsg(this->_db)<<"\n";
+    if (rc != SQLITE_OK)
+    {
+        std::cout << "Error: Failed to prepare - " << sqlite3_errmsg(this->_db) << "\n";
         return results;
     }
 
-    sqlite3_bind_text(stmt, 1 , (char*) group.c_str(), -1, NULL);
+    sqlite3_bind_text(stmt, 1, (char *)group.c_str(), -1, NULL);
     sqlite3_bind_int(stmt, 2, begin);
     sqlite3_bind_int(stmt, 3, end);
     while (
-        (rc = sqlite3_step(stmt)) == SQLITE_ROW
-    ) {
-        char* recordId = (char*) sqlite3_column_text(stmt, 0);
+        (rc = sqlite3_step(stmt)) == SQLITE_ROW)
+    {
+        char *recordId = (char *)sqlite3_column_text(stmt, 0);
         // std::cout<<"record id: "<<recordId<<std::endl;
-        char* pirId = (char*) sqlite3_column_text(stmt, 1);
-        char* rawVol = (char*) sqlite3_column_text(stmt, 2);
+        char *pirId = (char *)sqlite3_column_text(stmt, 1);
+        char *rawVol = (char *)sqlite3_column_text(stmt, 2);
         int timestamp = sqlite3_column_int(stmt, 3);
-        
+
         Record record = Record(recordId, pirId, rawVol, timestamp);
-        
+
         results.push_back(record);
     }
 
@@ -262,7 +272,7 @@ std::vector<class Record> PIR_ORM::readRecords(ID group, int begin, int end ) {
 }
 
 /* Implement class Record*/
-Record::Record(char* recordId, char* pirID, char *rawVol, int timestamp)
+Record::Record(char *recordId, char *pirID, char *rawVol, int timestamp)
 {
     this->_id = String(recordId);
     this->_PIRID = String(pirID);
@@ -366,4 +376,131 @@ std::string Record::toCsvRow()
         ss << "," << vols[i];
     // ss<<"\n";
     return ss.str();
+}
+
+int PIR_ORM::readPIR(ID pir_id, class PIR *pir)
+{
+    char *query = "SELECT * FROM PIRs WHERE (pir_id = ? )";
+
+    sqlite3_stmt *stmt;
+    int rc = sql_prepare(_db, &stmt, query);
+    // int rc = sqlite3_prepare_v2(this->_db, query, -1, &stmt, 0);
+
+    if (rc != SQLITE_OK)
+        return FAIL;
+
+    // rc = sql_bind_text(_db, &stmt, 1, pir_id);
+      sqlite3_bind_text(stmt, 1, (char *)pir_id.c_str(), -1, NULL);
+
+    if (rc != SQLITE_OK)
+        return FAIL;
+
+    rc = sqlite3_step(stmt);
+
+    if (rc == SQLITE_ROW)
+    {
+
+        ID pirId(
+            (char *)sqlite3_column_text(stmt, 0));
+
+        ID groupId(
+            (char *)sqlite3_column_text(stmt, 1));
+        String description(
+            (char *)sqlite3_column_text(stmt, 2));
+
+        *pir = PIR(
+            pirId,
+            groupId,
+            description);
+
+        return SUCCESS;
+    }
+
+    std::cout << "ERROR: Failed to execute statement. \n"
+              << sqlite3_errmsg(_db) << std::endl;
+    ;
+    return FAIL;
+}
+
+
+int PIR_ORM::readUser(ID user_token, class User *user)
+{
+    char *query = "SELECT * FROM Users WHERE (user_token = ? )";
+
+    sqlite3_stmt *stmt;
+    int rc = sqlite3_prepare_v2(this->_db, query, -1, &stmt, 0);
+
+    if (rc != SQLITE_OK)
+        return FAIL;
+
+    // rc = sql_bind_text(_db, &stmt, 1, pir_id);
+      sqlite3_bind_text(stmt, 1, (char *)user_token.c_str(), -1, NULL);
+
+    if (rc != SQLITE_OK)
+        return FAIL;
+
+    rc = sqlite3_step(stmt);
+
+    if (rc == SQLITE_ROW)
+    {
+
+        ID token(
+            (char *)sqlite3_column_text(stmt, 0));
+
+        String name(
+            (char *)sqlite3_column_text(stmt, 1));
+        String description(
+            (char *)sqlite3_column_text(stmt, 2));
+
+        *user = User(
+            token,
+            name,
+            description);
+
+        return SUCCESS;
+    }
+
+    std::cout << "ERROR: Failed to execute statement. \n"
+              << sqlite3_errmsg(_db) << std::endl;
+    ;
+    return FAIL;
+}
+
+std::vector<class PIR> PIR_ORM::readPIRs(ID group){
+    std::vector<class PIR> out = {};
+    char* query = "SELECT * FROM PIRs WHERE pir_group = ?";
+    sqlite3_stmt*stmt;
+
+     int rc = sqlite3_prepare_v2(this->_db, query, -1, &stmt, 0);
+
+    if (rc != SQLITE_OK)
+        return out;
+
+    // rc = sql_bind_text(_db, &stmt, 1, pir_id);
+      sqlite3_bind_text(stmt, 1, (char *)group.c_str(), -1, NULL);
+
+    if (rc != SQLITE_OK)
+        return out;
+
+    
+
+    while (sqlite3_step(stmt) == SQLITE_ROW)
+    {
+
+        ID pirId(
+            (char *)sqlite3_column_text(stmt, 0));
+
+        String pirGroup(
+            (char *)sqlite3_column_text(stmt, 1));
+        String description(
+            (char *)sqlite3_column_text(stmt, 2));
+
+        PIR pir = PIR(pirId, pirGroup, description);
+        out.push_back(pir);
+    }
+
+    std::cout 
+              << sqlite3_errmsg(_db) << std::endl;
+    // ;
+    return out;
 }

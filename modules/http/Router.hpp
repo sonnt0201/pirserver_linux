@@ -4,7 +4,10 @@
 #include "Response.hpp"
 
 #pragma once
-
+/*
+    Handler function for HTTP Middleware.
+    next = false as default.
+*/
 typedef std::function<void(Request* req, Response* res ,bool* next)> HANDLER;
 
 /*
