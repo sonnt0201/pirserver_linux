@@ -16,7 +16,7 @@ Abstraction
 Installation
 ----------
 
-### Installation for end user
+### Installation for usage purposes
 
 #### Prerequisites
 We put product version of server for usage purpose on [THIS Github link](https://github.com/sonnt0201/pirserver_product) so you can manually download using `Code > Download Zip` button or download via `Git`.
