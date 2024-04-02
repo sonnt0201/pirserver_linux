@@ -21,20 +21,21 @@ Installation
 #### Prerequisites
 We put product version of server for usage purpose on [THIS Github link](https://github.com/sonnt0201/pirserver_product) so you can manually download using `Code > Download Zip` button or download via `Git`.
 
-If you have tend to using `Git`, [get Git](https://git-scm.com/downloads) first, of course, then clone to your own device.
+If you have tend to use `Git`, [get Git](https://git-scm.com/downloads) first, of course, then clone to your own device.
 
 #### Installtion via `Git`
 After getting `Git`, create a directory holding the project then just clone the repository:
 
 ```shell
 mkdir pirserver
+cd pirserver
 git clone https://github.com/sonnt0201/pirserver_product
 ```
 
 Redirect to the downloaded folder then run `pirserver`
 
 ```shell
-cd ./product
+cd product
 ./pirserver
 ```
 
@@ -71,7 +72,7 @@ $ make run
 API Reference
 -------------
 
-PIR Server give some available API to end users for easy starting with. If you are a developer, feel free to add your own APIs or any other features, then contribute using `pull request`.  
+PIR Server give some available APIs to end users for easy starting with. If you are a developer, feel free to add your own APIs or any other features, then contribute using `pull request`.  
 
 ### Authentication
 
@@ -123,6 +124,7 @@ Endpoint: `POST /new-pir`
 
 ```
 - Response as the new PIR ID
+
 **Response:**
 ```json
 {
@@ -183,6 +185,7 @@ Endpoint: `POST /new-records`
 
 Endpoint: `GET /api/pirs/group`.
 - Get all PIRs' infor of an specified group.
+
 **Request:**
 ```json
 {
