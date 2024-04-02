@@ -23,7 +23,7 @@ We put product version of server for usage purpose on [THIS Github link](https:/
 
 If you have tend to use `Git`, [get Git](https://git-scm.com/downloads) first, of course, then clone to your own device.
 
-#### Installtion via `Git`
+#### Installation via `Git`
 After getting `Git`, create a directory holding the project then just clone the repository:
 
 ```shell
