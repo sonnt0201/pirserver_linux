@@ -16,4 +16,4 @@ Installation and API documentation
 
 - For end-user installation, [see this](https://github.com/sonnt0201/pirserver_linux/tree/server_v2?tab=readme-ov-file#installation-for-end-user).
 
-- For detail available API reference, [see this](https://github.com/sonnt0201/pirserver_linux/tree/server_v2?tab=readme-ov-file#api-reference)
+- For detail API reference, [see this](https://github.com/sonnt0201/pirserver_linux/tree/server_v2?tab=readme-ov-file#api-reference)
