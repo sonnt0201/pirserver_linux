@@ -23,29 +23,6 @@ We put product version of server for usage purpose on [THIS Github link](https:/
 
 If you have tend to use `Git`, [get Git](https://git-scm.com/downloads) first, of course, then clone to your own device.
 
-#### Installation via `Git`
-After getting `Git`, create a directory holding the project then just clone the repository:
-
-```shell
-mkdir pirserver
-cd pirserver
-git clone https://github.com/sonnt0201/pirserver_product
-```
-
-Redirect to the downloaded folder then run `pirserver`
-
-```shell
-cd product
-./pirserver
-```
-
-### Installation for development purposes.
-
-#### Prerequisites
-Our project use [Boost C++ Libraries](https://www.boost.org/) as a third party and [CMake](https://cmake.org/) as the build tool, so get [Boost](https://www.boost.org/), [Git](https://git-scm.com/downloads) and [CMake](https://cmake.org/) first, then clone and setup the project.
-
-Remember to add `Boost` and `CMake` to the `path`.
-#### Installation via `Git`
 
 ```shell
 $ git clone https://github.com/sonnt0201/pirserver_linux
@@ -53,7 +30,7 @@ $ git clone https://github.com/sonnt0201/pirserver_linux
 
 (Or contribute to this repository using `fork`)
 
-Delete old build folder then make a new one using CMake:
+Delete old `build` folder then make a new one using CMake:
 
 Open terminal in root directory then run `CMake` command
 
