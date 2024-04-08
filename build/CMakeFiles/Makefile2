@@ -73,6 +73,7 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/pirserver.dir/clean
 clean: CMakeFiles/run.dir/clean
+clean: CMakeFiles/bundle.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -82,12 +83,12 @@ clean: CMakeFiles/run.dir/clean
 CMakeFiles/pirserver.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target pirserver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles --progress-num=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27 "Built target pirserver"
 .PHONY : CMakeFiles/pirserver.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/pirserver.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/pirserver.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles 0
 .PHONY : CMakeFiles/pirserver.dir/rule
@@ -108,12 +109,12 @@ CMakeFiles/pirserver.dir/clean:
 CMakeFiles/run.dir/all: CMakeFiles/pirserver.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles --progress-num=12 "Built target run"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles --progress-num=28 "Built target run"
 .PHONY : CMakeFiles/run.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/run.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles 27
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/run.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles 0
 .PHONY : CMakeFiles/run.dir/rule
@@ -126,6 +127,32 @@ run: CMakeFiles/run.dir/rule
 CMakeFiles/run.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/clean
 .PHONY : CMakeFiles/run.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/bundle.dir
+
+# All Build rule for target.
+CMakeFiles/bundle.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bundle.dir/build.make CMakeFiles/bundle.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bundle.dir/build.make CMakeFiles/bundle.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles --progress-num=1 "Built target bundle"
+.PHONY : CMakeFiles/bundle.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/bundle.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/bundle.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles 0
+.PHONY : CMakeFiles/bundle.dir/rule
+
+# Convenience name for target.
+bundle: CMakeFiles/bundle.dir/rule
+.PHONY : bundle
+
+# clean rule for target.
+CMakeFiles/bundle.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bundle.dir/build.make CMakeFiles/bundle.dir/clean
+.PHONY : CMakeFiles/bundle.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
