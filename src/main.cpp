@@ -19,7 +19,8 @@ extern HANDLER validUser,
     getPir,
     getUserInfo,
     getPirsOfGroup,
-    getGroupList
+    getGroupList,
+    legacyCreateRecord
     ;
 
 int main()
@@ -43,13 +44,15 @@ int main()
 
     // POST
     // authen goes firsts
+    
     route.post("*", userAuthen);
     route.post("/api/user", validUser);
     route.post("api/new-group", createGroup);
     route.post("api/new-pir", createPir);
+    // one pir
     route.post("api/new-record", createRecord);
     route.post("api/new-records", createRecordsOfGroup);
-
+    
     std::cout << "Router initialized." << std::endl;
 
     app.use(route);
