@@ -271,6 +271,38 @@ std::vector<class Record> PIR_ORM::readRecords(ID group, int begin, int end)
     return results;
 }
 
+std::vector<class PirGroup> PIR_ORM::readAllGroups() {
+     std::vector<class PirGroup> results = {};
+
+    char *query = "SELECT * FROM PIRGroups;"
+                 ;
+
+    sqlite3_stmt *stmt;
+    int rc;
+
+    rc = sqlite3_prepare_v2(this->_db, query, -1, &stmt, 0);
+    if (rc != SQLITE_OK)
+    {
+        std::cout << "Error: Failed to prepare - " << sqlite3_errmsg(this->_db) << "\n";
+        return results;
+    }
+
+    while (
+        (rc = sqlite3_step(stmt)) == SQLITE_ROW)
+    {
+        char *id = (char *)sqlite3_column_text(stmt, 0);
+        // std::cout<<"record id: "<<recordId<<std::endl;
+        char *des = (char *)sqlite3_column_text(stmt, 1);
+       
+
+        PirGroup group = PirGroup(id, des);
+
+        results.push_back(group);
+    }
+
+    return results;
+};
+
 /* Implement class Record*/
 Record::Record(char *recordId, char *pirID, char *rawVol, int timestamp)
 {

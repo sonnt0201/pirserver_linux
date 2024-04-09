@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sonnguyen/Desktop/repos/pirserver
+CMAKE_SOURCE_DIR = /home/sonnguyen/Desktop/repos/pirserver_linux
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sonnguyen/Desktop/repos/pirserver/build
+CMAKE_BINARY_DIR = /home/sonnguyen/Desktop/repos/pirserver_linux/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles /home/sonnguyen/Desktop/repos/pirserver/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles /home/sonnguyen/Desktop/repos/pirserver_linux/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -467,6 +467,30 @@ src/controllers/createRecordsForGroup.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/createRecordsForGroup.cpp.s
 .PHONY : src/controllers/createRecordsForGroup.cpp.s
 
+src/controllers/getGroupList.o: src/controllers/getGroupList.cpp.o
+.PHONY : src/controllers/getGroupList.o
+
+# target to build an object file
+src/controllers/getGroupList.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/getGroupList.cpp.o
+.PHONY : src/controllers/getGroupList.cpp.o
+
+src/controllers/getGroupList.i: src/controllers/getGroupList.cpp.i
+.PHONY : src/controllers/getGroupList.i
+
+# target to preprocess a source file
+src/controllers/getGroupList.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/getGroupList.cpp.i
+.PHONY : src/controllers/getGroupList.cpp.i
+
+src/controllers/getGroupList.s: src/controllers/getGroupList.cpp.s
+.PHONY : src/controllers/getGroupList.s
+
+# target to generate assembly for a file
+src/controllers/getGroupList.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/getGroupList.cpp.s
+.PHONY : src/controllers/getGroupList.cpp.s
+
 src/controllers/getPir.o: src/controllers/getPir.cpp.o
 .PHONY : src/controllers/getPir.o
 
@@ -805,6 +829,9 @@ help:
 	@echo "... src/controllers/createRecordsForGroup.o"
 	@echo "... src/controllers/createRecordsForGroup.i"
 	@echo "... src/controllers/createRecordsForGroup.s"
+	@echo "... src/controllers/getGroupList.o"
+	@echo "... src/controllers/getGroupList.i"
+	@echo "... src/controllers/getGroupList.s"
 	@echo "... src/controllers/getPir.o"
 	@echo "... src/controllers/getPir.i"
 	@echo "... src/controllers/getPir.s"

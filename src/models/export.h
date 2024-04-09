@@ -99,6 +99,8 @@ public:
         [out] user: User object containing the retrieved information.
     */
     int readUser(ID user_token, class User *user);
+
+    std::vector<class PirGroup> readAllGroups();
 };
 
 /* TO-DO: Implement Request Row class */
@@ -181,5 +183,27 @@ public:
         json["name"] = _name;
         json["description"] = _description;
         return json;
+    }
+};
+
+class PirGroup {
+    private:
+    ID _id;
+    String _description;
+
+    public:
+    inline PirGroup(ID id, String description) {
+        _id = id;
+        _description = description;
+    }
+
+    inline ID id() { return _id; }
+    inline String description() { return _description; }
+
+    inline JSON toJson() {
+        JSON root;
+        root["id"] = _id;
+        root["description"] = _description;
+        return root;
     }
 };

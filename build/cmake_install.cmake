@@ -1,4 +1,4 @@
-# Install script for directory: /home/sonnguyen/Desktop/repos/pirserver
+# Install script for directory: /home/sonnguyen/Desktop/repos/pirserver_linux
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/sonnguyen/Desktop/repos/pirserver/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/sonnguyen/Desktop/repos/pirserver_linux/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

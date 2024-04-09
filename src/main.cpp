@@ -18,7 +18,8 @@ extern HANDLER validUser,
     createRecordsOfGroup,
     getPir,
     getUserInfo,
-    getPirsOfGroup
+    getPirsOfGroup,
+    getGroupList
     ;
 
 int main()
@@ -37,6 +38,7 @@ int main()
     route.get("api/pir", getPir);
     route.get("api/user-info", getUserInfo);
     route.get("api/pirs/group", getPirsOfGroup);
+    route.get("api/all-groups", getGroupList);
     //    route.get("/invalid-user", )
 
     // POST

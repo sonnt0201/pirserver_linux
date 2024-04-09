@@ -25,10 +25,10 @@ add_custom_target(run
 add_custom_target(bundle
     COMMAND cmake ..
     COMMAND make
-    COMMAND mkdir ../product
+    COMMAND mkdir -p ../product
     COMMAND cp pirserver ../product
     COMMAND cp -r ../web-views ../product
     
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-    COMMENT "Compile and run server"
+    COMMENT "Build and bundle product distribution"
 )

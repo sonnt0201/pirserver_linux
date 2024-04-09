@@ -1,5 +1,5 @@
 CMakeFiles/pirserver.dir/modules/sqlite/sqlite3.c.o: \
- /home/sonnguyen/Desktop/repos/pirserver/modules/sqlite/sqlite3.c \
+ /home/sonnguyen/Desktop/repos/pirserver_linux/modules/sqlite/sqlite3.c \
  /usr/include/stdc-predef.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \

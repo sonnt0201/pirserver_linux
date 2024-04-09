@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sonnguyen/Desktop/repos/pirserver
+CMAKE_SOURCE_DIR = /home/sonnguyen/Desktop/repos/pirserver_linux
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sonnguyen/Desktop/repos/pirserver/build
+CMAKE_BINARY_DIR = /home/sonnguyen/Desktop/repos/pirserver_linux/build
 
 # Utility rule file for bundle.
 
@@ -67,10 +67,10 @@ include CMakeFiles/bundle.dir/compiler_depend.make
 include CMakeFiles/bundle.dir/progress.make
 
 CMakeFiles/bundle:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Compile and run server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Build and bundle product distribution"
 	cmake ..
 	make
-	mkdir ../product
+	mkdir -p ../product
 	cp pirserver ../product
 	cp -r ../web-views ../product
 
@@ -87,6 +87,6 @@ CMakeFiles/bundle.dir/clean:
 .PHONY : CMakeFiles/bundle.dir/clean
 
 CMakeFiles/bundle.dir/depend:
-	cd /home/sonnguyen/Desktop/repos/pirserver/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sonnguyen/Desktop/repos/pirserver /home/sonnguyen/Desktop/repos/pirserver /home/sonnguyen/Desktop/repos/pirserver/build /home/sonnguyen/Desktop/repos/pirserver/build /home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles/bundle.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sonnguyen/Desktop/repos/pirserver_linux/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sonnguyen/Desktop/repos/pirserver_linux /home/sonnguyen/Desktop/repos/pirserver_linux /home/sonnguyen/Desktop/repos/pirserver_linux/build /home/sonnguyen/Desktop/repos/pirserver_linux/build /home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles/bundle.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/bundle.dir/depend
 

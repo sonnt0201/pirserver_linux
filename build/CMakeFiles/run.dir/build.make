@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sonnguyen/Desktop/repos/pirserver
+CMAKE_SOURCE_DIR = /home/sonnguyen/Desktop/repos/pirserver_linux
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sonnguyen/Desktop/repos/pirserver/build
+CMAKE_BINARY_DIR = /home/sonnguyen/Desktop/repos/pirserver_linux/build
 
 # Utility rule file for run.
 
@@ -67,10 +67,10 @@ include CMakeFiles/run.dir/compiler_depend.make
 include CMakeFiles/run.dir/progress.make
 
 CMakeFiles/run:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Compile and run server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Compile and run server"
 	cmake ..
 	make
-	/home/sonnguyen/Desktop/repos/pirserver/build/pirserver
+	/home/sonnguyen/Desktop/repos/pirserver_linux/build/pirserver
 
 run: CMakeFiles/run
 run: CMakeFiles/run.dir/build.make
@@ -85,6 +85,6 @@ CMakeFiles/run.dir/clean:
 .PHONY : CMakeFiles/run.dir/clean
 
 CMakeFiles/run.dir/depend:
-	cd /home/sonnguyen/Desktop/repos/pirserver/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sonnguyen/Desktop/repos/pirserver /home/sonnguyen/Desktop/repos/pirserver /home/sonnguyen/Desktop/repos/pirserver/build /home/sonnguyen/Desktop/repos/pirserver/build /home/sonnguyen/Desktop/repos/pirserver/build/CMakeFiles/run.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sonnguyen/Desktop/repos/pirserver_linux/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sonnguyen/Desktop/repos/pirserver_linux /home/sonnguyen/Desktop/repos/pirserver_linux /home/sonnguyen/Desktop/repos/pirserver_linux/build /home/sonnguyen/Desktop/repos/pirserver_linux/build /home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles/run.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/run.dir/depend
 

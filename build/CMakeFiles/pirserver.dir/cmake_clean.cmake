@@ -25,6 +25,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/pirserver.dir/src/controllers/createRecord.cpp.o.d"
   "CMakeFiles/pirserver.dir/src/controllers/createRecordsForGroup.cpp.o"
   "CMakeFiles/pirserver.dir/src/controllers/createRecordsForGroup.cpp.o.d"
+  "CMakeFiles/pirserver.dir/src/controllers/getGroupList.cpp.o"
+  "CMakeFiles/pirserver.dir/src/controllers/getGroupList.cpp.o.d"
   "CMakeFiles/pirserver.dir/src/controllers/getPir.cpp.o"
   "CMakeFiles/pirserver.dir/src/controllers/getPir.cpp.o.d"
   "CMakeFiles/pirserver.dir/src/controllers/getPirsOfGroup.cpp.o"

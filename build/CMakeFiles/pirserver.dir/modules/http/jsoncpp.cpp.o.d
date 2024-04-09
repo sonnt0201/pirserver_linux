@@ -1,7 +1,7 @@
 CMakeFiles/pirserver.dir/modules/http/jsoncpp.cpp.o: \
- /home/sonnguyen/Desktop/repos/pirserver/modules/http/jsoncpp.cpp \
+ /home/sonnguyen/Desktop/repos/pirserver_linux/modules/http/jsoncpp.cpp \
  /usr/include/stdc-predef.h \
- /home/sonnguyen/Desktop/repos/pirserver/modules/http/json.h \
+ /home/sonnguyen/Desktop/repos/pirserver_linux/modules/http/json.h \
  /usr/include/c++/11/cstring \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
