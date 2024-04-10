@@ -39,6 +39,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/pirserver.dir/src/controllers/home.cpp.o.d"
   "CMakeFiles/pirserver.dir/src/controllers/invalidUser.cpp.o"
   "CMakeFiles/pirserver.dir/src/controllers/invalidUser.cpp.o.d"
+  "CMakeFiles/pirserver.dir/src/controllers/legacyCreateRecord.cpp.o"
+  "CMakeFiles/pirserver.dir/src/controllers/legacyCreateRecord.cpp.o.d"
   "CMakeFiles/pirserver.dir/src/controllers/randomuuid.cpp.o"
   "CMakeFiles/pirserver.dir/src/controllers/randomuuid.cpp.o.d"
   "CMakeFiles/pirserver.dir/src/controllers/testPage.cpp.o"

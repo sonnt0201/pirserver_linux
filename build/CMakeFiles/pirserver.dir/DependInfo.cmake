@@ -28,6 +28,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/getUserInfo.cpp" "CMakeFiles/pirserver.dir/src/controllers/getUserInfo.cpp.o" "gcc" "CMakeFiles/pirserver.dir/src/controllers/getUserInfo.cpp.o.d"
   "/home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/home.cpp" "CMakeFiles/pirserver.dir/src/controllers/home.cpp.o" "gcc" "CMakeFiles/pirserver.dir/src/controllers/home.cpp.o.d"
   "/home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/invalidUser.cpp" "CMakeFiles/pirserver.dir/src/controllers/invalidUser.cpp.o" "gcc" "CMakeFiles/pirserver.dir/src/controllers/invalidUser.cpp.o.d"
+  "/home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/legacyCreateRecord.cpp" "CMakeFiles/pirserver.dir/src/controllers/legacyCreateRecord.cpp.o" "gcc" "CMakeFiles/pirserver.dir/src/controllers/legacyCreateRecord.cpp.o.d"
   "/home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/randomuuid.cpp" "CMakeFiles/pirserver.dir/src/controllers/randomuuid.cpp.o" "gcc" "CMakeFiles/pirserver.dir/src/controllers/randomuuid.cpp.o.d"
   "/home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/testPage.cpp" "CMakeFiles/pirserver.dir/src/controllers/testPage.cpp.o" "gcc" "CMakeFiles/pirserver.dir/src/controllers/testPage.cpp.o.d"
   "/home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/userAuthen.cpp" "CMakeFiles/pirserver.dir/src/controllers/userAuthen.cpp.o" "gcc" "CMakeFiles/pirserver.dir/src/controllers/userAuthen.cpp.o.d"

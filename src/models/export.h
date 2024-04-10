@@ -8,7 +8,7 @@
 #pragma once
 
 #define VOLNUM 100
-#define SEPARATOR '_'
+#define SEPARATOR '+'
 
 extern class PIR_ORM pirOrm;
 
