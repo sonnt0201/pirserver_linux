@@ -137,7 +137,7 @@ void Server::onClientConnection(int clientSocket)
         std::cout 
                   << timer.now()
                   << req.methodAsString() << " " << req.path()
-                  << "\nFinished handling request in: " << timer.getDuration() << " milliseconds\n"
+                  << "\nHandling time: " << timer.getDuration() << " millisecs\n"
                   << "_____________________________________\n\n";
 
         close(clientSocket);

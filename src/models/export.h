@@ -100,7 +100,18 @@ public:
     */
     int readUser(ID user_token, class User *user);
 
+
+    /*
+        Read all pir groups 
+        [out] vector holding all the pir groups in PirGroup.
+    */
     std::vector<class PirGroup> readAllGroups();
+
+    /*
+
+    */
+    std::vector<class Record> latestRecords(int number, ID groupID);
+    
 };
 
 /* TO-DO: Implement Request Row class */

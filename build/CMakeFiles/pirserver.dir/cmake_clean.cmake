@@ -27,6 +27,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/pirserver.dir/src/controllers/createRecordsForGroup.cpp.o.d"
   "CMakeFiles/pirserver.dir/src/controllers/getGroupList.cpp.o"
   "CMakeFiles/pirserver.dir/src/controllers/getGroupList.cpp.o.d"
+  "CMakeFiles/pirserver.dir/src/controllers/getLastestRecords.cpp.o"
+  "CMakeFiles/pirserver.dir/src/controllers/getLastestRecords.cpp.o.d"
   "CMakeFiles/pirserver.dir/src/controllers/getPir.cpp.o"
   "CMakeFiles/pirserver.dir/src/controllers/getPir.cpp.o.d"
   "CMakeFiles/pirserver.dir/src/controllers/getPirsOfGroup.cpp.o"
@@ -51,6 +53,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/pirserver.dir/src/main.cpp.o.d"
   "CMakeFiles/pirserver.dir/src/models/PIR_ORM.cpp.o"
   "CMakeFiles/pirserver.dir/src/models/PIR_ORM.cpp.o.d"
+  "CMakeFiles/pirserver.dir/src/utils/printNezuko.cpp.o"
+  "CMakeFiles/pirserver.dir/src/utils/printNezuko.cpp.o.d"
   "pirserver"
   "pirserver.pdb"
 )

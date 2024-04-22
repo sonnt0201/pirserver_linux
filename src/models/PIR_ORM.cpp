@@ -271,11 +271,11 @@ std::vector<class Record> PIR_ORM::readRecords(ID group, int begin, int end)
     return results;
 }
 
-std::vector<class PirGroup> PIR_ORM::readAllGroups() {
-     std::vector<class PirGroup> results = {};
+std::vector<class PirGroup> PIR_ORM::readAllGroups()
+{
+    std::vector<class PirGroup> results = {};
 
-    char *query = "SELECT * FROM PIRGroups;"
-                 ;
+    char *query = "SELECT * FROM PIRGroups;";
 
     sqlite3_stmt *stmt;
     int rc;
@@ -293,7 +293,6 @@ std::vector<class PirGroup> PIR_ORM::readAllGroups() {
         char *id = (char *)sqlite3_column_text(stmt, 0);
         // std::cout<<"record id: "<<recordId<<std::endl;
         char *des = (char *)sqlite3_column_text(stmt, 1);
-       
 
         PirGroup group = PirGroup(id, des);
 
@@ -342,6 +341,9 @@ std::vector<int> Record::getVols()
             chunk = 0;
         }
     }
+
+    if (chunk > 0)result.push_back(chunk);
+    
     return result;
 };
 
@@ -422,7 +424,7 @@ int PIR_ORM::readPIR(ID pir_id, class PIR *pir)
         return FAIL;
 
     // rc = sql_bind_text(_db, &stmt, 1, pir_id);
-      sqlite3_bind_text(stmt, 1, (char *)pir_id.c_str(), -1, NULL);
+    sqlite3_bind_text(stmt, 1, (char *)pir_id.c_str(), -1, NULL);
 
     if (rc != SQLITE_OK)
         return FAIL;
@@ -454,7 +456,6 @@ int PIR_ORM::readPIR(ID pir_id, class PIR *pir)
     return FAIL;
 }
 
-
 int PIR_ORM::readUser(ID user_token, class User *user)
 {
     char *query = "SELECT * FROM Users WHERE (user_token = ? )";
@@ -466,7 +467,7 @@ int PIR_ORM::readUser(ID user_token, class User *user)
         return FAIL;
 
     // rc = sql_bind_text(_db, &stmt, 1, pir_id);
-      sqlite3_bind_text(stmt, 1, (char *)user_token.c_str(), -1, NULL);
+    sqlite3_bind_text(stmt, 1, (char *)user_token.c_str(), -1, NULL);
 
     if (rc != SQLITE_OK)
         return FAIL;
@@ -498,23 +499,22 @@ int PIR_ORM::readUser(ID user_token, class User *user)
     return FAIL;
 }
 
-std::vector<class PIR> PIR_ORM::readPIRs(ID group){
+std::vector<class PIR> PIR_ORM::readPIRs(ID group)
+{
     std::vector<class PIR> out = {};
-    char* query = "SELECT * FROM PIRs WHERE pir_group = ?";
-    sqlite3_stmt*stmt;
+    char *query = "SELECT * FROM PIRs WHERE pir_group = ?";
+    sqlite3_stmt *stmt;
 
-     int rc = sqlite3_prepare_v2(this->_db, query, -1, &stmt, 0);
+    int rc = sqlite3_prepare_v2(this->_db, query, -1, &stmt, 0);
 
     if (rc != SQLITE_OK)
         return out;
 
     // rc = sql_bind_text(_db, &stmt, 1, pir_id);
-      sqlite3_bind_text(stmt, 1, (char *)group.c_str(), -1, NULL);
+    sqlite3_bind_text(stmt, 1, (char *)group.c_str(), -1, NULL);
 
     if (rc != SQLITE_OK)
         return out;
-
-    
 
     while (sqlite3_step(stmt) == SQLITE_ROW)
     {
@@ -531,8 +531,46 @@ std::vector<class PIR> PIR_ORM::readPIRs(ID group){
         out.push_back(pir);
     }
 
-    std::cout 
-              << sqlite3_errmsg(_db) << std::endl;
+    std::cout
+        << sqlite3_errmsg(_db) << std::endl;
     // ;
     return out;
 }
+
+std::vector<class Record> PIR_ORM::latestRecords(int num, ID groupID)
+{
+    char *query = "SELECT * FROM Records ORDER BY time DESC LIMIT ( (SELECT COUNT (*) FROM PIRs WHERE (pir_group=? )) * ? )";
+
+    std::vector<class Record> out = {};
+
+    sqlite3_stmt *stmt;
+    int rc = sqlite3_prepare_v2(this->_db, query, -1, &stmt, 0);
+
+    if (rc != SQLITE_OK){
+        std::cout<<"Prepare failed: "
+        <<sqlite3_errmsg(_db) << std::endl;
+        return out;
+    }
+
+    // rc = sql_bind_text(_db, &stmt, 1, pir_id);
+    sqlite3_bind_text(stmt, 1, (char *)groupID.c_str(), -1, NULL);
+    sqlite3_bind_int(stmt, 2, num);
+
+    // rc = sqlite3_step(stmt);
+    
+  while (
+        (rc = sqlite3_step(stmt)) == SQLITE_ROW)
+    {
+        char *recordId = (char *)sqlite3_column_text(stmt, 0);
+        // std::cout<<"record id: "<<recordId<<std::endl;
+        char *pirId = (char *)sqlite3_column_text(stmt, 1);
+        char *rawVol = (char *)sqlite3_column_text(stmt, 2);
+        int timestamp = sqlite3_column_int(stmt, 3);
+
+        Record record = Record(recordId, pirId, rawVol, timestamp);
+
+        out.push_back(record);
+    }
+
+    return out;
+};

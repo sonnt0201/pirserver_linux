@@ -491,6 +491,30 @@ src/controllers/getGroupList.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/getGroupList.cpp.s
 .PHONY : src/controllers/getGroupList.cpp.s
 
+src/controllers/getLastestRecords.o: src/controllers/getLastestRecords.cpp.o
+.PHONY : src/controllers/getLastestRecords.o
+
+# target to build an object file
+src/controllers/getLastestRecords.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/getLastestRecords.cpp.o
+.PHONY : src/controllers/getLastestRecords.cpp.o
+
+src/controllers/getLastestRecords.i: src/controllers/getLastestRecords.cpp.i
+.PHONY : src/controllers/getLastestRecords.i
+
+# target to preprocess a source file
+src/controllers/getLastestRecords.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/getLastestRecords.cpp.i
+.PHONY : src/controllers/getLastestRecords.cpp.i
+
+src/controllers/getLastestRecords.s: src/controllers/getLastestRecords.cpp.s
+.PHONY : src/controllers/getLastestRecords.s
+
+# target to generate assembly for a file
+src/controllers/getLastestRecords.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/getLastestRecords.cpp.s
+.PHONY : src/controllers/getLastestRecords.cpp.s
+
 src/controllers/getPir.o: src/controllers/getPir.cpp.o
 .PHONY : src/controllers/getPir.o
 
@@ -779,6 +803,30 @@ src/models/PIR_ORM.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/models/PIR_ORM.cpp.s
 .PHONY : src/models/PIR_ORM.cpp.s
 
+src/utils/printNezuko.o: src/utils/printNezuko.cpp.o
+.PHONY : src/utils/printNezuko.o
+
+# target to build an object file
+src/utils/printNezuko.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/utils/printNezuko.cpp.o
+.PHONY : src/utils/printNezuko.cpp.o
+
+src/utils/printNezuko.i: src/utils/printNezuko.cpp.i
+.PHONY : src/utils/printNezuko.i
+
+# target to preprocess a source file
+src/utils/printNezuko.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/utils/printNezuko.cpp.i
+.PHONY : src/utils/printNezuko.cpp.i
+
+src/utils/printNezuko.s: src/utils/printNezuko.cpp.s
+.PHONY : src/utils/printNezuko.s
+
+# target to generate assembly for a file
+src/utils/printNezuko.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/utils/printNezuko.cpp.s
+.PHONY : src/utils/printNezuko.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -832,6 +880,9 @@ help:
 	@echo "... src/controllers/getGroupList.o"
 	@echo "... src/controllers/getGroupList.i"
 	@echo "... src/controllers/getGroupList.s"
+	@echo "... src/controllers/getLastestRecords.o"
+	@echo "... src/controllers/getLastestRecords.i"
+	@echo "... src/controllers/getLastestRecords.s"
 	@echo "... src/controllers/getPir.o"
 	@echo "... src/controllers/getPir.i"
 	@echo "... src/controllers/getPir.s"
@@ -868,6 +919,9 @@ help:
 	@echo "... src/models/PIR_ORM.o"
 	@echo "... src/models/PIR_ORM.i"
 	@echo "... src/models/PIR_ORM.s"
+	@echo "... src/utils/printNezuko.o"
+	@echo "... src/utils/printNezuko.i"
+	@echo "... src/utils/printNezuko.s"
 .PHONY : help
 
 

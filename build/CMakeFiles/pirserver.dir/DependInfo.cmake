@@ -22,6 +22,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/createRecord.cpp" "CMakeFiles/pirserver.dir/src/controllers/createRecord.cpp.o" "gcc" "CMakeFiles/pirserver.dir/src/controllers/createRecord.cpp.o.d"
   "/home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/createRecordsForGroup.cpp" "CMakeFiles/pirserver.dir/src/controllers/createRecordsForGroup.cpp.o" "gcc" "CMakeFiles/pirserver.dir/src/controllers/createRecordsForGroup.cpp.o.d"
   "/home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/getGroupList.cpp" "CMakeFiles/pirserver.dir/src/controllers/getGroupList.cpp.o" "gcc" "CMakeFiles/pirserver.dir/src/controllers/getGroupList.cpp.o.d"
+  "/home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/getLastestRecords.cpp" "CMakeFiles/pirserver.dir/src/controllers/getLastestRecords.cpp.o" "gcc" "CMakeFiles/pirserver.dir/src/controllers/getLastestRecords.cpp.o.d"
   "/home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/getPir.cpp" "CMakeFiles/pirserver.dir/src/controllers/getPir.cpp.o" "gcc" "CMakeFiles/pirserver.dir/src/controllers/getPir.cpp.o.d"
   "/home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/getPirsOfGroup.cpp" "CMakeFiles/pirserver.dir/src/controllers/getPirsOfGroup.cpp.o" "gcc" "CMakeFiles/pirserver.dir/src/controllers/getPirsOfGroup.cpp.o.d"
   "/home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/getRecordsOfGroup.cpp" "CMakeFiles/pirserver.dir/src/controllers/getRecordsOfGroup.cpp.o" "gcc" "CMakeFiles/pirserver.dir/src/controllers/getRecordsOfGroup.cpp.o.d"
@@ -34,6 +35,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/validUser.cpp" "CMakeFiles/pirserver.dir/src/controllers/validUser.cpp.o" "gcc" "CMakeFiles/pirserver.dir/src/controllers/validUser.cpp.o.d"
   "/home/sonnguyen/Desktop/repos/pirserver_linux/src/main.cpp" "CMakeFiles/pirserver.dir/src/main.cpp.o" "gcc" "CMakeFiles/pirserver.dir/src/main.cpp.o.d"
   "/home/sonnguyen/Desktop/repos/pirserver_linux/src/models/PIR_ORM.cpp" "CMakeFiles/pirserver.dir/src/models/PIR_ORM.cpp.o" "gcc" "CMakeFiles/pirserver.dir/src/models/PIR_ORM.cpp.o.d"
+  "/home/sonnguyen/Desktop/repos/pirserver_linux/src/utils/printNezuko.cpp" "CMakeFiles/pirserver.dir/src/utils/printNezuko.cpp.o" "gcc" "CMakeFiles/pirserver.dir/src/utils/printNezuko.cpp.o.d"
   )
 
 # Targets to which this target links.

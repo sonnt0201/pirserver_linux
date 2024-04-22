@@ -1,13 +1,10 @@
 #include "export.h"
 
 /*
-    "group_id": String
+    ?group_id:String
 */
 HANDLER getPirsOfGroup = [](Request *req, Response *res, bool *next) {
-    JSON reqJson;
-    reqJson = req->toJson();
-
-    ID groupId = reqJson["group_id"].asString();
+    ID groupId = req->queryValue("group_id");
 
     std::vector<PIR> pirs;
 

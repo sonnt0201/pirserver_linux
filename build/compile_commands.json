@@ -71,6 +71,11 @@
 },
 {
   "directory": "/home/sonnguyen/Desktop/repos/pirserver_linux/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/pirserver.dir/src/controllers/getLastestRecords.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/getLastestRecords.cpp",
+  "file": "/home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/getLastestRecords.cpp"
+},
+{
+  "directory": "/home/sonnguyen/Desktop/repos/pirserver_linux/build",
   "command": "/usr/bin/g++   -g -o CMakeFiles/pirserver.dir/src/controllers/getPir.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/getPir.cpp",
   "file": "/home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/getPir.cpp"
 },
@@ -128,5 +133,10 @@
   "directory": "/home/sonnguyen/Desktop/repos/pirserver_linux/build",
   "command": "/usr/bin/g++   -g -o CMakeFiles/pirserver.dir/src/models/PIR_ORM.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver_linux/src/models/PIR_ORM.cpp",
   "file": "/home/sonnguyen/Desktop/repos/pirserver_linux/src/models/PIR_ORM.cpp"
+},
+{
+  "directory": "/home/sonnguyen/Desktop/repos/pirserver_linux/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/pirserver.dir/src/utils/printNezuko.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver_linux/src/utils/printNezuko.cpp",
+  "file": "/home/sonnguyen/Desktop/repos/pirserver_linux/src/utils/printNezuko.cpp"
 }
 ]

@@ -2,7 +2,7 @@
 #include "../modules/export.h"
 #include "config.h"
 #include "controllers/export.h"
-
+#include "utils/export.h"
 extern HANDLER validUser,
     createGroup,
     home,
@@ -20,7 +20,8 @@ extern HANDLER validUser,
     getUserInfo,
     getPirsOfGroup,
     getGroupList,
-    legacyCreateRecord
+    legacyCreateRecord,
+    getLatestRecords
     ;
 
 int main()
@@ -40,6 +41,7 @@ int main()
     route.get("api/user-info", getUserInfo);
     route.get("api/pirs/group", getPirsOfGroup);
     route.get("api/all-groups", getGroupList);
+    route.get("api/records/latest", getLatestRecords);
     //    route.get("/invalid-user", )
 
     // POST
@@ -56,6 +58,8 @@ int main()
     std::cout << "Router initialized." << std::endl;
 
     app.use(route);
+
+    printNezuko();
 
     app.run();
 }
