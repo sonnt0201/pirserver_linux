@@ -395,6 +395,30 @@ src/controllers/createGroup.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/createGroup.cpp.s
 .PHONY : src/controllers/createGroup.cpp.s
 
+src/controllers/createGroupRecordsWithWebForm.o: src/controllers/createGroupRecordsWithWebForm.cpp.o
+.PHONY : src/controllers/createGroupRecordsWithWebForm.o
+
+# target to build an object file
+src/controllers/createGroupRecordsWithWebForm.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/createGroupRecordsWithWebForm.cpp.o
+.PHONY : src/controllers/createGroupRecordsWithWebForm.cpp.o
+
+src/controllers/createGroupRecordsWithWebForm.i: src/controllers/createGroupRecordsWithWebForm.cpp.i
+.PHONY : src/controllers/createGroupRecordsWithWebForm.i
+
+# target to preprocess a source file
+src/controllers/createGroupRecordsWithWebForm.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/createGroupRecordsWithWebForm.cpp.i
+.PHONY : src/controllers/createGroupRecordsWithWebForm.cpp.i
+
+src/controllers/createGroupRecordsWithWebForm.s: src/controllers/createGroupRecordsWithWebForm.cpp.s
+.PHONY : src/controllers/createGroupRecordsWithWebForm.s
+
+# target to generate assembly for a file
+src/controllers/createGroupRecordsWithWebForm.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/createGroupRecordsWithWebForm.cpp.s
+.PHONY : src/controllers/createGroupRecordsWithWebForm.cpp.s
+
 src/controllers/createPir.o: src/controllers/createPir.cpp.o
 .PHONY : src/controllers/createPir.o
 
@@ -868,6 +892,9 @@ help:
 	@echo "... src/controllers/createGroup.o"
 	@echo "... src/controllers/createGroup.i"
 	@echo "... src/controllers/createGroup.s"
+	@echo "... src/controllers/createGroupRecordsWithWebForm.o"
+	@echo "... src/controllers/createGroupRecordsWithWebForm.i"
+	@echo "... src/controllers/createGroupRecordsWithWebForm.s"
 	@echo "... src/controllers/createPir.o"
 	@echo "... src/controllers/createPir.i"
 	@echo "... src/controllers/createPir.s"

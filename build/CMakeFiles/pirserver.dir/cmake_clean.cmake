@@ -19,6 +19,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/pirserver.dir/src/controllers/api_example.cpp.o.d"
   "CMakeFiles/pirserver.dir/src/controllers/createGroup.cpp.o"
   "CMakeFiles/pirserver.dir/src/controllers/createGroup.cpp.o.d"
+  "CMakeFiles/pirserver.dir/src/controllers/createGroupRecordsWithWebForm.cpp.o"
+  "CMakeFiles/pirserver.dir/src/controllers/createGroupRecordsWithWebForm.cpp.o.d"
   "CMakeFiles/pirserver.dir/src/controllers/createPir.cpp.o"
   "CMakeFiles/pirserver.dir/src/controllers/createPir.cpp.o.d"
   "CMakeFiles/pirserver.dir/src/controllers/createRecord.cpp.o"

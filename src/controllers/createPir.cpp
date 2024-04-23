@@ -4,8 +4,7 @@ HANDLER createPir = [](Request *req, Response *res, bool *next) {
     JSON reqJson = req->toJson();
 
     if (
-        pirOrm.validUser(reqJson["user_token"].asString())
-        & pirOrm.isGroupExists(reqJson["group"].asString())
+        pirOrm.isGroupExists(reqJson["group"].asString())
     ) {
           JSON resJson;
     ID newpir;

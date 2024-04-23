@@ -47,7 +47,7 @@ int main()
     // POST
     // authen goes firsts
     
-    route.post("*", userAuthen);
+    // route.post("*", userAuthen);
     route.post("/api/user", validUser);
     route.post("api/new-group", createGroup);
     route.post("api/new-pir", createPir);
