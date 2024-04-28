@@ -97,7 +97,7 @@ Hết `Header`, xuống dòng 2 lần rồi thêm nội dung của `body` vào.
 
 "pir" sẽ là id của từng con PIR, mình đánh dâu từ 0 -> 4, lưu ý nó ở dạng `String` nên nhớ đặt là `"pir": "0"`, `"pir": "1"`,... thay vì `"pir": 0`, `"pir": 1`.
 
-"vol" thì như kì trước mình làm, 100 số vol kể từ thời gian `timestamp` ở trên.
+"vol" thì như kì trước mình làm, 100 số vol kể từ thời gian `timestamp` ở trên, cách nhau bằng dấu "_".
 
 ## Lưu ý nếu làm mãi không được.
 
