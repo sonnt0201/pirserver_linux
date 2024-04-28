@@ -111,6 +111,16 @@
 },
 {
   "directory": "/home/sonnguyen/Desktop/repos/pirserver_linux/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/pirserver.dir/src/controllers/legacyCreateRecord.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/legacyCreateRecord.cpp",
+  "file": "/home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/legacyCreateRecord.cpp"
+},
+{
+  "directory": "/home/sonnguyen/Desktop/repos/pirserver_linux/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/pirserver.dir/src/controllers/printRequest.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/printRequest.cpp",
+  "file": "/home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/printRequest.cpp"
+},
+{
+  "directory": "/home/sonnguyen/Desktop/repos/pirserver_linux/build",
   "command": "/usr/bin/g++   -g -o CMakeFiles/pirserver.dir/src/controllers/randomuuid.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/randomuuid.cpp",
   "file": "/home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/randomuuid.cpp"
 },

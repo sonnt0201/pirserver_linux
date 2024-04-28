@@ -20,8 +20,9 @@ extern HANDLER validUser,
     getUserInfo,
     getPirsOfGroup,
     getGroupList,
+    getLatestRecords,
     legacyCreateRecord,
-    getLatestRecords
+    printRequest
     ;
 
 int main()
@@ -48,6 +49,8 @@ int main()
     // authen goes firsts
     
     // route.post("*", userAuthen);
+    route.post("*", printRequest);
+    route.post("/legacy", legacyCreateRecord);
     route.post("/api/user", validUser);
     route.post("api/new-group", createGroup);
     route.post("api/new-pir", createPir);

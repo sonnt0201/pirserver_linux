@@ -2,7 +2,6 @@
 
 /*
 {
-    "user_token": String,
     "pir": String,
     "vol": String,
     "timestamp": number

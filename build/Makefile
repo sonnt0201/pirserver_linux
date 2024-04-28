@@ -683,6 +683,54 @@ src/controllers/invalidUser.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/invalidUser.cpp.s
 .PHONY : src/controllers/invalidUser.cpp.s
 
+src/controllers/legacyCreateRecord.o: src/controllers/legacyCreateRecord.cpp.o
+.PHONY : src/controllers/legacyCreateRecord.o
+
+# target to build an object file
+src/controllers/legacyCreateRecord.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/legacyCreateRecord.cpp.o
+.PHONY : src/controllers/legacyCreateRecord.cpp.o
+
+src/controllers/legacyCreateRecord.i: src/controllers/legacyCreateRecord.cpp.i
+.PHONY : src/controllers/legacyCreateRecord.i
+
+# target to preprocess a source file
+src/controllers/legacyCreateRecord.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/legacyCreateRecord.cpp.i
+.PHONY : src/controllers/legacyCreateRecord.cpp.i
+
+src/controllers/legacyCreateRecord.s: src/controllers/legacyCreateRecord.cpp.s
+.PHONY : src/controllers/legacyCreateRecord.s
+
+# target to generate assembly for a file
+src/controllers/legacyCreateRecord.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/legacyCreateRecord.cpp.s
+.PHONY : src/controllers/legacyCreateRecord.cpp.s
+
+src/controllers/printRequest.o: src/controllers/printRequest.cpp.o
+.PHONY : src/controllers/printRequest.o
+
+# target to build an object file
+src/controllers/printRequest.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/printRequest.cpp.o
+.PHONY : src/controllers/printRequest.cpp.o
+
+src/controllers/printRequest.i: src/controllers/printRequest.cpp.i
+.PHONY : src/controllers/printRequest.i
+
+# target to preprocess a source file
+src/controllers/printRequest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/printRequest.cpp.i
+.PHONY : src/controllers/printRequest.cpp.i
+
+src/controllers/printRequest.s: src/controllers/printRequest.cpp.s
+.PHONY : src/controllers/printRequest.s
+
+# target to generate assembly for a file
+src/controllers/printRequest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/printRequest.cpp.s
+.PHONY : src/controllers/printRequest.cpp.s
+
 src/controllers/randomuuid.o: src/controllers/randomuuid.cpp.o
 .PHONY : src/controllers/randomuuid.o
 
@@ -928,6 +976,12 @@ help:
 	@echo "... src/controllers/invalidUser.o"
 	@echo "... src/controllers/invalidUser.i"
 	@echo "... src/controllers/invalidUser.s"
+	@echo "... src/controllers/legacyCreateRecord.o"
+	@echo "... src/controllers/legacyCreateRecord.i"
+	@echo "... src/controllers/legacyCreateRecord.s"
+	@echo "... src/controllers/printRequest.o"
+	@echo "... src/controllers/printRequest.i"
+	@echo "... src/controllers/printRequest.s"
 	@echo "... src/controllers/randomuuid.o"
 	@echo "... src/controllers/randomuuid.i"
 	@echo "... src/controllers/randomuuid.s"

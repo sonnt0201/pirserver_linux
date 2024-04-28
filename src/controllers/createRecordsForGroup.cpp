@@ -2,12 +2,13 @@
 
 /*
 {
-    "user_token": String,
+    "timestamp": Number,
+
     "records": [
         {
             "pir": String,
             "vol": String,
-            "timestamp": Number
+            
         },
         ...
     ]
@@ -21,11 +22,11 @@ HANDLER createRecordsOfGroup = [](Request *req, Response *res, bool* next) {
     res->setStatusCode(200);
     res->setContentType(TEXT_PLAIN);
     res->asPlainText("Received !");
-
+    int timestamp = reqJson["timestamp"].asInt();
     for (JSON &recordJson: records) {
         ID pir = recordJson["pir"].asString();
         ID vol = recordJson["vol"].asString();
-        int timestamp = recordJson["timestamp"].asInt();
+        
 
         int rc = pirOrm.createRecord(pir, vol, timestamp);
 
@@ -38,4 +39,4 @@ HANDLER createRecordsOfGroup = [](Request *req, Response *res, bool* next) {
 
 
     }
-};
+}; 
