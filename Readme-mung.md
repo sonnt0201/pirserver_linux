@@ -1,4 +1,4 @@
-# Hướng dẫn gửi HTTP Request cho bên ESP32-Client
+# Hướng dẫn dạng HTTP Request cho bên ESP32-Client
 
 **Lưu ý**: Phần này là phần nối giữa phần cứng với phần mềm nên kiểu gì mình cũng phải ngồi với nhau rất nhiều để đảm bảo giao thức nó đúng.
 
