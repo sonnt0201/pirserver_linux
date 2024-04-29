@@ -539,7 +539,7 @@ std::vector<class PIR> PIR_ORM::readPIRs(ID group)
 
 std::vector<class Record> PIR_ORM::latestRecords(int num, ID groupID)
 {
-    char *query = "SELECT * FROM Records ORDER BY time DESC LIMIT ( (SELECT COUNT (*) FROM PIRs WHERE (pir_group=? )) * ? )";
+    char *query = "SELECT * FROM Records WHERE (pir_id IN (SELECT pir_id FROM PIRs WHERE (pir_group=?))) ORDER BY time DESC LIMIT ( (SELECT COUNT (*) FROM PIRs WHERE (pir_group=? )) * ? ) ";
 
     std::vector<class Record> out = {};
 
@@ -554,7 +554,8 @@ std::vector<class Record> PIR_ORM::latestRecords(int num, ID groupID)
 
     // rc = sql_bind_text(_db, &stmt, 1, pir_id);
     sqlite3_bind_text(stmt, 1, (char *)groupID.c_str(), -1, NULL);
-    sqlite3_bind_int(stmt, 2, num);
+    sqlite3_bind_text(stmt, 2, (char *)groupID.c_str(), -1, NULL);
+    sqlite3_bind_int(stmt, 3, num);
 
     // rc = sqlite3_step(stmt);
     
