@@ -95,6 +95,36 @@ Response trả về là 1 `JSON` chứa các records gần nhất thu được.
 
 Tìm cách in ra JSON data trả về và xử lý nó.
 
+Một ví dụ về JSON được gửi kèm trong Response:
+
+```JSON
+{
+    "payload": [
+        {
+            "pir_id": "5",
+            "record_id": "e397d179-3b11-468c-958f-a1c3e47ba699",
+            "timestamp": 123456,
+            "voltages": [
+                123,
+                456
+            ]
+        },
+        {
+            "pir_id": "5",
+            "record_id": "33146e88-ff97-4782-a3cd-5d318355b1c6",
+            "timestamp": 123456,
+            "voltages": [
+                123,
+                456
+            ]
+        }
+    ],
+    "total": 2
+}
+```
+
+Nếu vẫn không biết cách lấy dữ liệu, ông có thể cop nguyên cái phần hướng dẫn này vào con chat rồi bảo nó viết code Python hộ, tôi vừa thử rồi, nó làm được đấy 😀.
+
 ***
 ### April 2024 by Thai-Son Nguyen.
 
