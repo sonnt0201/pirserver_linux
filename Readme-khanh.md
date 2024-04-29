@@ -78,7 +78,7 @@ Nếu gửi thành công thì màn hình `Terminal` bên server sẽ hiện ra �
 Một cách để lấy dữ liệu đã ghi
 ----
 
-Mỗi bản ghi chứa 100 số vol trong 1 giây bắt đầu từ `timestamp` được gửi kèm.
+Mỗi bản ghi chứa 100 số vol trong 1 giây bắt đầu từ `timestamp`.
 
 Ở đây hướng dẫn ông cách lấy `n` bản ghi gần nhất:
 
