@@ -6,7 +6,7 @@ Tổng quan
 
 Hôm trước tôi ném cho bọn ông riêng một con server giống kì trước do Server kì này của bọn tôi nó kiểu khác, không dùng được cho bên project của bọn ông.
 
-Tuy nhiên vừa rồi tôi có ngồi làm lại để Server kì này có thể dùng được cho cả Project của bọn tôi lần của bọn ông. Nên bây giờ ông có thể dùng cùng một Server với Mừng.
+Tuy nhiên vừa rồi tôi có ngồi làm lại để Server kì này có thể dùng được cho cả Project của bọn tôi lẫn của bọn ông. Nên bây giờ ông có thể dùng cùng một Server với Mừng.
 
 Ông sẽ chuyển sang Server này để dễ cập nhật các tính năng về sau, đồng thời thay đổi một vài code trong ESP để thích hợp với server này.
 
@@ -30,7 +30,7 @@ Nếu server hiện ra bé Nezuko và chữ **Server is listening on port: 8080*
 
 Địa chỉ Server sẽ là địa chỉ IPv4 của máy ông với port là 8080, nếu máy ông thay đổi mạng thì tự fix lại cái địa chỉ đấy ở phần code của ESP32 rồi `build` và `upload` lại.
 
-Trước khi chạy server, ông cần gỡ firewall ở PORT 8080 để server có thể nhận được request từ các máy khác bằng cách mở `Terminal` lên và chạy lệnh :
+Trước khi chạy server, ông cần gỡ firewall ở PORT 8080 để server có thể nhận được request từ các máy khác. Mở `Terminal` lên và chạy lệnh :
 
 ```shell
 sudo ufw allow 8080
