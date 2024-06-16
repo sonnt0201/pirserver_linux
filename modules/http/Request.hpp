@@ -15,7 +15,7 @@ private:
     std::string rawText;
     std::string _body;
     std::string _header;
-    
+    int _clientSocket = -1;
     std::map<std::string, std::string> _headerVals;
     bool _valid = true;
     // Init _header value
@@ -25,7 +25,7 @@ private:
 
 public:
     // Initializer with char* request received from client
-    Request(char request[8000]);
+    Request(char request[8000], int clientSocket);
 
     // check if the request is valid
     bool isValid();
@@ -60,6 +60,7 @@ public:
     // return origin request in raw text
     std::string getText();
 
-
+    void closeConnection();
     
+    bool isSocketOpen();
 };

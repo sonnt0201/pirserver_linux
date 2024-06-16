@@ -89,7 +89,7 @@ void Server::onClientConnection(int clientSocket)
     {
         Timer timer = Timer();
         timer.start();
-        Request req = Request(request);
+        Request req = Request(request, clientSocket);
         Response res = Response(200, TEXT_PLAIN);
         bool hasMiddleware = false;
         bool next = false;
@@ -140,7 +140,7 @@ void Server::onClientConnection(int clientSocket)
                   << " [" << timer.getDuration() << " millisecs]\n"
                   << "_____________________________________\n\n";
 
-        close(clientSocket);
+        if (req.isSocketOpen() ) close(clientSocket);
     }
 }
 

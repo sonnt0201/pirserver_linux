@@ -2,13 +2,23 @@
 
 const std::string RESERVED_CHARS = ":/?#[]@!$&'()*+,;=\n\r";
 
-Request::Request(char rawText[8000])
+Request::Request(char rawText[8000], int clientSocket = -1 )
 {
+
+    this->_clientSocket = clientSocket;
     this->rawText = std::string(rawText);
     initHeader();
     initBody();
 }
 
+void Request::closeConnection() {
+    close(this->_clientSocket);
+    this->_clientSocket = -1;
+}
+
+bool Request::isSocketOpen() {
+    return (this->_clientSocket != -1);
+}
 bool Request::isValid()
 {
     return this->_valid;
@@ -373,6 +383,7 @@ Json::Value Request::toJson()
     if (!parsingSuccessful)
     {
         std::cout << "Error: Invalid JSON format. \n";
+        root = NULL;
         // std::cout <<this->_body << std::endl;
         return root;
     }

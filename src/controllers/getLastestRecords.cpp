@@ -11,6 +11,11 @@ HANDLER getLatestRecords = [](Request *req, Response * res, bool *next) {
     
     std::vector <class Record> records = pirOrm.latestRecords(number, group);
 
+    if (!pirOrm.isGroupExists(group)) {
+        res->asDefault404();
+        return;
+    }
+
     JSON resJson;
     resJson["total"] = records.size();
     resJson["payload"] = Json::arrayValue;

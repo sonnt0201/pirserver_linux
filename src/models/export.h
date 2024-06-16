@@ -12,14 +12,27 @@
 
 extern class PIR_ORM pirOrm;
 
+
+
 class PIR_ORM
 {
 private:
     sqlite3 *_db;
     char *_filename;
-
+    bool _allowDataWrite = true;
 public:
     PIR_ORM(char *filename);
+
+    // set to allow data writing or not
+    inline void setDataWrite(bool value) {
+        this->_allowDataWrite = value;
+    }
+
+    // return true if data write is allowed, and false otherwise
+    inline bool allowDataWrite() {
+        return this->_allowDataWrite;
+    }
+
 
     /*
         Create a new user and assign a unique user token (ID).
@@ -218,3 +231,5 @@ class PirGroup {
         return root;
     }
 };
+
+

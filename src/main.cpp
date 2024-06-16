@@ -22,7 +22,10 @@ extern HANDLER validUser,
     getGroupList,
     getLatestRecords,
     legacyCreateRecord,
-    printRequest
+    printRequest,
+    turnOnRecording,
+    turnOffRecording,
+    isAllowedToWrite
     ;
 
 int main()
@@ -43,13 +46,14 @@ int main()
     route.get("api/pirs/group", getPirsOfGroup);
     route.get("api/all-groups", getGroupList);
     route.get("api/records/latest", getLatestRecords);
+    route.get("api/allowed-to-write", isAllowedToWrite);
     //    route.get("/invalid-user", )
 
     // POST
     // authen goes firsts
     
     // route.post("*", userAuthen);
-    // route.post("*", printRequest);
+    route.post("*", printRequest);
     route.post("/legacy", legacyCreateRecord);
     route.post("/api/user", validUser);
     route.post("api/new-group", createGroup);
@@ -57,7 +61,9 @@ int main()
     // one pir
     route.post("api/new-record", createRecord);
     route.post("api/new-records", createRecordsOfGroup);
-    
+    route.post("/on", turnOnRecording);
+    route.post("/off", turnOffRecording);
+
     std::cout << "Router initialized." << std::endl;
 
     app.use(route);
