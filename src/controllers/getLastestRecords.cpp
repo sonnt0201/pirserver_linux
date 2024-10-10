@@ -3,7 +3,7 @@
 {
     "group": ID,
     "number": number 
-}
+} as QueryParameters
 */
 HANDLER getLatestRecords = [](Request *req, Response * res, bool *next) {
     ID group = req->queryValue("group");
