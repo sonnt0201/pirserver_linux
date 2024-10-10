@@ -68,6 +68,11 @@ bool PIR_ORM::validUser(ID user_token)
 
 int PIR_ORM::createGroup(String description, ID *group)
 {
+    if (!this->_allowDataWrite) {
+        std::cout<<"Data writing is not allowed.\n";
+        return FAIL;
+    } 
+
     char *query = "INSERT INTO PIRGroups VALUES (?, ?);";
     sqlite3_stmt *stmt;
     int rc;
@@ -131,6 +136,11 @@ bool PIR_ORM::isGroupExists(ID group)
 
 int PIR_ORM::createPIR(ID group, String description, ID *pir)
 {
+    if (!this->_allowDataWrite) {
+        std::cout<<"Data writing is not allowed.\n";
+        return FAIL;
+    } 
+
     char *query = "INSERT INTO PIRs VALUES (?, ?, ?);";
     sqlite3_stmt *stmt;
     int rc;
@@ -174,6 +184,11 @@ int PIR_ORM::createPIR(ID group, String description, ID *pir)
 
 int PIR_ORM::createRecord(ID pir, String vol, int timestamp)
 {
+      if (!this->_allowDataWrite) {
+        std::cout<<"Data writing is not allowed.\n";
+        return FAIL;
+    } 
+
     char *query = "INSERT INTO Records(record_id, pir_id, vol, time) VALUES ( ?, ?, ?, ? );";
     sqlite3_stmt *stmt;
 

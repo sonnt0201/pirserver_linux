@@ -3,13 +3,18 @@
 {
     "group": ID,
     "number": number 
-}
+} as QueryParameters
 */
 HANDLER getLatestRecords = [](Request *req, Response * res, bool *next) {
     ID group = req->queryValue("group");
     int number = stoi(req->queryValue("number"));
     
     std::vector <class Record> records = pirOrm.latestRecords(number, group);
+
+    if (!pirOrm.isGroupExists(group)) {
+        res->asDefault404();
+        return;
+    }
 
     JSON resJson;
     resJson["total"] = records.size();

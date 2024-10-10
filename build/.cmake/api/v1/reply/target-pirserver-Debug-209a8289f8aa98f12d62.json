@@ -70,7 +70,11 @@
 				27,
 				28,
 				29,
-				30
+				30,
+				31,
+				32,
+				33,
+				34
 			]
 		},
 		{
@@ -146,7 +150,11 @@
 				27,
 				28,
 				29,
-				30
+				30,
+				31,
+				32,
+				33,
+				34
 			]
 		}
 	],
@@ -287,6 +295,18 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "src/controllers/isAllowedToWrite.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/controllers/labelData.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "src/controllers/legacyCreateRecord.cpp",
 			"sourceGroupIndex" : 0
 		},
@@ -306,6 +326,18 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/controllers/testPage.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/controllers/turnOffRecorder.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/controllers/turnOnRecorder.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

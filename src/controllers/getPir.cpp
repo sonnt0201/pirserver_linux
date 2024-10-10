@@ -1,8 +1,7 @@
 #include "export.h"
 
 /*
-    Query: 
-    pir_id=String
+    pir_id=String as QueryParameters
 */
 HANDLER getPir = [](Request *req, Response *res, bool* next) {
     ID pirId = req->queryValue("pir_id");

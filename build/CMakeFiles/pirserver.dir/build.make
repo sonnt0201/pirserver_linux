@@ -377,10 +377,38 @@ CMakeFiles/pirserver.dir/src/controllers/invalidUser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pirserver.dir/src/controllers/invalidUser.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/invalidUser.cpp -o CMakeFiles/pirserver.dir/src/controllers/invalidUser.cpp.s
 
+CMakeFiles/pirserver.dir/src/controllers/isAllowedToWrite.cpp.o: CMakeFiles/pirserver.dir/flags.make
+CMakeFiles/pirserver.dir/src/controllers/isAllowedToWrite.cpp.o: ../src/controllers/isAllowedToWrite.cpp
+CMakeFiles/pirserver.dir/src/controllers/isAllowedToWrite.cpp.o: CMakeFiles/pirserver.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/pirserver.dir/src/controllers/isAllowedToWrite.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pirserver.dir/src/controllers/isAllowedToWrite.cpp.o -MF CMakeFiles/pirserver.dir/src/controllers/isAllowedToWrite.cpp.o.d -o CMakeFiles/pirserver.dir/src/controllers/isAllowedToWrite.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/isAllowedToWrite.cpp
+
+CMakeFiles/pirserver.dir/src/controllers/isAllowedToWrite.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pirserver.dir/src/controllers/isAllowedToWrite.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/isAllowedToWrite.cpp > CMakeFiles/pirserver.dir/src/controllers/isAllowedToWrite.cpp.i
+
+CMakeFiles/pirserver.dir/src/controllers/isAllowedToWrite.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pirserver.dir/src/controllers/isAllowedToWrite.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/isAllowedToWrite.cpp -o CMakeFiles/pirserver.dir/src/controllers/isAllowedToWrite.cpp.s
+
+CMakeFiles/pirserver.dir/src/controllers/labelData.cpp.o: CMakeFiles/pirserver.dir/flags.make
+CMakeFiles/pirserver.dir/src/controllers/labelData.cpp.o: ../src/controllers/labelData.cpp
+CMakeFiles/pirserver.dir/src/controllers/labelData.cpp.o: CMakeFiles/pirserver.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/pirserver.dir/src/controllers/labelData.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pirserver.dir/src/controllers/labelData.cpp.o -MF CMakeFiles/pirserver.dir/src/controllers/labelData.cpp.o.d -o CMakeFiles/pirserver.dir/src/controllers/labelData.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/labelData.cpp
+
+CMakeFiles/pirserver.dir/src/controllers/labelData.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pirserver.dir/src/controllers/labelData.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/labelData.cpp > CMakeFiles/pirserver.dir/src/controllers/labelData.cpp.i
+
+CMakeFiles/pirserver.dir/src/controllers/labelData.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pirserver.dir/src/controllers/labelData.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/labelData.cpp -o CMakeFiles/pirserver.dir/src/controllers/labelData.cpp.s
+
 CMakeFiles/pirserver.dir/src/controllers/legacyCreateRecord.cpp.o: CMakeFiles/pirserver.dir/flags.make
 CMakeFiles/pirserver.dir/src/controllers/legacyCreateRecord.cpp.o: ../src/controllers/legacyCreateRecord.cpp
 CMakeFiles/pirserver.dir/src/controllers/legacyCreateRecord.cpp.o: CMakeFiles/pirserver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/pirserver.dir/src/controllers/legacyCreateRecord.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/pirserver.dir/src/controllers/legacyCreateRecord.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pirserver.dir/src/controllers/legacyCreateRecord.cpp.o -MF CMakeFiles/pirserver.dir/src/controllers/legacyCreateRecord.cpp.o.d -o CMakeFiles/pirserver.dir/src/controllers/legacyCreateRecord.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/legacyCreateRecord.cpp
 
 CMakeFiles/pirserver.dir/src/controllers/legacyCreateRecord.cpp.i: cmake_force
@@ -394,7 +422,7 @@ CMakeFiles/pirserver.dir/src/controllers/legacyCreateRecord.cpp.s: cmake_force
 CMakeFiles/pirserver.dir/src/controllers/printRequest.cpp.o: CMakeFiles/pirserver.dir/flags.make
 CMakeFiles/pirserver.dir/src/controllers/printRequest.cpp.o: ../src/controllers/printRequest.cpp
 CMakeFiles/pirserver.dir/src/controllers/printRequest.cpp.o: CMakeFiles/pirserver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/pirserver.dir/src/controllers/printRequest.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/pirserver.dir/src/controllers/printRequest.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pirserver.dir/src/controllers/printRequest.cpp.o -MF CMakeFiles/pirserver.dir/src/controllers/printRequest.cpp.o.d -o CMakeFiles/pirserver.dir/src/controllers/printRequest.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/printRequest.cpp
 
 CMakeFiles/pirserver.dir/src/controllers/printRequest.cpp.i: cmake_force
@@ -408,7 +436,7 @@ CMakeFiles/pirserver.dir/src/controllers/printRequest.cpp.s: cmake_force
 CMakeFiles/pirserver.dir/src/controllers/randomuuid.cpp.o: CMakeFiles/pirserver.dir/flags.make
 CMakeFiles/pirserver.dir/src/controllers/randomuuid.cpp.o: ../src/controllers/randomuuid.cpp
 CMakeFiles/pirserver.dir/src/controllers/randomuuid.cpp.o: CMakeFiles/pirserver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/pirserver.dir/src/controllers/randomuuid.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/pirserver.dir/src/controllers/randomuuid.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pirserver.dir/src/controllers/randomuuid.cpp.o -MF CMakeFiles/pirserver.dir/src/controllers/randomuuid.cpp.o.d -o CMakeFiles/pirserver.dir/src/controllers/randomuuid.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/randomuuid.cpp
 
 CMakeFiles/pirserver.dir/src/controllers/randomuuid.cpp.i: cmake_force
@@ -422,7 +450,7 @@ CMakeFiles/pirserver.dir/src/controllers/randomuuid.cpp.s: cmake_force
 CMakeFiles/pirserver.dir/src/controllers/testPage.cpp.o: CMakeFiles/pirserver.dir/flags.make
 CMakeFiles/pirserver.dir/src/controllers/testPage.cpp.o: ../src/controllers/testPage.cpp
 CMakeFiles/pirserver.dir/src/controllers/testPage.cpp.o: CMakeFiles/pirserver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/pirserver.dir/src/controllers/testPage.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/pirserver.dir/src/controllers/testPage.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pirserver.dir/src/controllers/testPage.cpp.o -MF CMakeFiles/pirserver.dir/src/controllers/testPage.cpp.o.d -o CMakeFiles/pirserver.dir/src/controllers/testPage.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/testPage.cpp
 
 CMakeFiles/pirserver.dir/src/controllers/testPage.cpp.i: cmake_force
@@ -433,10 +461,38 @@ CMakeFiles/pirserver.dir/src/controllers/testPage.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pirserver.dir/src/controllers/testPage.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/testPage.cpp -o CMakeFiles/pirserver.dir/src/controllers/testPage.cpp.s
 
+CMakeFiles/pirserver.dir/src/controllers/turnOffRecorder.cpp.o: CMakeFiles/pirserver.dir/flags.make
+CMakeFiles/pirserver.dir/src/controllers/turnOffRecorder.cpp.o: ../src/controllers/turnOffRecorder.cpp
+CMakeFiles/pirserver.dir/src/controllers/turnOffRecorder.cpp.o: CMakeFiles/pirserver.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/pirserver.dir/src/controllers/turnOffRecorder.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pirserver.dir/src/controllers/turnOffRecorder.cpp.o -MF CMakeFiles/pirserver.dir/src/controllers/turnOffRecorder.cpp.o.d -o CMakeFiles/pirserver.dir/src/controllers/turnOffRecorder.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/turnOffRecorder.cpp
+
+CMakeFiles/pirserver.dir/src/controllers/turnOffRecorder.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pirserver.dir/src/controllers/turnOffRecorder.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/turnOffRecorder.cpp > CMakeFiles/pirserver.dir/src/controllers/turnOffRecorder.cpp.i
+
+CMakeFiles/pirserver.dir/src/controllers/turnOffRecorder.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pirserver.dir/src/controllers/turnOffRecorder.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/turnOffRecorder.cpp -o CMakeFiles/pirserver.dir/src/controllers/turnOffRecorder.cpp.s
+
+CMakeFiles/pirserver.dir/src/controllers/turnOnRecorder.cpp.o: CMakeFiles/pirserver.dir/flags.make
+CMakeFiles/pirserver.dir/src/controllers/turnOnRecorder.cpp.o: ../src/controllers/turnOnRecorder.cpp
+CMakeFiles/pirserver.dir/src/controllers/turnOnRecorder.cpp.o: CMakeFiles/pirserver.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/pirserver.dir/src/controllers/turnOnRecorder.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pirserver.dir/src/controllers/turnOnRecorder.cpp.o -MF CMakeFiles/pirserver.dir/src/controllers/turnOnRecorder.cpp.o.d -o CMakeFiles/pirserver.dir/src/controllers/turnOnRecorder.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/turnOnRecorder.cpp
+
+CMakeFiles/pirserver.dir/src/controllers/turnOnRecorder.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pirserver.dir/src/controllers/turnOnRecorder.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/turnOnRecorder.cpp > CMakeFiles/pirserver.dir/src/controllers/turnOnRecorder.cpp.i
+
+CMakeFiles/pirserver.dir/src/controllers/turnOnRecorder.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pirserver.dir/src/controllers/turnOnRecorder.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/turnOnRecorder.cpp -o CMakeFiles/pirserver.dir/src/controllers/turnOnRecorder.cpp.s
+
 CMakeFiles/pirserver.dir/src/controllers/userAuthen.cpp.o: CMakeFiles/pirserver.dir/flags.make
 CMakeFiles/pirserver.dir/src/controllers/userAuthen.cpp.o: ../src/controllers/userAuthen.cpp
 CMakeFiles/pirserver.dir/src/controllers/userAuthen.cpp.o: CMakeFiles/pirserver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/pirserver.dir/src/controllers/userAuthen.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/pirserver.dir/src/controllers/userAuthen.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pirserver.dir/src/controllers/userAuthen.cpp.o -MF CMakeFiles/pirserver.dir/src/controllers/userAuthen.cpp.o.d -o CMakeFiles/pirserver.dir/src/controllers/userAuthen.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/userAuthen.cpp
 
 CMakeFiles/pirserver.dir/src/controllers/userAuthen.cpp.i: cmake_force
@@ -450,7 +506,7 @@ CMakeFiles/pirserver.dir/src/controllers/userAuthen.cpp.s: cmake_force
 CMakeFiles/pirserver.dir/src/controllers/validUser.cpp.o: CMakeFiles/pirserver.dir/flags.make
 CMakeFiles/pirserver.dir/src/controllers/validUser.cpp.o: ../src/controllers/validUser.cpp
 CMakeFiles/pirserver.dir/src/controllers/validUser.cpp.o: CMakeFiles/pirserver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/pirserver.dir/src/controllers/validUser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/pirserver.dir/src/controllers/validUser.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pirserver.dir/src/controllers/validUser.cpp.o -MF CMakeFiles/pirserver.dir/src/controllers/validUser.cpp.o.d -o CMakeFiles/pirserver.dir/src/controllers/validUser.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver_linux/src/controllers/validUser.cpp
 
 CMakeFiles/pirserver.dir/src/controllers/validUser.cpp.i: cmake_force
@@ -464,7 +520,7 @@ CMakeFiles/pirserver.dir/src/controllers/validUser.cpp.s: cmake_force
 CMakeFiles/pirserver.dir/src/main.cpp.o: CMakeFiles/pirserver.dir/flags.make
 CMakeFiles/pirserver.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/pirserver.dir/src/main.cpp.o: CMakeFiles/pirserver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/pirserver.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/pirserver.dir/src/main.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pirserver.dir/src/main.cpp.o -MF CMakeFiles/pirserver.dir/src/main.cpp.o.d -o CMakeFiles/pirserver.dir/src/main.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver_linux/src/main.cpp
 
 CMakeFiles/pirserver.dir/src/main.cpp.i: cmake_force
@@ -478,7 +534,7 @@ CMakeFiles/pirserver.dir/src/main.cpp.s: cmake_force
 CMakeFiles/pirserver.dir/src/models/PIR_ORM.cpp.o: CMakeFiles/pirserver.dir/flags.make
 CMakeFiles/pirserver.dir/src/models/PIR_ORM.cpp.o: ../src/models/PIR_ORM.cpp
 CMakeFiles/pirserver.dir/src/models/PIR_ORM.cpp.o: CMakeFiles/pirserver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/pirserver.dir/src/models/PIR_ORM.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/pirserver.dir/src/models/PIR_ORM.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pirserver.dir/src/models/PIR_ORM.cpp.o -MF CMakeFiles/pirserver.dir/src/models/PIR_ORM.cpp.o.d -o CMakeFiles/pirserver.dir/src/models/PIR_ORM.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver_linux/src/models/PIR_ORM.cpp
 
 CMakeFiles/pirserver.dir/src/models/PIR_ORM.cpp.i: cmake_force
@@ -492,7 +548,7 @@ CMakeFiles/pirserver.dir/src/models/PIR_ORM.cpp.s: cmake_force
 CMakeFiles/pirserver.dir/src/utils/printNezuko.cpp.o: CMakeFiles/pirserver.dir/flags.make
 CMakeFiles/pirserver.dir/src/utils/printNezuko.cpp.o: ../src/utils/printNezuko.cpp
 CMakeFiles/pirserver.dir/src/utils/printNezuko.cpp.o: CMakeFiles/pirserver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/pirserver.dir/src/utils/printNezuko.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/pirserver.dir/src/utils/printNezuko.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pirserver.dir/src/utils/printNezuko.cpp.o -MF CMakeFiles/pirserver.dir/src/utils/printNezuko.cpp.o.d -o CMakeFiles/pirserver.dir/src/utils/printNezuko.cpp.o -c /home/sonnguyen/Desktop/repos/pirserver_linux/src/utils/printNezuko.cpp
 
 CMakeFiles/pirserver.dir/src/utils/printNezuko.cpp.i: cmake_force
@@ -527,10 +583,14 @@ pirserver_OBJECTS = \
 "CMakeFiles/pirserver.dir/src/controllers/getUserInfo.cpp.o" \
 "CMakeFiles/pirserver.dir/src/controllers/home.cpp.o" \
 "CMakeFiles/pirserver.dir/src/controllers/invalidUser.cpp.o" \
+"CMakeFiles/pirserver.dir/src/controllers/isAllowedToWrite.cpp.o" \
+"CMakeFiles/pirserver.dir/src/controllers/labelData.cpp.o" \
 "CMakeFiles/pirserver.dir/src/controllers/legacyCreateRecord.cpp.o" \
 "CMakeFiles/pirserver.dir/src/controllers/printRequest.cpp.o" \
 "CMakeFiles/pirserver.dir/src/controllers/randomuuid.cpp.o" \
 "CMakeFiles/pirserver.dir/src/controllers/testPage.cpp.o" \
+"CMakeFiles/pirserver.dir/src/controllers/turnOffRecorder.cpp.o" \
+"CMakeFiles/pirserver.dir/src/controllers/turnOnRecorder.cpp.o" \
 "CMakeFiles/pirserver.dir/src/controllers/userAuthen.cpp.o" \
 "CMakeFiles/pirserver.dir/src/controllers/validUser.cpp.o" \
 "CMakeFiles/pirserver.dir/src/main.cpp.o" \
@@ -562,10 +622,14 @@ pirserver: CMakeFiles/pirserver.dir/src/controllers/getRecordsOfGroup.cpp.o
 pirserver: CMakeFiles/pirserver.dir/src/controllers/getUserInfo.cpp.o
 pirserver: CMakeFiles/pirserver.dir/src/controllers/home.cpp.o
 pirserver: CMakeFiles/pirserver.dir/src/controllers/invalidUser.cpp.o
+pirserver: CMakeFiles/pirserver.dir/src/controllers/isAllowedToWrite.cpp.o
+pirserver: CMakeFiles/pirserver.dir/src/controllers/labelData.cpp.o
 pirserver: CMakeFiles/pirserver.dir/src/controllers/legacyCreateRecord.cpp.o
 pirserver: CMakeFiles/pirserver.dir/src/controllers/printRequest.cpp.o
 pirserver: CMakeFiles/pirserver.dir/src/controllers/randomuuid.cpp.o
 pirserver: CMakeFiles/pirserver.dir/src/controllers/testPage.cpp.o
+pirserver: CMakeFiles/pirserver.dir/src/controllers/turnOffRecorder.cpp.o
+pirserver: CMakeFiles/pirserver.dir/src/controllers/turnOnRecorder.cpp.o
 pirserver: CMakeFiles/pirserver.dir/src/controllers/userAuthen.cpp.o
 pirserver: CMakeFiles/pirserver.dir/src/controllers/validUser.cpp.o
 pirserver: CMakeFiles/pirserver.dir/src/main.cpp.o
@@ -573,7 +637,7 @@ pirserver: CMakeFiles/pirserver.dir/src/models/PIR_ORM.cpp.o
 pirserver: CMakeFiles/pirserver.dir/src/utils/printNezuko.cpp.o
 pirserver: CMakeFiles/pirserver.dir/build.make
 pirserver: CMakeFiles/pirserver.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Linking CXX executable pirserver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sonnguyen/Desktop/repos/pirserver_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Linking CXX executable pirserver"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/pirserver.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

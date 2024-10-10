@@ -683,6 +683,54 @@ src/controllers/invalidUser.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/invalidUser.cpp.s
 .PHONY : src/controllers/invalidUser.cpp.s
 
+src/controllers/isAllowedToWrite.o: src/controllers/isAllowedToWrite.cpp.o
+.PHONY : src/controllers/isAllowedToWrite.o
+
+# target to build an object file
+src/controllers/isAllowedToWrite.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/isAllowedToWrite.cpp.o
+.PHONY : src/controllers/isAllowedToWrite.cpp.o
+
+src/controllers/isAllowedToWrite.i: src/controllers/isAllowedToWrite.cpp.i
+.PHONY : src/controllers/isAllowedToWrite.i
+
+# target to preprocess a source file
+src/controllers/isAllowedToWrite.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/isAllowedToWrite.cpp.i
+.PHONY : src/controllers/isAllowedToWrite.cpp.i
+
+src/controllers/isAllowedToWrite.s: src/controllers/isAllowedToWrite.cpp.s
+.PHONY : src/controllers/isAllowedToWrite.s
+
+# target to generate assembly for a file
+src/controllers/isAllowedToWrite.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/isAllowedToWrite.cpp.s
+.PHONY : src/controllers/isAllowedToWrite.cpp.s
+
+src/controllers/labelData.o: src/controllers/labelData.cpp.o
+.PHONY : src/controllers/labelData.o
+
+# target to build an object file
+src/controllers/labelData.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/labelData.cpp.o
+.PHONY : src/controllers/labelData.cpp.o
+
+src/controllers/labelData.i: src/controllers/labelData.cpp.i
+.PHONY : src/controllers/labelData.i
+
+# target to preprocess a source file
+src/controllers/labelData.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/labelData.cpp.i
+.PHONY : src/controllers/labelData.cpp.i
+
+src/controllers/labelData.s: src/controllers/labelData.cpp.s
+.PHONY : src/controllers/labelData.s
+
+# target to generate assembly for a file
+src/controllers/labelData.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/labelData.cpp.s
+.PHONY : src/controllers/labelData.cpp.s
+
 src/controllers/legacyCreateRecord.o: src/controllers/legacyCreateRecord.cpp.o
 .PHONY : src/controllers/legacyCreateRecord.o
 
@@ -778,6 +826,54 @@ src/controllers/testPage.s: src/controllers/testPage.cpp.s
 src/controllers/testPage.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/testPage.cpp.s
 .PHONY : src/controllers/testPage.cpp.s
+
+src/controllers/turnOffRecorder.o: src/controllers/turnOffRecorder.cpp.o
+.PHONY : src/controllers/turnOffRecorder.o
+
+# target to build an object file
+src/controllers/turnOffRecorder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/turnOffRecorder.cpp.o
+.PHONY : src/controllers/turnOffRecorder.cpp.o
+
+src/controllers/turnOffRecorder.i: src/controllers/turnOffRecorder.cpp.i
+.PHONY : src/controllers/turnOffRecorder.i
+
+# target to preprocess a source file
+src/controllers/turnOffRecorder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/turnOffRecorder.cpp.i
+.PHONY : src/controllers/turnOffRecorder.cpp.i
+
+src/controllers/turnOffRecorder.s: src/controllers/turnOffRecorder.cpp.s
+.PHONY : src/controllers/turnOffRecorder.s
+
+# target to generate assembly for a file
+src/controllers/turnOffRecorder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/turnOffRecorder.cpp.s
+.PHONY : src/controllers/turnOffRecorder.cpp.s
+
+src/controllers/turnOnRecorder.o: src/controllers/turnOnRecorder.cpp.o
+.PHONY : src/controllers/turnOnRecorder.o
+
+# target to build an object file
+src/controllers/turnOnRecorder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/turnOnRecorder.cpp.o
+.PHONY : src/controllers/turnOnRecorder.cpp.o
+
+src/controllers/turnOnRecorder.i: src/controllers/turnOnRecorder.cpp.i
+.PHONY : src/controllers/turnOnRecorder.i
+
+# target to preprocess a source file
+src/controllers/turnOnRecorder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/turnOnRecorder.cpp.i
+.PHONY : src/controllers/turnOnRecorder.cpp.i
+
+src/controllers/turnOnRecorder.s: src/controllers/turnOnRecorder.cpp.s
+.PHONY : src/controllers/turnOnRecorder.s
+
+# target to generate assembly for a file
+src/controllers/turnOnRecorder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pirserver.dir/build.make CMakeFiles/pirserver.dir/src/controllers/turnOnRecorder.cpp.s
+.PHONY : src/controllers/turnOnRecorder.cpp.s
 
 src/controllers/userAuthen.o: src/controllers/userAuthen.cpp.o
 .PHONY : src/controllers/userAuthen.o
@@ -976,6 +1072,12 @@ help:
 	@echo "... src/controllers/invalidUser.o"
 	@echo "... src/controllers/invalidUser.i"
 	@echo "... src/controllers/invalidUser.s"
+	@echo "... src/controllers/isAllowedToWrite.o"
+	@echo "... src/controllers/isAllowedToWrite.i"
+	@echo "... src/controllers/isAllowedToWrite.s"
+	@echo "... src/controllers/labelData.o"
+	@echo "... src/controllers/labelData.i"
+	@echo "... src/controllers/labelData.s"
 	@echo "... src/controllers/legacyCreateRecord.o"
 	@echo "... src/controllers/legacyCreateRecord.i"
 	@echo "... src/controllers/legacyCreateRecord.s"
@@ -988,6 +1090,12 @@ help:
 	@echo "... src/controllers/testPage.o"
 	@echo "... src/controllers/testPage.i"
 	@echo "... src/controllers/testPage.s"
+	@echo "... src/controllers/turnOffRecorder.o"
+	@echo "... src/controllers/turnOffRecorder.i"
+	@echo "... src/controllers/turnOffRecorder.s"
+	@echo "... src/controllers/turnOnRecorder.o"
+	@echo "... src/controllers/turnOnRecorder.i"
+	@echo "... src/controllers/turnOnRecorder.s"
 	@echo "... src/controllers/userAuthen.o"
 	@echo "... src/controllers/userAuthen.i"
 	@echo "... src/controllers/userAuthen.s"
