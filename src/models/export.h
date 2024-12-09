@@ -72,7 +72,7 @@ public:
         [in] vol: Voltage reading as a String.
         [in] timestamp: Timestamp of the reading (defaults to current time).
     */
-    int createRecord(ID pir, String vol, int timestamp);
+    int createRecord(ID pir, String vol, uint64_t timestamp);
 
     std::vector<ID> readPIRsOfGroup(ID group);
 
@@ -83,7 +83,7 @@ public:
         [in] end: Ending timestamp for the query (defaults to current time).
         [out] records: vector containing the retrieved Record objects.
     */
-    std::vector<class Record> readRecords(ID group, int begin, int end = time(NULL));
+    std::vector<class Record> readRecords(ID group, uint64_t begin, uint64_t end = (time(NULL) * 1000));
 
     /*
         Read all PIRs associated with a specific group.
@@ -132,15 +132,15 @@ class Record
 {
 private:
     ID _id, _PIRID;
-    int _timestamp;
+    uint64_t _timestamp;
     std::string _rawVol;
 
 public:
-    Record(char *recordId, char *pirID, char *rawVol, int timestamp);
+    Record(char *recordId, char *pirID, char *rawVol, uint64_t  timestamp);
     ID getID();
     ID getPIRID();
     std::vector<int> getVols();
-    int getTimestamp();
+    uint64_t getTimestamp();
 
     Json::Value toJson();
 

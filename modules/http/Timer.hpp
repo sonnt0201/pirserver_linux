@@ -28,4 +28,8 @@ public:
 
     // Get current timestamps in seconds
     char* now();
+
+    // current timestamp in milliseconds
+    uint64_t nowInMillisec();
+    
 };

@@ -25,7 +25,8 @@ extern HANDLER validUser,
     printRequest,
     turnOnRecording,
     turnOffRecording,
-    isAllowedToWrite
+    isAllowedToWrite,
+    currentTimestamp
     ;
 
 int main()
@@ -47,6 +48,7 @@ int main()
     route.get("api/all-groups", getGroupList);
     route.get("api/records/latest", getLatestRecords);
     route.get("api/allowed-to-write", isAllowedToWrite);
+    route.get("api/time", currentTimestamp);
     //    route.get("/invalid-user", )
 
     // POST

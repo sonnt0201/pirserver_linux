@@ -14,12 +14,12 @@ HANDLER getRecordsOfGroup = [](Request *req, Response *res, bool *next)
     ID group = req->queryValue("group");
 
     String beginStr = req->queryValue("begin"); 
-    int begin;
-    if (beginStr != "") begin = stoi(req->queryValue("begin")) ; else begin = 0;
+    uint64_t begin;
+    if (beginStr != "") begin = stoull(req->queryValue("begin")) ; else begin = 0;
 
     String endStr = req->queryValue("end");
 
-    int end = (endStr != "" ) ? stoi(endStr) : time(NULL);
+    uint64_t end = (endStr != "" ) ? stoull(endStr) : (time(NULL) * 1000);
     // if (end == NULL) end = time(NULL);
 
     std::cout <<"begin: "<<begin<<"\n";

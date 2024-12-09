@@ -25,7 +25,7 @@ HANDLER createRecordsOfGroup = [](Request *req, Response *res, bool *next)
     res->setStatusCode(200);
     res->setContentType(TEXT_PLAIN);
     res->asPlainText("Received !");
-    int timestamp = reqJson["timestamp"].asInt();
+    uint64_t timestamp = reqJson["timestamp"].asUInt64();
    
         for (JSON &recordJson : records)
         {

@@ -18,7 +18,7 @@ PIR_ORM::PIR_ORM(char *filename)
         "CREATE TABLE IF NOT EXISTS Users (user_token VARCHAR PRIMARY KEY, name VARCHAR, description VARCHAR);",
         "CREATE TABLE IF NOT EXISTS PIRGroups (pir_group VARCHAR PRIMARY KEY, description VARCHAR);",
         "CREATE TABLE IF NOT EXISTS PIRs (pir_id VARCHAR PRIMARY KEY, pir_group VARCHAR NOT NULL, description VARCHAR, FOREIGN KEY (pir_group) REFERENCES PIRGroups(pir_group));",
-        "CREATE TABLE IF NOT EXISTS Records (record_id VARCHAR PRIMARY KEY, pir_id VARCHAR NOT NULL, vol VARCHAR NOT NULL, time INTEGER NOT NULL, FOREIGN KEY (pir_id) REFERENCES PIRs(pir_id));",
+        "CREATE TABLE IF NOT EXISTS Records (record_id VARCHAR PRIMARY KEY, pir_id VARCHAR NOT NULL, vol VARCHAR NOT NULL, time UNSIGNED BIG INT NOT NULL, FOREIGN KEY (pir_id) REFERENCES PIRs(pir_id));",
     };
 
     sqlite3_stmt *stmt;
@@ -182,7 +182,7 @@ int PIR_ORM::createPIR(ID group, String description, ID *pir)
     return SUCCESS;
 }
 
-int PIR_ORM::createRecord(ID pir, String vol, int timestamp)
+int PIR_ORM::createRecord(ID pir, String vol, uint64_t timestamp)
 {
       if (!this->_allowDataWrite) {
         std::cout<<"Data writing is not allowed.\n";
@@ -207,7 +207,7 @@ int PIR_ORM::createRecord(ID pir, String vol, int timestamp)
 
     sqlite3_bind_text(stmt, 2, (char *)pir.c_str(), -1, NULL);
     sqlite3_bind_text(stmt, 3, (char *)vol.c_str(), -1, NULL);
-    sqlite3_bind_int(stmt, 4, timestamp);
+    sqlite3_bind_int64(stmt, 4, timestamp);
 
     rc = sqlite3_step(stmt);
     if (rc != SQLITE_DONE)
@@ -247,7 +247,7 @@ std::vector<ID> PIR_ORM::readPIRsOfGroup(ID group)
     return results;
 }
 
-std::vector<class Record> PIR_ORM::readRecords(ID group, int begin, int end)
+std::vector<class Record> PIR_ORM::readRecords(ID group, uint64_t begin, uint64_t end)
 {
 
     std::vector<class Record> results = {};
@@ -267,8 +267,8 @@ std::vector<class Record> PIR_ORM::readRecords(ID group, int begin, int end)
     }
 
     sqlite3_bind_text(stmt, 1, (char *)group.c_str(), -1, NULL);
-    sqlite3_bind_int(stmt, 2, begin);
-    sqlite3_bind_int(stmt, 3, end);
+    sqlite3_bind_int64(stmt, 2, begin);
+    sqlite3_bind_int64(stmt, 3, end);
     while (
         (rc = sqlite3_step(stmt)) == SQLITE_ROW)
     {
@@ -276,7 +276,7 @@ std::vector<class Record> PIR_ORM::readRecords(ID group, int begin, int end)
         // std::cout<<"record id: "<<recordId<<std::endl;
         char *pirId = (char *)sqlite3_column_text(stmt, 1);
         char *rawVol = (char *)sqlite3_column_text(stmt, 2);
-        int timestamp = sqlite3_column_int(stmt, 3);
+        int timestamp = sqlite3_column_int64(stmt, 3);
 
         Record record = Record(recordId, pirId, rawVol, timestamp);
 
@@ -318,7 +318,7 @@ std::vector<class PirGroup> PIR_ORM::readAllGroups()
 };
 
 /* Implement class Record*/
-Record::Record(char *recordId, char *pirID, char *rawVol, int timestamp)
+Record::Record(char *recordId, char *pirID, char *rawVol, uint64_t timestamp)
 {
     this->_id = String(recordId);
     this->_PIRID = String(pirID);
@@ -336,7 +336,7 @@ ID Record::getPIRID()
     return this->_PIRID;
 }
 
-int Record::getTimestamp()
+uint64_t Record::getTimestamp()
 {
     return this->_timestamp;
 }
@@ -581,7 +581,7 @@ std::vector<class Record> PIR_ORM::latestRecords(int num, ID groupID)
         // std::cout<<"record id: "<<recordId<<std::endl;
         char *pirId = (char *)sqlite3_column_text(stmt, 1);
         char *rawVol = (char *)sqlite3_column_text(stmt, 2);
-        int timestamp = sqlite3_column_int(stmt, 3);
+        uint64_t timestamp = sqlite3_column_int64(stmt, 3);
 
         Record record = Record(recordId, pirId, rawVol, timestamp);
 

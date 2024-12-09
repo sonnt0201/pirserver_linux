@@ -13,7 +13,7 @@ HANDLER createRecord = [](Request *req, Response *res, bool *next) {
     JSON resJson;
     int rc;
     try {
-         rc = pirOrm.createRecord(reqJson["pir"].asString(), reqJson["vol"].asString(), reqJson["timestamp"].asInt());
+         rc = pirOrm.createRecord(reqJson["pir"].asString(), reqJson["vol"].asString(), reqJson["timestamp"].asUInt64());
     
     } catch (const std::exception& e) {
          std::cerr << "Error: Unexpected exception: " << e.what() << std::endl;
