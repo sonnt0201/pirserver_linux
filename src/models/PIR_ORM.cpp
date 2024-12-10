@@ -276,8 +276,8 @@ std::vector<class Record> PIR_ORM::readRecords(ID group, uint64_t begin, uint64_
         // std::cout<<"record id: "<<recordId<<std::endl;
         char *pirId = (char *)sqlite3_column_text(stmt, 1);
         char *rawVol = (char *)sqlite3_column_text(stmt, 2);
-        int timestamp = sqlite3_column_int64(stmt, 3);
-
+        uint64_t timestamp = sqlite3_column_int64(stmt, 3);
+        // std::cout<<"Timestamp from db: "<<timestamp<<std::endl;
         Record record = Record(recordId, pirId, rawVol, timestamp);
 
         results.push_back(record);
